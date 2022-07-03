@@ -5,9 +5,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using Sirenix.OdinInspector;
-using strange.extensions.mediation.impl;
 
-public class GameController : View
+public class GameController : MonoBehaviour
 {
     public static GameController instance;
 

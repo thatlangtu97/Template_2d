@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Entitas;
-using strange.extensions.injector.impl;
 using UniRx;
 using Unity.Collections;
 using Unity.Jobs;
