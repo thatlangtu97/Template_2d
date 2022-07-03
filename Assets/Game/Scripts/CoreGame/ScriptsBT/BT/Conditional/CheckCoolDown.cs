@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
 using BehaviorDesigner.Runtime;
-namespace CoreBT
+namespace Core.AI
 {
     [TaskCategory("Extension")]
     public class CheckCoolDown : Conditional

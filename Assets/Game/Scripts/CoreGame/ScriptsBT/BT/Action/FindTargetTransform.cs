@@ -1,7 +1,8 @@
 ﻿using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
+using Core.GamePlay;
 using UnityEngine;
-namespace CoreBT
+namespace Core.AI
 {
     [TaskCategory("Extension")]
     public class FindTargetTransform : Action
@@ -9,10 +10,6 @@ namespace CoreBT
         public SharedComponentManager componentManager;
         public int frameUpdate = 5;
         public int frameCount;
-//        public override void OnStart()
-//        {
-//            base.OnStart();
-//        }
         public override TaskStatus OnUpdate()
         {
             frameCount += 1;

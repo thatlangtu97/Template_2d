@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using BehaviorDesigner.Runtime;
 using UnityEngine;
-namespace CoreBT
+namespace Core.AI
 {
     [TaskCategory("Extension")]
     public class MoveToPoint : Action

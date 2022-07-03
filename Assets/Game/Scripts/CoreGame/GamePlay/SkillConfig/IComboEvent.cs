@@ -4,7 +4,9 @@ using System;
 using System.Collections.Generic;
 using Spine;
 
-public enum PowerCollider
+namespace Core.GamePlay
+{
+    public enum PowerCollider
 {
     Node,
     Small,
@@ -984,3 +986,6 @@ public class ShakeCamera : IComboEvent
     }
 }
 #endregion
+
+
+}

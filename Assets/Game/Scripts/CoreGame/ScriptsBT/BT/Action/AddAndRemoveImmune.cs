@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using BehaviorDesigner.Runtime.Tasks;
 using Sirenix.OdinInspector;
 
-namespace CoreBT
+namespace Core.AI
 {
     [TaskCategory("Extension")]
     public class AddAndRemoveImmune : Action

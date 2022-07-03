@@ -1,7 +1,10 @@
 ﻿using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
-public class State : SerializedScriptableObject
+
+namespace Core.GamePlay
+{
+    public class State : SerializedScriptableObject
 {
     [SerializeField]
     protected StateMachineController controller;
@@ -112,5 +115,8 @@ public class State : SerializedScriptableObject
     {
     }
 }
+
+}
+
 
 

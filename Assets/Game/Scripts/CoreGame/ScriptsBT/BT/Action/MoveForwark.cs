@@ -1,8 +1,9 @@
 ﻿using BehaviorDesigner.Runtime.Tasks;
 using System.Collections;
 using System.Collections.Generic;
+using Core.GamePlay;
 using UnityEngine;
-namespace CoreBT
+namespace Core.AI
 {
     [TaskCategory("Extension")]
     public class MoveForwark : Action
@@ -13,9 +14,5 @@ namespace CoreBT
             base.OnStart();
             componentManager.Value.stateMachine.ChangeState(NameState.MoveState);
         }
-//        public override void OnEnd()
-//        {
-//            base.OnEnd();
-//        }
     }
 }

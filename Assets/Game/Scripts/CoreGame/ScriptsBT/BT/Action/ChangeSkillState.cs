@@ -1,6 +1,6 @@
 ﻿using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
-namespace CoreBT
+namespace Core.AI
 {
     [TaskCategory("Extension")]
     public class ChangeSkillState : Action

@@ -2,8 +2,9 @@
 using BehaviorDesigner.Runtime.Tasks;
 using System.Collections;
 using System.Collections.Generic;
+using Core.GamePlay;
 using UnityEngine;
-namespace CoreBT
+namespace Core.AI
 {
     [TaskCategory("Extension")]
     public class HasTarget : Conditional
@@ -11,14 +12,6 @@ namespace CoreBT
         public SharedComponentManager componentManager;
         public int frameUpdate = 5;
         public int frameCount;
-//        public override void OnAwake()
-//        {
-//            base.OnAwake();
-//        }
-//        public override void OnStart()
-//        {
-//            base.OnStart();
-//        }
         public override TaskStatus OnUpdate()
         {
             if (!componentManager.Value.enableAI) return TaskStatus.Failure;

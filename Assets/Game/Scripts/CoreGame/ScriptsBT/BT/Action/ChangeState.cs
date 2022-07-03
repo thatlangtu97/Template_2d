@@ -1,5 +1,7 @@
 ﻿using BehaviorDesigner.Runtime.Tasks;
-namespace CoreBT
+using Core.GamePlay;
+
+namespace Core.AI
 {
     [TaskCategory("Extension")]
     public class ChangeState : Action

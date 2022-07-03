@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using BehaviorDesigner.Runtime;
+using Core.GamePlay;
 using UnityEngine;
 
 public class PoolItemStateMachine : PoolItem

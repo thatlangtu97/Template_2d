@@ -17,7 +17,6 @@ public class PlayerSkin : MonoBehaviour
     public void Modify()
     {
         Skin mixSkin = new Skin("NewSkin");
-        //                                                        skeletonMecanim.runInEditMode = true;
         mixSkin.AddSkin(skeletonMecanim.skeleton.Data.FindSkin(skinWeaponName));
         mixSkin.AddSkin(skeletonMecanim.skeleton.Data.FindSkin(skinOufitName));
         skeletonMecanim.skeleton.SetSkin(mixSkin);

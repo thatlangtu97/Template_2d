@@ -1599,16 +1599,12 @@
                   <e p="DamageInfoEvent.cs" t="Include" />
                   <e p="DamageProperties.cs" t="Include" />
                   <e p="DealDmgManager.cs" t="Include" />
-                  <e p="Detectable.cs" t="Include" />
                   <e p="ProjectileCollider.cs" t="Include" />
                 </e>
                 <e p="ComponentGameController.cs" t="Include" />
                 <e p="ComponentManagerUtils.cs" t="Include" />
                 <e p="DamageText" t="Include">
                   <e p="DamageTextView.cs" t="Include" />
-                </e>
-                <e p="EnemyScripts" t="Include">
-                  <e p="EnemyStateMachine.cs" t="Include" />
                 </e>
                 <e p="EnemySpawnController" t="Include">
                   <e p="EnemySpawnController.cs" t="Include" />
@@ -1621,7 +1617,6 @@
                   </e>
                   <e p="PlayerSkin.cs" t="Include" />
                   <e p="PlayerSkinEditor.cs" t="Include" />
-                  <e p="PlayerStateMatchine.cs" t="Include" />
                 </e>
                 <e p="Projectile" t="Include">
                   <e p="ProjectileArrowMovement.cs" t="Include" />
@@ -1633,23 +1628,15 @@
                   <e p="ProjectileTrajectoryMovement.cs" t="Include" />
                 </e>
                 <e p="ProjectileComponent.cs" t="Include" />
-                <e p="Signal" t="Include">
-                  <e p="StartGamePlaySignal.cs" t="Include" />
-                </e>
                 <e p="SkillConfig" t="Include">
-                  <e p="AttackConfig.cs" t="Include" />
                   <e p="EventCollection.cs" t="Include" />
                   <e p="EventCollectionEditor.cs" t="Include" />
-                  <e p="EventConfig.cs" t="Include" />
                   <e p="IComboEvent.cs" t="Include" />
                 </e>
                 <e p="StateMachine" t="Include">
                   <e p="AttackState" t="Include">
                     <e p="AirAttackState.cs" t="Include" />
-                    <e p="AirAttackStateWithCurve.cs" t="Include" />
-                    <e p="AttackAndMoveState.cs" t="Include" />
                     <e p="AttackState.cs" t="Include" />
-                    <e p="FlyAttackState.cs" t="Include" />
                   </e>
                   <e p="DashState" t="Include">
                     <e p="DashAttackState.cs" t="Include" />
@@ -1668,7 +1655,6 @@
                     <e p="HitState.cs" t="Include" />
                   </e>
                   <e p="IdleState" t="Include">
-                    <e p="IdleAirState.cs" t="Include" />
                     <e p="IdleState.cs" t="Include" />
                   </e>
                   <e p="JumpState" t="Include">
@@ -1680,34 +1666,22 @@
                     <e p="KnockUpState.cs" t="Include" />
                   </e>
                   <e p="MoveState" t="Include">
-                    <e p="MoveAirState.cs" t="Include" />
-                    <e p="MoveBeziorToPointState.cs" t="Include" />
                     <e p="MoveState.cs" t="Include" />
                     <e p="MoveStepByStepState.cs" t="Include" />
                   </e>
+                  <e p="PlayerStateMatchine.cs" t="Include" />
                   <e p="ReviveState" t="Include">
                     <e p="ReviveState.cs" t="Include" />
                   </e>
-                  <e p="RollOutState" t="Include">
-                    <e p="RollOutState.cs" t="Include" />
-                  </e>
                   <e p="SkillState" t="Include">
-                    <e p="FlySkillState.cs" t="Include" />
                     <e p="SkillState.cs" t="Include" />
                   </e>
                   <e p="SpawnState" t="Include">
                     <e p="SpawnState.cs" t="Include" />
                   </e>
                   <e p="State.cs" t="Include" />
-                  <e p="StateMachineClone.cs" t="Include" />
                   <e p="StateMachineController.cs" t="Include" />
                 </e>
-              </e>
-              <e p="Passive" t="Include">
-                <e p="BasePassive.cs" t="Include" />
-                <e p="IGamePassiveCondition.cs" t="Include" />
-                <e p="IPassiveAction.cs" t="Include" />
-                <e p="PassiveCollection.cs" t="Include" />
               </e>
               <e p="ScriptsBT" t="Include">
                 <e p="AnimationName.cs" t="Include" />
@@ -1750,20 +1724,11 @@
               </e>
             </e>
             <e p="DataManager" t="Include">
-              <e p="CurrencyDataManager.cs" t="Include" />
               <e p="DataManager.cs" t="Include" />
               <e p="GameResourcePath.cs" t="Include" />
-              <e p="HeroDataManager.cs" t="Include" />
-              <e p="InventoryDataManager.cs" t="Include" />
-              <e p="Signal" t="Include">
-                <e p="SetupDatamanagerSignal.cs" t="Include" />
-              </e>
             </e>
             <e p="Hitstop" t="Include">
               <e p="HitStopManager.cs" t="Include" />
-            </e>
-            <e p="Particle" t="Include">
-              <e p="CustomParticleSpeed.cs" t="Include" />
             </e>
             <e p="Pool" t="Include">
               <e p="DamageTextPoolItem.cs" t="Include" />
@@ -1772,16 +1737,8 @@
               <e p="PoolItemParticleNotActive.cs" t="Include" />
               <e p="PoolItemSetActive.cs" t="Include" />
               <e p="PoolItemStateMachine.cs" t="Include" />
-              <e p="SkeletonMecanimPool" t="Include">
-                <e p="SpawnSkeletonMecanim.cs" t="Include" />
-              </e>
             </e>
             <e p="ScriptableObject" t="Include">
-              <e p="EquipmentConfig.cs" t="Include" />
-              <e p="EquipmentConfigCollection.cs" t="Include" />
-              <e p="GachaConfigCollection.cs" t="Include" />
-              <e p="HeroConfigCollection.cs" t="Include" />
-              <e p="ResourceIconCollection.cs" t="Include" />
               <e p="ScriptableObjectData.cs" t="Include" />
             </e>
             <e p="SoundManager" t="Include">

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using BehaviorDesigner.Runtime;
+using Core.GamePlay;
 using UnityEngine;
 using Entitas;
 using UnityEngine.UI;

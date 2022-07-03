@@ -11,7 +11,7 @@ public partial class GameEntity {
     public TakeDamageComponent takeDamage { get { return (TakeDamageComponent)GetComponent(GameComponentsLookup.TakeDamage); } }
     public bool hasTakeDamage { get { return HasComponent(GameComponentsLookup.TakeDamage); } }
 
-    public void AddTakeDamage(GameEntity newMyEntity, GameEntity newTargetEnemy, DamageInfoSend newDamageInfoSend) {
+    public void AddTakeDamage(GameEntity newMyEntity, GameEntity newTargetEnemy, Core.GamePlay.DamageInfoSend newDamageInfoSend) {
         var index = GameComponentsLookup.TakeDamage;
         var component = (TakeDamageComponent)CreateComponent(index, typeof(TakeDamageComponent));
         component.myEntity = newMyEntity;
@@ -20,7 +20,7 @@ public partial class GameEntity {
         AddComponent(index, component);
     }
 
-    public void ReplaceTakeDamage(GameEntity newMyEntity, GameEntity newTargetEnemy, DamageInfoSend newDamageInfoSend) {
+    public void ReplaceTakeDamage(GameEntity newMyEntity, GameEntity newTargetEnemy, Core.GamePlay.DamageInfoSend newDamageInfoSend) {
         var index = GameComponentsLookup.TakeDamage;
         var component = (TakeDamageComponent)CreateComponent(index, typeof(TakeDamageComponent));
         component.myEntity = newMyEntity;

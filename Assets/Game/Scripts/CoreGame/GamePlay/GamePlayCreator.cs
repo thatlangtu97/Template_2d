@@ -4,33 +4,37 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class GamePlayCreator : MonoBehaviour
+namespace Core.GamePlay
 {
-    static GamePlayCreator instance;
-    public string heroPrefabName;
-    private PoolItem heroPrefab;
-    public static GamePlayCreator Instance {
-        get { return instance; }
-    }
-    
-    private void Awake()
+    public class GamePlayCreator : MonoBehaviour
     {
-        if (instance == null)
-        {
-            instance = this;
+        static GamePlayCreator instance;
+        public string heroPrefabName;
+        private PoolItem heroPrefab;
+        public static GamePlayCreator Instance {
+            get { return instance; }
         }
-        heroPrefab = Resources.Load<PoolItem>("PrefabCharacter/" + heroPrefabName);
-    }
-    [Button("SPAWN HERO", ButtonSizes.Gigantic), GUIColor(0.4f, 0.8f, 1),]
-    public void CreateHero()
-    {
+    
+        private void Awake()
+        {
+            if (instance == null)
+            {
+                instance = this;
+            }
+            heroPrefab = Resources.Load<PoolItem>("PrefabCharacter/" + heroPrefabName);
+        }
+        [Button("SPAWN HERO", ButtonSizes.Gigantic), GUIColor(0.4f, 0.8f, 1),]
+        public void CreateHero()
+        {
         
-        StateMachineController statemachine = PoolManager.Spawn<StateMachineController>(heroPrefab.gameObject);
-        statemachine.GetComponent<ComponentManager>().SetupEntity();
-    }
+            StateMachineController statemachine = PoolManager.Spawn<StateMachineController>(heroPrefab.gameObject);
+            statemachine.GetComponent<ComponentManager>().SetupEntity();
+        }
 
-    public void NextWave(int waveID)
-    {
+        public void NextWave(int waveID)
+        {
         
+        }
     }
 }
+

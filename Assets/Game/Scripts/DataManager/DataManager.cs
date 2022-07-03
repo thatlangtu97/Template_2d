@@ -68,52 +68,6 @@ public class DataManager : MonoBehaviour
             fileStream.Close();
         }
     }
-    CurrencyDataManager currencyDataManager;
-    public CurrencyDataManager CurrencyDataManager
-    {
-        get
-        {
-            if (currencyDataManager == null)
-            {
-                currencyDataManager = new CurrencyDataManager();
-                currencyDataManager.LoadData();
-                listObjectDataManager.Add(currencyDataManager);
-
-            }
-            return currencyDataManager;
-        }
-    }
-    InventoryDataManager inventoryDataManager;
-    public InventoryDataManager InventoryDataManager
-    {
-        get
-        {
-            if (inventoryDataManager == null)
-            {
-                inventoryDataManager = new InventoryDataManager();
-                inventoryDataManager.LoadData();
-                listObjectDataManager.Add(inventoryDataManager);
-
-            }
-            return inventoryDataManager;
-        }
-    }
-    HeroDataManager heroDataManager;
-    public HeroDataManager HeroDataManager
-    {
-        get
-        {
-            if (heroDataManager == null)
-            {
-                heroDataManager = new HeroDataManager();
-                heroDataManager.LoadData();
-                listObjectDataManager.Add(heroDataManager);
-
-            }
-            return heroDataManager;
-        }
-    }
-
 }
 public interface IObjectDataManager
 {

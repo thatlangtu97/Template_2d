@@ -1,62 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "HitState", menuName = "CoreGame/State/HitState")]
-public class HitState : State
+
+namespace Core.GamePlay
 {
-    public override void EnterState()
+    [CreateAssetMenu(fileName = "HitState", menuName = "CoreGame/State/HitState")]
+    public class HitState : State
     {
-        base.EnterState();
-//        if (entity.hasBehaviourTree)
-//        {
-//            entity.behaviourTree.value.DisableBehavior();
-//        }
-        controller.componentManager.DisableBehavior();
-        if (eventCollectionData.Count!=0)
-        idState = (idState + 1) % eventCollectionData.Count;
-        controller.SetTrigger(eventCollectionData[idState].NameTrigger,eventCollectionData[idState].typeAnim,eventCollectionData[idState].timeStart);
-    }
-    public override void UpdateState()
-    {
-        base.UpdateState();
-        if (timeTrigger > eventCollectionData[idState].durationAnimation)
+        public override void EnterState()
         {
-            if (controller.componentManager.checkGround())
-            {
-                if (controller.componentManager.speedMove != 0)
-                {
-                    controller.ChangeState(NameState.MoveState);
-                }
-                else
-                {
-                    controller.ChangeState(NameState.IdleState);
-                }
-                //controller.ChangeState(NameState.IdleState);
-            }
-            
-//            else
-//            {
-//                controller.ChangeState(NameState.FallingState);
-//            }
+            base.EnterState();
         }
-        if (!controller.componentManager.checkGround())
+        public override void UpdateState()
         {
-            controller.ChangeState(NameState.FallingState);
+            base.UpdateState();
+
         }
-        
+        public override void ExitState()
+        {
+            base.ExitState();
+
+        }
     }
-    public override void ExitState()
-    {
-        base.ExitState();
-//        if (entity.hasBehaviourTree)
-//        {
-//            entity.behaviourTree.value.EnableBehavior();
-//        }
-        controller.componentManager.EnableBehavior();
-    }
-    public override void OnHit()
-    {
-        base.OnHit();
-        EnterState();
-    }
+
 }
+

@@ -9,16 +9,13 @@ using UnityEngine.InputSystem;
 
 public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
-    //public GameObject gameinitObj;
-
-    //public int deviceId;
     [SerializeField]
     public Image BackGround, PointJoystick;
     public Vector3 posStart, posEnd, ForceVector;
     [Range(1.5f, 4f)]
     public float space =2.5f;
     public Transform effectLook;
-    public ComponentManager componentManager;
+//    public ComponentManager componentManager;
     // GAME PAD
     private Gamepad gamePad;
     public Vector2 VectorMove;
@@ -34,8 +31,6 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
     {
         posStart = Vector3.zero;
         gamePad = Gamepad.current;
-        
-
     }
     public void OnDrag(PointerEventData eventData)
     {
@@ -75,32 +70,10 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
     }
     void OnMove()
     {
-        if (componentManager != null)
-        {
-            if (ForceVector.x > 0)
-            {
-                componentManager.speedMove = componentManager.maxSpeedMove;
-            }
-            if (ForceVector.x < 0)
-            {
-                componentManager.speedMove = -componentManager.maxSpeedMove;
-            }
-
-            componentManager.vectorSpeed = ForceVector;
-        }
     }
     void OnStop()
     {
-        if (componentManager != null)
-        {
-            componentManager.speedMove = 0f;
-        }
     }
-
-//    private void Update()
-//    {
-//        LeftStick(gamePad);
-//    }
 
     public void LeftStick(Gamepad gamePad)
     {
@@ -176,7 +149,6 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
         if (!isPress)
         {
             Vector2 sizeDelta = BackGround.rectTransform.sizeDelta;
-            //float horizontal = Input.GetAxis("Horizontal");
             VectorMove = new Vector2(horizontal, 0f);
             PointJoystick.rectTransform.anchoredPosition = new Vector3((VectorMove.x * sizeDelta.x) / space,
                 (VectorMove.y * sizeDelta.y) / space);

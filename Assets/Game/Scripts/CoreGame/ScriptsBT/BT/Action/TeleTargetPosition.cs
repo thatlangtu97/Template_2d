@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-namespace CoreBT
+namespace Core.AI
 {
     [TaskCategory("Extension")]
     public class TeleTargetPosition : Action
