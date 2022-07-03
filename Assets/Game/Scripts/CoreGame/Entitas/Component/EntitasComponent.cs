@@ -165,13 +165,6 @@ public class BehaviourTreeComponent : IComponent
 //}
 #endregion
 
-#region HealthBarUI
-[Game]
-public class HealthBarUIComponent : IComponent
-{
-    public HPBarUI hpBarUI;
-}
-#endregion
 
 #region SkeletonMecanim
 [Game]

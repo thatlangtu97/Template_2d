@@ -4,7 +4,6 @@ using BehaviorDesigner.Runtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using EntrySystem;
 using Sirenix.OdinInspector;
 using strange.extensions.mediation.impl;
 
@@ -19,33 +18,15 @@ public class GameController : View
     private TakeDamageSystem takeDamageSystem;
     private ProjectileMoveBezierSystem projectileMoveBezierSystem;
     private DamageTextSystem damageTextSystem;
-    private HealthBarUpdateSystem healthBarUpdateSystem;
+//    private HealthBarUpdateSystem healthBarUpdateSystem;
     private Contexts contexts;
 
-
-    public bool testloadFlashScene = false;
     private void Awake()
     {
-        //Debug.Log("entry context "+EntryContextView.Instance);
-#if UNITY_EDITOR
-        EntryContextView.Instance.loadFlashScene = testloadFlashScene;
-        GamePlayContextView.Instance.Load();
-#endif
         if (instance == null)
         {
             instance = this;
         }
-    }
-    public void InitUI()
-    {
-        GameObject UI1 = Resources.Load<GameObject>(GameResourcePath.UI1);
-        GameObject UI2 = Resources.Load<GameObject>(GameResourcePath.UI2);
-        GameObject UI3 = Resources.Load<GameObject>(GameResourcePath.UI3);
-        GameObject UI4 = Resources.Load<GameObject>(GameResourcePath.UI4);
-        Instantiate(UI1);
-        Instantiate(UI2);
-        Instantiate(UI3);
-        Instantiate(UI4);
     }
     public void CreateSystem()
     {
@@ -54,7 +35,7 @@ public class GameController : View
         takeDamageSystem = new TakeDamageSystem(contexts);
         projectileMoveBezierSystem = new ProjectileMoveBezierSystem(contexts);
         damageTextSystem = new DamageTextSystem(contexts);
-        healthBarUpdateSystem = new HealthBarUpdateSystem(contexts);
+//        healthBarUpdateSystem = new HealthBarUpdateSystem(contexts);
     }
     
     [Button("SetupSystem", ButtonSizes.Gigantic), GUIColor(0.4f, 0.8f, 1),]
@@ -65,7 +46,7 @@ public class GameController : View
                 .Add(takeDamageSystem)
                 .Add(projectileMoveBezierSystem)
                 .Add(damageTextSystem)
-                .Add(healthBarUpdateSystem)
+//                .Add(healthBarUpdateSystem)
             ;
         DealDmgManager.context = contexts;
         DamageTextManager.context = contexts;
@@ -73,36 +54,20 @@ public class GameController : View
     }
     void Start()
     {
-        if (PlayFlashScene.instance != null)
-        {
-            PlayFlashScene.instance.HideLoading();
-        }
         CreateSystem();
         SetupSystem();
-        InitUI();
     }
     void Update()
     {
         if(isPlaying)
             if(GameSystem!=null)
                 GameSystem.Execute();
-        //GameSystem.Cleanup();
     }
-
-//    private void FixedUpdate()
-//    {
-//        if(GameSystem!=null)
-//            GameSystem.Execute();  
-//    }
-
     private void LateUpdate()
     {
         if(isPlaying)
             if(GameSystem!=null)
                 GameSystem.Cleanup();  
     }
-
-
-
 }
 

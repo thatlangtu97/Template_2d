@@ -40,7 +40,6 @@ public static class GameComponentsLookup {
         typeof(BehaviourTreeComponent),
         typeof(DamageTextComponent),
         typeof(GameInput),
-        typeof(HealthBarUIComponent),
         typeof(HealthComponent),
         typeof(PlayerFlagComponent),
         typeof(PowerComponent),

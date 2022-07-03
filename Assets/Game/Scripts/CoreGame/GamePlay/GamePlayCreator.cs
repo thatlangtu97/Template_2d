@@ -27,8 +27,6 @@ public class GamePlayCreator : MonoBehaviour
         
         StateMachineController statemachine = PoolManager.Spawn<StateMachineController>(heroPrefab.gameObject);
         statemachine.GetComponent<ComponentManager>().SetupEntity();
-        GameUIController.instance.stateMachine = statemachine;
-        GameUIController.instance.MODIFY(); 
     }
 
     public void NextWave(int waveID)
