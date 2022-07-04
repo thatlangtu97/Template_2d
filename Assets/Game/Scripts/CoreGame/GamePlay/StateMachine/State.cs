@@ -62,7 +62,7 @@ namespace Core.GamePlay
     }
     public virtual void UpdateState()
     {
-        controller.SetSpeed( eventCollectionData[idState].curveSpeedAnimation.Evaluate(timeTrigger));
+        controller.SetSpeedAnim( eventCollectionData[idState].curveSpeedAnimation.Evaluate(timeTrigger));
         timeTrigger += Time.deltaTime;
         if (eventCollectionData != null && eventCollectionData.Count > idState && idState >= 0)
         {
