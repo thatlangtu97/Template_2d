@@ -20,6 +20,12 @@ namespace Core.GamePlay
         {
             base.ExitState();
         }
+
+        public override void OnInputAttack()
+        {
+            base.OnInputAttack();
+            controller.ChangeState(NameState.AttackState,0);
+        }
     } 
 }
 

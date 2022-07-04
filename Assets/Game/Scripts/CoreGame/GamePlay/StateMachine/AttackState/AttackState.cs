@@ -8,6 +8,9 @@ namespace Core.GamePlay
     public class AttackState : State
     {
         public List<float> timeBuffers = new List<float>();
+        private EventCollection currentEvent;
+        private float duration;
+        private bool buffer;
         protected override void OnBeforeSerialize()
         {
             if (eventCollectionData == null) return;
@@ -28,14 +31,44 @@ namespace Core.GamePlay
         public override void EnterState()
         {
             base.EnterState();
+            CastSkill();
         }
         public override void UpdateState()
         {
             base.UpdateState();
+            if (timeTrigger >= duration)
+            {
+                if (buffer)
+                {
+                    idState = (idState + 1) % eventCollectionData.Count;
+                    CastSkill();
+                }
+                else
+                {
+                    controller.ChangeState(NameState.IdleState);
+                }
+                
+            }
         }
         public override void ExitState()
         {
             base.ExitState();
+        }
+
+        void CastSkill()
+        {
+            currentEvent = eventCollectionData[idState];
+            controller.PlayAnim(currentEvent.NameTrigger,currentEvent.typeAnim,currentEvent.timeStart);
+            duration = currentEvent.durationAnimation;
+            ResetEvent();
+            buffer = false;
+
+        }
+
+        public override void OnInputAttack()
+        {
+            base.OnInputAttack();
+            buffer = true;
         }
     }
 

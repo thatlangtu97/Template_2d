@@ -8,6 +8,7 @@ namespace Core.GamePlay
     public class StateMachineController : MonoBehaviour
     {
         public Dictionary<NameState, State> dictionaryStateMachine = new Dictionary<NameState, State>();
+        [FoldoutGroup("Current State")] public NameState firstState;
         [FoldoutGroup("Current State")] public State currentState;
         [FoldoutGroup("Current State")] public NameState currentNameState;
         [FoldoutGroup("Previous State")] public NameState previousNameState;
