@@ -53,7 +53,7 @@ namespace Core.GamePlay
             float velocityX = currentEvent.curveX.Evaluate(timeTrigger);
             float velocityY = currentEvent.curveY.Evaluate(timeTrigger);
             Vector2 velocity = controller.componentManager.rgbody2D.velocity;
-            controller.componentManager.rgbody2D.velocity = new Vector2(velocityX + velocity.x , velocityY + velocity.y);
+            controller.componentManager.rgbody2D.velocity = new Vector2(velocityX , velocityY);
         }
         public override void ExitState()
         {
