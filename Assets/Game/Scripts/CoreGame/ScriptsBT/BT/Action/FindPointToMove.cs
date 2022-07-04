@@ -31,9 +31,9 @@ namespace Core.AI
                 {
                     if (Vector2.Distance(pointToMove.Value, componentManager.Value.transform.position) < 0.1f)
                     {
-                        componentManager.Value.vectorSpeed =
-                            (componentManager.Value.enemy.position - componentManager.Value.transform.position)
-                            .normalized;
+//                        componentManager.Value.vectorSpeed =
+//                            (componentManager.Value.enemy.position - componentManager.Value.transform.position)
+//                            .normalized;
                         hasFind = false;
                     }
                 }

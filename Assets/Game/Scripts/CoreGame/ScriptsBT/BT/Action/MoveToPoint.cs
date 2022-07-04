@@ -13,7 +13,7 @@ namespace Core.AI
         public override void OnStart()
         {
             base.OnStart();
-            componentManager.Value.vectorSpeed = ( (Vector3)pointToMove.Value - componentManager.Value.transform.position ).normalized;
+//            componentManager.Value.vectorSpeed = ( (Vector3)pointToMove.Value - componentManager.Value.transform.position ).normalized;
         }
 //        public override void OnEnd()
 //        {

@@ -28,44 +28,30 @@ namespace Core.GamePlay
     [FoldoutGroup("REFERENCE")]
     public DamageInfoEvent damageInfoEvent;
     
-    [FoldoutGroup("BUFFER")]
-    public LayerMask layerMaskGround,layerMaskWall,layerEnemy, layerPlatForm;
-    [FoldoutGroup("BUFFER")]
-    public bool isAttack = false;
-    [FoldoutGroup("BUFFER")]
-    public bool isOnGround;
-    [FoldoutGroup("BUFFER")]
-    public bool isBufferAttack;
-    [FoldoutGroup("BUFFER")]
-    [Range(0f,2f)]
-    public float distanceCheckGround=0.1f;
-    [FoldoutGroup("BUFFER")]
-    [Range(0f, 2f)]
-    public float distanceCheckWall = 0.1f;
-    [FoldoutGroup("BUFFER")]
-    [Range(0f, 5f)]
-    public float distanceChecEnemy = 0.1f;
-    [FoldoutGroup("BUFFER")]
-    public Vector2 vectorSpeed =Vector2.zero;
-    [FoldoutGroup("BUFFER")]
-    public int attackAirCount;
-    [FoldoutGroup("BUFFER")]
-    public float speedMove ;
-    [FoldoutGroup("BUFFER")]
-    public Vector2 originBoxCheckGround2d = new Vector2(.4f, .1f);
-    [FoldoutGroup("BUFFER")]
+//    [FoldoutGroup("BUFFER")] public LayerMask layerMaskGround,layerMaskWall,layerEnemy, layerPlatForm;
+//    [FoldoutGroup("BUFFER")] public bool isAttack = false;
+//    [FoldoutGroup("BUFFER")] public bool isOnGround;
+//    [FoldoutGroup("BUFFER")] public bool isBufferAttack;
+//    [Range(0f,2f)]
+//    [FoldoutGroup("BUFFER")] public float distanceCheckGround=0.1f;
+//    [Range(0f, 2f)]
+//    [FoldoutGroup("BUFFER")] public float distanceCheckWall = 0.1f;
+//    [Range(0f, 5f)]
+//    [FoldoutGroup("BUFFER")] public float distanceChecEnemy = 0.1f;
+//    [FoldoutGroup("BUFFER")] public Vector2 vectorSpeed =Vector2.zero;
+//    [FoldoutGroup("BUFFER")] public int attackAirCount;
+    [FoldoutGroup("BUFFER")] public float speedMove ;
+//    [FoldoutGroup("BUFFER")] public Vector2 originBoxCheckGround2d = new Vector2(.4f, .1f);
     [ShowInInspector]
-    public List<Immune> currentImunes= new List<Immune>();
-    [FoldoutGroup("BUFFER")]
-    public bool enableAI ;
-    [FoldoutGroup("PROPERTIES")]
-    public List<Immune> baseImmunes = new List<Immune>();
-    [FoldoutGroup("PROPERTIES")]
-    public int jumpCount,dashCount;
-    [FoldoutGroup("PROPERTIES")] 
-    public float maxSpeedMove = 2f;
-    [FoldoutGroup("PROPERTIES")] 
-    public int maxJump,maxDash, maxAttackAirCount;
+    [FoldoutGroup("BUFFER")] public List<Immune> currentImunes= new List<Immune>();
+    [FoldoutGroup("BUFFER")] public bool enableAI ;
+
+//    [FoldoutGroup("PROPERTIES")]
+//    public int jumpCount,dashCount;
+    [FoldoutGroup("PROPERTIES")] public float maxSpeedMove = 2f;
+//    [FoldoutGroup("PROPERTIES")] 
+//    public int maxJump,maxDash, maxAttackAirCount;
+    [FoldoutGroup("PROPERTIES")] public List<Immune> baseImmunes = new List<Immune>();
     [ShowInInspector]
     //public List<IAutoAdd<GameEntity>> AutoAdds = new List<IAutoAdd<GameEntity>>();
     public List<AutoAddComponent> AutoAdds = new List<AutoAddComponent>();
@@ -101,7 +87,6 @@ namespace Core.GamePlay
         currentImunes = baseImmunes.Clone();
     }
     [Button("SETUP ENTITY", ButtonSizes.Gigantic), GUIColor(0.4f, 0.8f, 1),]
-
     public void SetupEntity()
     {
         entity = PoolManager.SpawnEntity();
@@ -111,7 +96,6 @@ namespace Core.GamePlay
             component.AddComponent(entity);
         }
         DisableBehavior();
-        //ComponentManagerUtils.AddComponent(this);
     }
     private void OnDisable()
     {
@@ -124,86 +108,87 @@ namespace Core.GamePlay
     }
     public void OnInputChangeFacing()
     {
-        if(enemy)
-        if (enemy.transform.position.x < transform.position.x)
-        {
-            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            speedMove = -maxSpeedMove;
-        }
-        else if (enemy.transform.position.x > transform.position.x)
-        {
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            speedMove = maxSpeedMove;
-        }
+//        if(enemy)
+//            
+//        if (enemy.transform.position.x < transform.position.x)
+//        {
+//            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+//            speedMove = -maxSpeedMove;
+//        }
+//        else if (enemy.transform.position.x > transform.position.x)
+//        {
+//            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+//            speedMove = maxSpeedMove;
+//        }
     }
-    public void ResetJumpCount()
-    {
-        jumpCount = 0;
-    }
+//    public void ResetJumpCount()
+//    {
+//        jumpCount = 0;
+//    }
+//    
+//    public void ResetDashCount()
+//    {
+//        dashCount = 0;
+//    }
     
-    public void ResetDashCount()
-    {
-        dashCount = 0;
-    }
+//    public void ResetAttackAirCount()
+//    {
+//        attackAirCount = 0;
+//    }
     
-    public void ResetAttackAirCount()
-    {
-        attackAirCount = 0;
-    }
+//    public bool CanJump
+//    {
+//        get { return jumpCount < maxJump; }
+//    }
+//    
+//    public bool CanDash
+//    {
+//        get { return dashCount < maxDash; }
+//    }
+//    
+//    public bool CanAttackAir
+//    {
+//        get { return attackAirCount < maxAttackAirCount; }
+//    }
     
-    public bool CanJump
-    {
-        get { return jumpCount < maxJump; }
-    }
-    
-    public bool CanDash
-    {
-        get { return dashCount < maxDash; }
-    }
-    
-    public bool CanAttackAir
-    {
-        get { return attackAirCount < maxAttackAirCount; }
-    }
-    
-    public bool checkGround()
-    {
-        RaycastHit2D hit = Physics2D.BoxCast((Vector2)transform.position , originBoxCheckGround2d,0, Vector2.down,0f, layerMaskGround);
-        if (hit.collider != null)
-        {
-            isOnGround = true;
-            return true;
-        }
-        else
-        {
-            isOnGround = false;
-            return false;
-        }
-    }
-    public bool checkWall()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(1,0)* transform.localScale.x, distanceCheckWall, layerMaskWall);
-        if (hit.collider != null)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    public bool checkEnemyForwark()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(1, 0) * transform.localScale.x, distanceChecEnemy, layerEnemy);
-        if (hit.collider != null)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
+//    public bool checkGround()
+//    {
+//        RaycastHit2D hit = Physics2D.BoxCast((Vector2)transform.position , originBoxCheckGround2d,0, Vector2.down,0f, layerMaskGround);
+//        if (hit.collider != null)
+//        {
+//            isOnGround = true;
+//            return true;
+//        }
+//        else
+//        {
+//            isOnGround = false;
+//            return false;
+//        }
+//    }
+//    public bool checkWall()
+//    {
+//        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(1,0)* transform.localScale.x, distanceCheckWall, layerMaskWall);
+//        if (hit.collider != null)
+//        {
+//            return true;
+//        }
+//        else
+//        {
+//            return false;
+//        }
+//    }
+//    public bool checkEnemyForwark()
+//    {
+//        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(1, 0) * transform.localScale.x, distanceChecEnemy, layerEnemy);
+//        if (hit.collider != null)
+//        {
+//            return true;
+//        }
+//        else
+//        {
+//            return false;
+//        }
+//    }
     public void Rotate()
     {
         if (speedMove == maxSpeedMove)
@@ -247,7 +232,6 @@ namespace Core.GamePlay
         currentImunes = tempImmune;
         //new addimune 
     }
-
     public void RemoveImmunes(List<Immune> immunesRemove)
     {
         foreach (Immune immuneItem in immunesRemove)
@@ -258,7 +242,6 @@ namespace Core.GamePlay
                 currentImunes.Remove(immuneItem);
         }
     }
-
     public bool HasImmune(Immune immune)
     {
         if (currentImunes.Contains(immune))
