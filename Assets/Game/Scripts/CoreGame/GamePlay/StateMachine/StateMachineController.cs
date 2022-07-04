@@ -8,19 +8,14 @@ namespace Core.GamePlay
     public class StateMachineController : MonoBehaviour
     {
         public Dictionary<NameState, State> dictionaryStateMachine = new Dictionary<NameState, State>();
-        [BoxGroup("Current State")]
-        public State currentState;
-        [BoxGroup("Current State")]
-        public NameState currentNameState;
-        [BoxGroup("Previous State")]
-        public NameState previousNameState;
-        [LabelText("STATE TO CLONE")]
-        public List<StateClone> States;
-
-        public List<string> nameTrigger;
-        public ComponentManager componentManager;
-        public Animator animator;
-        public List<State> testState= new List<State>();
+        [FoldoutGroup("Current State")] public State currentState;
+        [FoldoutGroup("Current State")] public NameState currentNameState;
+        [FoldoutGroup("Previous State")] public NameState previousNameState;
+        [FoldoutGroup("State To Clone")] public List<StateClone> States;
+        [FoldoutGroup("Referen")] public List<string> nameTrigger;
+        [FoldoutGroup("Referen")] public ComponentManager componentManager;
+        [FoldoutGroup("Referen")] public Animator animator;
+        [FoldoutGroup("Test State")] public List<State> testState= new List<State>();
         private void Awake()
         {
             SpawnState();
@@ -78,7 +73,7 @@ namespace Core.GamePlay
             InitState();
         }
 
-        public void SetTrigger(string name, AnimationTypeState type , float timestart)
+        public void PlayAnim(string name, AnimationTypeState type , float timestart)
         {
             if (animator)
             {
@@ -94,7 +89,7 @@ namespace Core.GamePlay
             }
         }
         
-        public void SetSpeed(float speed)
+        public void SetSpeedAnim(float speed)
         {
             if (animator)
             {

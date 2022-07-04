@@ -12,21 +12,14 @@ namespace Core.GamePlay
 {
     public class ComponentManager : MonoBehaviour
 {
-    [FoldoutGroup("REFERENCE")]
-    public Transform enemy;
-    [FoldoutGroup("REFERENCE")]
-    public StateMachineController stateMachine;
-    [FoldoutGroup("REFERENCE")]
-    public Rigidbody2D rgbody2D;
-    [FoldoutGroup("REFERENCE")]
-    public MeshRenderer meshRenderer;
-    [FoldoutGroup("REFERENCE")]
-    public EntityLink link;
-    [FoldoutGroup("REFERENCE")]
+    [FoldoutGroup("REFERENCE")] public Transform enemy;
+    [FoldoutGroup("REFERENCE")] public StateMachineController stateMachine;
+    [FoldoutGroup("REFERENCE")] public Rigidbody2D rgbody2D;
+    [FoldoutGroup("REFERENCE")] public MeshRenderer meshRenderer;
+    [FoldoutGroup("REFERENCE")] public EntityLink link;
     [ShowInInspector]
-    public GameEntity entity;
-    [FoldoutGroup("REFERENCE")]
-    public DamageInfoEvent damageInfoEvent;
+    [FoldoutGroup("REFERENCE")] public GameEntity entity;
+    [FoldoutGroup("REFERENCE")] public DamageInfoEvent damageInfoEvent;
     
 //    [FoldoutGroup("BUFFER")] public LayerMask layerMaskGround,layerMaskWall,layerEnemy, layerPlatForm;
 //    [FoldoutGroup("BUFFER")] public bool isAttack = false;
@@ -191,7 +184,7 @@ namespace Core.GamePlay
 //    }
     public void Rotate()
     {
-        if (speedMove == maxSpeedMove)
+        if (speedMove > 0)
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
