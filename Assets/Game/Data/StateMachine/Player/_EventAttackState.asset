@@ -35,9 +35,9 @@ MonoBehaviour:
       Entry: 8
       Data: 
   typeAnim: 1
-  NameTrigger: 1hwp_attack1
+  NameTrigger: boxing_attack2
   timeStart: 0
-  durationAnimation: 0.633
+  durationAnimation: 0.667
   curveX:
     serializedVersion: 2
     m_Curve: []

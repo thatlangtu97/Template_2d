@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GizmoDrawerTool : MonoBehaviour
 {
-    public Mesh mesh;
     public static GizmoDrawerTool instance {
         get { 
             if(skeleton == null)
@@ -18,7 +17,7 @@ public class GizmoDrawerTool : MonoBehaviour
     }
     public Color colorGimoz = Color.green;
     public List<colliderGizmo> listCollider =new List<colliderGizmo>();
-    public int frameDestroy;
+    public int frameDestroy = 10;
     static GizmoDrawerTool skeleton;
     private void Awake()
     {

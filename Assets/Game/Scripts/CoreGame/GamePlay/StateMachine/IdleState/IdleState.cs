@@ -6,19 +6,34 @@ namespace Core.GamePlay
     public class IdleState : State
     {
         private EventCollection currentEvent;
+        private float duration;
         public override void EnterState()
         {
             base.EnterState();
-            currentEvent = eventCollectionData[idState];
-            controller.PlayAnim(currentEvent.NameTrigger, currentEvent.typeAnim, currentEvent.timeStart);
+            CastSkill();
         }
         public override void UpdateState()
         {
             base.UpdateState();
+            if (timeTrigger > duration)
+            {
+                idState = (idState + 1) % eventCollectionData.Count;
+                CastSkill();
+            }
+            
         }
         public override void ExitState()
         {
             base.ExitState();
+
+        }
+        void CastSkill()
+        {
+            currentEvent = eventCollectionData[idState];
+            controller.PlayAnim(currentEvent.NameTrigger,currentEvent.typeAnim,currentEvent.timeStart);
+            duration = currentEvent.durationAnimation;
+            ResetEvent();
+
         }
 
         public override void OnInputAttack()
