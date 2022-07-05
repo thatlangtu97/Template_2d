@@ -14,7 +14,6 @@ namespace Core.GamePlay
     [ReadOnly]
     public int idState;
     public List<Immune> Immunes = new List<Immune>();
-    
     public List<EventCollection> eventCollectionData;
     public virtual void InitState(StateMachineController controller)
     {

@@ -2,18 +2,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Core.GamePlay
 {
     [CreateAssetMenu(fileName = "EventState", menuName = "CoreGame/EventState")]
     public class EventCollection : SerializedScriptableObject
     {
+        [EnumToggleButtons, HideLabel]
         public AnimationTypeState typeAnim;
+        [LabelText("$typeAnim")]
         public string NameTrigger;
         [ShowIf("typeAnim",AnimationTypeState.PlayAnim)]
         public float timeStart;
-        public float durationAnimation;
+
+        [Header("TimeEvent")]
+        [InfoBox("Duration => Hãy tính time của animation với các event ở dưới để khớp nếu có")]
+        public float duration;
         public AnimationCurve curveX, curveY;
+        [GUIColor(0f, 1f, 0f)]
         public AnimationCurve curveSpeedAnimation= new AnimationCurve(new Keyframe(0,1f));
         [HideReferenceObjectPicker]
         [LabelText("EVENT")]

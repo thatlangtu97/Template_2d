@@ -17,7 +17,7 @@ namespace Core.GamePlay
         public override void UpdateState()
         {
             base.UpdateState();
-            if (timeTrigger >= currentEvent.durationAnimation)
+            if (timeTrigger >= currentEvent.duration)
             {
                 CastSkill();
             }
@@ -33,7 +33,7 @@ namespace Core.GamePlay
         {
             currentEvent = eventCollectionData[idState];
             controller.PlayAnim(currentEvent.NameTrigger,currentEvent.typeAnim,currentEvent.timeStart);
-            duration = currentEvent.durationAnimation;
+            duration = currentEvent.duration;
             ResetEvent();
 
         }

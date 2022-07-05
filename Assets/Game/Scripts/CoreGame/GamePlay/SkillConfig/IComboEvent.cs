@@ -2,6 +2,7 @@
 using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
+using Sirenix.OdinInspector.Editor.Drawers;
 using Spine;
 
 namespace Core.GamePlay
@@ -983,6 +984,65 @@ public class ShakeCamera : IComboEvent
     public void OnUpdateTrigger()
     {
         
+    }
+}
+#endregion
+
+
+#region EVENT ANIMATION
+public class AnimationEvent : IComboEvent
+{
+    [FoldoutGroup("EVENT ANIMATION")]
+    [ReadOnly]
+    public int idEvent;
+
+    [FoldoutGroup("EVENT ANIMATION")] 
+    public float timeTriggerEvent;
+    
+    [FoldoutGroup("EVENT ANIMATION")]
+    [EnumToggleButtons, HideLabel]
+    public AnimationTypeState typeAnim;
+    
+    [FoldoutGroup("EVENT ANIMATION")] 
+    [LabelText("$typeAnim")]
+    public string  NameTrigger;
+
+    [FoldoutGroup("EVENT ANIMATION")] 
+    public float timeStart;
+    
+    [FoldoutGroup("EVENT ANIMATION")] 
+    public float duration;
+    
+    [FoldoutGroup("EVENT ANIMATION")]
+    [GUIColor(0f, 1f, 0f)]
+    public AnimationCurve curveSpeedAnimation= new AnimationCurve(new Keyframe(0,1f));
+
+    private float timeCount;
+    private StateMachineController controller;
+    
+    public int id { get { return idEvent; } set { idEvent = value; } }
+    public float timeTrigger { get { return timeTriggerEvent; } }
+    
+    public void OnEventTrigger(GameEntity entity)
+    {
+        controller = entity.stateMachineContainer.value;
+        if(controller)
+            controller.PlayAnim(NameTrigger,typeAnim,timeStart);
+        timeCount = 0;
+    }
+    public void Recycle()
+    {
+        timeCount = duration;
+    }
+
+    public void OnUpdateTrigger()
+    {
+        timeCount += Time.deltaTime;
+        if (timeCount <= duration)
+        {
+            if(controller)
+                controller.SetSpeedAnim(curveSpeedAnimation.Evaluate(timeCount));
+        }
     }
 }
 #endregion

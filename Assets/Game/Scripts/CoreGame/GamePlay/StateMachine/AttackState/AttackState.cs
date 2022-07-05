@@ -64,7 +64,7 @@ namespace Core.GamePlay
         {
             currentEvent = eventCollectionData[idState];
             controller.PlayAnim(currentEvent.NameTrigger,currentEvent.typeAnim,currentEvent.timeStart);
-            duration = currentEvent.durationAnimation;
+            duration = currentEvent.duration;
             ResetEvent();
             buffer = false;
 
