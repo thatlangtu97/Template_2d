@@ -99,6 +99,7 @@ public class CastVfxEvent : IComboEvent
     public float duration = 0.5f;
 
     [FoldoutGroup("CAST VFX")]
+    [PreviewField]
     public GameObject Prefab;
 
     [FoldoutGroup("CAST VFX")]
@@ -219,7 +220,7 @@ public class SpawnGameObject : IComboEvent
     
     [FoldoutGroup("SPAWN GAMEOBJECT")]     public float duration = 0.5f;
 
-    [FoldoutGroup("SPAWN GAMEOBJECT")]     public GameObject Prefab;
+    [FoldoutGroup("SPAWN GAMEOBJECT")] [PreviewField]    public GameObject Prefab;
 
     [FoldoutGroup("SPAWN GAMEOBJECT")]     public Vector3 localPosition;
     
@@ -235,7 +236,7 @@ public class SpawnGameObject : IComboEvent
     
     [FoldoutGroup("SPAWN GAMEOBJECT")]     public bool forceWhenFinishEvent ;
 
-    [FoldoutGroup("SPAWN GAMEOBJECT")]     public TypeSpawn typeSpawn;
+    [FoldoutGroup("SPAWN GAMEOBJECT")] [EnumToggleButtons]    public TypeSpawn typeSpawn;
     
     [FoldoutGroup("SPAWN GAMEOBJECT")]     public LayerMask LayerMask ;
     public int id { get { return idEvent; } set { idEvent = value; } }
@@ -641,6 +642,7 @@ public class CastProjectile : IComboEvent
     public TypeSpawn typeSpawn;
     
     [FoldoutGroup("PROJECTILE")] 
+    [PreviewField]
     public GameObject Prefab;
 
     [FoldoutGroup("PROJECTILE")]
@@ -1049,6 +1051,5 @@ public class AnimationEvent : IComboEvent
     }
 }
 #endregion
-
 
 }
