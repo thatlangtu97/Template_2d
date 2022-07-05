@@ -1015,6 +1015,7 @@ public class AnimationEvent : IComboEvent
     
     [FoldoutGroup("EVENT ANIMATION")]
     [GUIColor(0f, 1f, 0f)]
+    [HideReferenceObjectPicker]
     public AnimationCurve curveSpeedAnimation= new AnimationCurve(new Keyframe(0,1f));
 
     private float timeCount;
