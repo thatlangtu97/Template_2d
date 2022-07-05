@@ -418,7 +418,8 @@ public class ColliderEvent : IComboEvent
     public GameObject prefab;
     
     [FoldoutGroup("COLLIDER EVENT")] 
-    public DamageInfoEvent damageInfoEvent;
+    [HideReferenceObjectPicker]
+    public DamageInfoEvent damageInfoEvent = new DamageInfoEvent();
     
     private GameObject col;
     private int countCast;
@@ -656,7 +657,8 @@ public class CastProjectile : IComboEvent
     public Vector2 ForceSpawn;
     
     [FoldoutGroup("PROJECTILE")] 
-    public DamageInfoEvent damageInfoEvent;
+    [HideReferenceObjectPicker]
+    public DamageInfoEvent damageInfoEvent = new DamageInfoEvent();
 
     [FoldoutGroup("PROJECTILE")]     
     public LayerMask LayerMaskLimitPosition ;

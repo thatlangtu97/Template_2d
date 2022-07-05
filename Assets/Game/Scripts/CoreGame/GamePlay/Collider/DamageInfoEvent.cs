@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Core.GamePlay
@@ -8,6 +9,7 @@ namespace Core.GamePlay
     public class DamageInfoEvent
     {
         public float damageScale;
+        [EnumToggleButtons]
         public PowerCollider powerCollider;
         public Vector2 forcePower;
 
@@ -17,6 +19,7 @@ namespace Core.GamePlay
             this.powerCollider = clone.powerCollider;
             this.forcePower = clone.forcePower;
         }
+        public DamageInfoEvent(){}
     }
 }
 
