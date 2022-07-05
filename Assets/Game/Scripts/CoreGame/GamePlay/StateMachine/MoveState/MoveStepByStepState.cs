@@ -21,8 +21,8 @@ namespace Core.GamePlay
             {
                 CastSkill();
             }
-            float velocityX = currentEvent.curveX.Evaluate(timeTrigger);
-            float velocityY = currentEvent.curveY.Evaluate(timeTrigger);
+            float velocityX = currentEvent.curveVelocityX.Evaluate(timeTrigger);
+            float velocityY = currentEvent.curveVelocityY.Evaluate(timeTrigger);
             controller.componentManager.rgbody2D.velocity = new Vector2( velocityX , velocityY);
         }
         public override void ExitState()
@@ -32,7 +32,7 @@ namespace Core.GamePlay
         void CastSkill()
         {
             currentEvent = eventCollectionData[idState];
-            controller.PlayAnim(currentEvent.NameTrigger,currentEvent.typeAnim,currentEvent.timeStart);
+            controller.PlayAnim(currentEvent.nameTrigger,currentEvent.typeAnim,currentEvent.timeStart);
             duration = currentEvent.duration;
             ResetEvent();
 

@@ -30,7 +30,7 @@ namespace Core.GamePlay
         void CastSkill()
         {
             currentEvent = eventCollectionData[idState];
-            controller.PlayAnim(currentEvent.NameTrigger,currentEvent.typeAnim,currentEvent.timeStart);
+            controller.PlayAnim(currentEvent.nameTrigger,currentEvent.typeAnim,currentEvent.timeStart);
             duration = currentEvent.duration;
             ResetEvent();
 
