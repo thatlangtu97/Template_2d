@@ -563,6 +563,11 @@ public class ON_HIT_VFX : OnHitPhase
         
     }
 
+    public void OnEventTrigger(GameEntity entity)
+    {
+        
+    }
+
     public void OnUpdateTrigger()
     {
         
