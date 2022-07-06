@@ -21,10 +21,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  controller: {fileID: 0}
-  timeTrigger: 0
   idState: 0
-  Immunes: 
+  immunes: 
   eventCollectionData:
   - {fileID: 11400000, guid: 700b0b4f2f949d146ad4856a9b3c9ed9, type: 2}
-  - {fileID: 11400000, guid: 8d860eba0dfea044083b97be85dc968b, type: 2}

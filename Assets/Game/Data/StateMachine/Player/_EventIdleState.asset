@@ -21,7 +21,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: EventCombo
+    - Name: eventCombo
       Entry: 7
       Data: 0|System.Collections.Generic.List`1[[Core.GamePlay.IComboEvent, Assembly-CSharp]],
         mscorlib
@@ -34,17 +34,17 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  typeAnim: 1
-  NameTrigger: otherwp_idle
+  typeAnim: 0
+  nameTrigger: otherwp_idle
   timeStart: 0
-  duration: 0
-  curveX:
+  duration: 1
+  curveVelocityX:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  curveY:
+  curveVelocityY:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
