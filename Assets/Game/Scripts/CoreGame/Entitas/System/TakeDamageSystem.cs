@@ -58,6 +58,11 @@ public class TakeDamageSystem : ReactiveSystem<GameEntity>
                 return;
             }
 
+            if (stateMachine.componentManager.isParry)
+            {
+                stateMachine.ChangeState(NameState.RepostedState);
+            }
+            
             if (!stateMachine.componentManager.HasImmune(Immune.BLOCK))
             {
                 int damageTake=(int) (damageInfoSend.damageProperties *

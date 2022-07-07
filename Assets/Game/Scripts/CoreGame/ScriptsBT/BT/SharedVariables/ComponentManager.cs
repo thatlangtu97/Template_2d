@@ -38,7 +38,7 @@ namespace Core.GamePlay
     [ShowInInspector]
     [FoldoutGroup("BUFFER")] public List<Immune> currentImunes= new List<Immune>();
     [FoldoutGroup("BUFFER")] public bool enableAI ;
-
+    [FoldoutGroup("BUFFER")] public bool isParry ;
 //    [FoldoutGroup("PROPERTIES")]
 //    public int jumpCount,dashCount;
     [FoldoutGroup("PROPERTIES")] public float maxSpeedMove = 2f;

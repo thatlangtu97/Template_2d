@@ -295,6 +295,9 @@ namespace Core.GamePlay
         FallingState,
         KnockUpState,
         RollOutState,
+        ParryState,
+        RepostedState,
+        
     }
 }
 
