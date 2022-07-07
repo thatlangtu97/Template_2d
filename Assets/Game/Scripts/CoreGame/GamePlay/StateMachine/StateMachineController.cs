@@ -297,6 +297,7 @@ namespace Core.GamePlay
         RollOutState,
         ParryState,
         RepostedState,
+        HitBackParryState,
         
     }
 }

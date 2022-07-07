@@ -58,9 +58,12 @@ public class TakeDamageSystem : ReactiveSystem<GameEntity>
                 return;
             }
 
+            //Nếu Target đang trong trạng thái parry thì target chuyển trạng thái sang đánh bật ngược lại 
+            //Source chuyển trạng thái HitBackParry 
             if (stateMachine.componentManager.isParry)
             {
                 stateMachine.ChangeState(NameState.RepostedState);
+                entity.stateMachineContainer.value.ChangeState(NameState.HitBackParryState);
             }
             
             if (!stateMachine.componentManager.HasImmune(Immune.BLOCK))
