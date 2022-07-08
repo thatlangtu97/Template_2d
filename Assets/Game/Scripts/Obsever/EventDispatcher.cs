@@ -24,7 +24,6 @@ public class EventDispatcher : MonoBehaviour {
             }
             return _instance;
         }
-        private set { }
     }
     void Awake()
     {
