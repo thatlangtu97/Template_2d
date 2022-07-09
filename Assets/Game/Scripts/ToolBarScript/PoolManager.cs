@@ -462,11 +462,12 @@ public static GameObject Spawn (GameObject prefab)
             GameEntity temp = entites[0];
             try
             {
-                if(temp!=null)
+                if(temp != null)
                     temp.Destroy();
             }
             catch (Exception e)
             {
+                Debug.Log(e);
             }
 
             entites.RemoveAt(0);
@@ -492,12 +493,12 @@ public static GameObject Spawn (GameObject prefab)
 
     private void Start()
     {
-
+        SetupPool();
     }
 
     public void SetupPool()
     {
-        CreatePoolsList();
+        //CreatePoolsList();
         CreateStartupPools();
         CreatePoolEntity(Contexts.sharedInstance, 100);
     }

@@ -32,6 +32,7 @@ namespace Core.GamePlay
             currentEvent = eventCollectionData[idState];
             controller.PlayAnim(currentEvent.nameTrigger,currentEvent.typeAnim,currentEvent.timeStart);
             duration = currentEvent.duration;
+            RecycleEvent();
             ResetEvent();
 
         }

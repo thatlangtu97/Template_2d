@@ -32,6 +32,13 @@ namespace Core.GamePlay
         Box,
         Circle,
     }
+
+    public enum TypeCast
+    {
+        Forward,
+        Transform,
+    }
+    
     public interface IComboEvent 
     {
 
@@ -539,6 +546,58 @@ namespace Core.GamePlay
     }
 #endregion
 
+//#region EVENT CAST IMPACK
+//
+//public class EVENT_CAST_IMPACK : IComboEvent
+//{
+//    [FoldoutGroup("EVENT CAST IMPACK")] [ReadOnly] public int idEvent;
+//
+//    [FoldoutGroup("EVENT CAST IMPACK")] public float timeTriggerEvent;
+//    
+//    [FoldoutGroup("EVENT CAST IMPACK")] [PreviewField] public GameObject prefab;
+//
+//    [FoldoutGroup("EVENT CAST IMPACK")] [EnumToggleButtons] public TypeCast typeCast;
+//    
+//    [FoldoutGroup("EVENT CAST IMPACK")] public Vector3 position;
+//    
+//    [FoldoutGroup("EVENT CAST IMPACK")] public Vector3 rotation;
+//    
+//    [FoldoutGroup("EVENT CAST IMPACK")] public Vector3 scale;
+//    public int id { get { return idEvent; } set { idEvent = value; } }
+//    public float timeTrigger { get { return timeTriggerEvent; } }
+//
+//    private GameObject spawned;
+//    public void OnEventTrigger(GameEntity entity)
+//    {
+//        Transform owner = entity.stateMachineContainer.value.transform;
+//        Vector3 offset = Vector3.zero;
+//        Vector3 rot = Vector3.zero;
+//        switch (typeCast)
+//        {
+//            case TypeCast.Forward:
+//                spawned = PoolManager.Spawn(prefab, owner, position ,Quaternion.Euler(rotation), scale);
+//                spawned.transform.parent = null;
+//                break;
+//            case TypeCast.Transform:
+//                spawned = PoolManager.Spawn(prefab);
+//                spawned.transform.position = owner.transform.position + position;
+//                spawned.transform.rotation = Quaternion.Euler(rotation);
+//                spawned.transform.localScale = scale;
+//                break;
+//        }
+//    }
+//
+//    public void OnUpdateTrigger()
+//    {
+//
+//    }
+//
+//    public void Recycle()
+//    {
+//        PoolManager.Recycle(spawned);
+//    }
+//}
+//#endregion
 public interface OnHitPhase                 
 {                                            
                                                  
