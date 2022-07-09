@@ -11,22 +11,20 @@ public static class GameComponentsLookup {
     public const int BehaviourTree = 0;
     public const int DamageText = 1;
     public const int GameInput = 2;
-    public const int HealthBarUI = 3;
-    public const int Health = 4;
-    public const int PlayerFlag = 5;
-    public const int Power = 6;
-    public const int ProjectileContainer = 7;
-    public const int SkeletonMecanim = 8;
-    public const int StateMachineContainer = 9;
-    public const int TakeDamage = 10;
+    public const int Health = 3;
+    public const int PlayerFlag = 4;
+    public const int Power = 5;
+    public const int ProjectileContainer = 6;
+    public const int SkeletonMecanim = 7;
+    public const int StateMachineContainer = 8;
+    public const int TakeDamage = 9;
 
-    public const int TotalComponents = 11;
+    public const int TotalComponents = 10;
 
     public static readonly string[] componentNames = {
         "BehaviourTree",
         "DamageText",
         "GameInput",
-        "HealthBarUI",
         "Health",
         "PlayerFlag",
         "Power",

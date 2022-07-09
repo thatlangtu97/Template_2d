@@ -217,6 +217,7 @@ MonoBehaviour:
   speedMove: 0
   currentImunes: 
   enableAI: 0
+  isParry: 0
   maxSpeedMove: 2
   baseImmunes: 
   AutoAdds:
@@ -782,7 +783,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &956951151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -999,6 +1000,7 @@ MonoBehaviour:
   speedMove: 0
   currentImunes: 
   enableAI: 0
+  isParry: 0
   maxSpeedMove: 2
   baseImmunes: 
   AutoAdds:

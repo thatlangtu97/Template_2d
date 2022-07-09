@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using BehaviorDesigner.Runtime;
-using Core.GamePlay;
 using UnityEngine;
 using Entitas;
 using UnityEngine.UI;
@@ -12,49 +9,49 @@ public class PlayerFlagComponent : IComponent
 {
     public bool isPlayer = true;
 }
-//[System.Serializable]
-//public class ConvertToPlayerFlag : ConvertToComponent
-//{
-//    public bool isPlayer = true;
-//    public override IComponent Convert()
-//    {
-//        return new PlayerFlagComponent(){isPlayer = isPlayer};
-//    }
-//}
+[System.Serializable]
+public class ConvertToPlayerFlag : ConvertToComponent
+{
+    public bool isPlayer = true;
+    public override IComponent Convert()
+    {
+        return new PlayerFlagComponent(){isPlayer = isPlayer};
+    }
+}
 #endregion
 
 #region ProjectileContainer
 [Game]
 public class ProjectileContainerComponent : IComponent
 {
-    public ProjectileComponent value;
+    public Core.GamePlay.ProjectileComponent value;
 }
-//[System.Serializable]
-//public class ConvertToProjectileContainer: ConvertToComponent
-//{
-//    public ProjectileComponent value;
-//    public override IComponent Convert()
-//    {
-//        return new ProjectileContainerComponent(){value = value};
-//    }
-//}
+[System.Serializable]
+public class ConvertToProjectileContainer: ConvertToComponent
+{
+    public Core.GamePlay.ProjectileComponent value;
+    public override IComponent Convert()
+    {
+        return new ProjectileContainerComponent(){value = value};
+    }
+}
 #endregion
 
 #region StateMachineContainer
 [Game]
 public class StateMachineContainerComponent : IComponent
 {
-    public StateMachineController value;
+    public Core.GamePlay.StateMachineController value;
 }
-//[System.Serializable]
-//public class ConvertToStateMachineContainer :ConvertToComponent
-//{
-//    public StateMachineController value;
-//    public override IComponent Convert()
-//    {
-//        return new StateMachineContainerComponent() { value = value};
-//    }
-//}
+[System.Serializable]
+public class ConvertToStateMachineContainer :ConvertToComponent
+{
+    public Core.GamePlay.StateMachineController value;
+    public override IComponent Convert()
+    {
+        return new StateMachineContainerComponent() { value = value};
+    }
+}
 #endregion
 
 #region DamageText
@@ -91,16 +88,16 @@ public class HealthComponent : IComponent
     public int health;
     public int maxHealth;
 }
-//[System.Serializable]
-//public class ConvertToHealth : ConvertToComponent
-//{
-//    public int health;
-//    public int maxHealth;
-//    public override IComponent Convert()
-//    {
-//        return new HealthComponent() {health = health, maxHealth = maxHealth};
-//    }
-//}
+[System.Serializable]
+public class ConvertToHealth : ConvertToComponent
+{
+    public int health;
+    public int maxHealth;
+    public override IComponent Convert()
+    {
+        return new HealthComponent() {health = health, maxHealth = maxHealth};
+    }
+}
 #endregion
 
 #region Power
@@ -126,9 +123,9 @@ public class TakeDamageComponent : IComponent
 {
     public GameEntity myEntity;
     public GameEntity targetEnemy;
-    public DamageInfoSend damageInfoSend;
+    public Core.GamePlay.DamageInfoSend damageInfoSend;
     public TakeDamageComponent(){}
-    public TakeDamageComponent(GameEntity myEntity, GameEntity targetEnemy,DamageInfoSend damageInfoSend)
+    public TakeDamageComponent(GameEntity myEntity, GameEntity targetEnemy,Core.GamePlay.DamageInfoSend damageInfoSend)
     {
         this.myEntity = myEntity;
         this.targetEnemy = targetEnemy;
@@ -140,7 +137,7 @@ public class ConvertToTakeDamage : ConvertToComponent
 {
     public GameEntity myEntity;
     public GameEntity targetEnemy;
-    public DamageInfoSend damageInfoSend;
+    public Core.GamePlay.DamageInfoSend damageInfoSend;
     public override IComponent Convert()
     {
         return new TakeDamageComponent()
@@ -153,19 +150,18 @@ public class ConvertToTakeDamage : ConvertToComponent
 [Game]
 public class BehaviourTreeComponent : IComponent
 {
-    public BehaviorTree value;
+    public BehaviorDesigner.Runtime.BehaviorTree value;
 }
-//[System.Serializable]
-//public class ConvertToBehaviourTree : ConvertToComponent
-//{
-//    public BehaviorTree value;
-//    public override IComponent Convert()
-//    {
-//        return new BehaviourTreeComponent() {value = value};
-//    }
-//}
+[System.Serializable]
+public class ConvertToBehaviourTree : ConvertToComponent
+{
+    public BehaviorDesigner.Runtime.BehaviorTree value;
+    public override IComponent Convert()
+    {
+        return new BehaviourTreeComponent() {value = value};
+    }
+}
 #endregion
-
 
 #region SkeletonMecanim
 [Game]
@@ -174,7 +170,6 @@ public class SkeletonMecanimComponent : IComponent
     public Spine.Unity.SkeletonMecanim macanim;
 }
 #endregion
-
 
 #region GameInput
 [Game]
