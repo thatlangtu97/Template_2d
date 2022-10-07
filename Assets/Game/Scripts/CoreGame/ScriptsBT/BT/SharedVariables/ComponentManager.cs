@@ -7,46 +7,30 @@ using Doozy.Engine.Extensions;
 using Entitas;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Object = System.Object;
 
 namespace Core.GamePlay
 {
     public class ComponentManager : MonoBehaviour
 {
+    [HideInInspector]
     [FoldoutGroup("REFERENCE")] public Transform enemy;
     [FoldoutGroup("REFERENCE")] public StateMachineController stateMachine;
     [FoldoutGroup("REFERENCE")] public Rigidbody2D rgbody2D;
-    [FoldoutGroup("REFERENCE")] public MeshRenderer meshRenderer;
+    [FoldoutGroup("REFERENCE")] public Animator animator;
+    [HideInInspector]
     [FoldoutGroup("REFERENCE")] public EntityLink link;
-    [ShowInInspector]
     [FoldoutGroup("REFERENCE")] public GameEntity entity;
+    [HideInInspector]
     [FoldoutGroup("REFERENCE")] public DamageInfoEvent damageInfoEvent;
-    
-//    [FoldoutGroup("BUFFER")] public LayerMask layerMaskGround,layerMaskWall,layerEnemy, layerPlatForm;
-//    [FoldoutGroup("BUFFER")] public bool isAttack = false;
-//    [FoldoutGroup("BUFFER")] public bool isOnGround;
-//    [FoldoutGroup("BUFFER")] public bool isBufferAttack;
-//    [Range(0f,2f)]
-//    [FoldoutGroup("BUFFER")] public float distanceCheckGround=0.1f;
-//    [Range(0f, 2f)]
-//    [FoldoutGroup("BUFFER")] public float distanceCheckWall = 0.1f;
-//    [Range(0f, 5f)]
-//    [FoldoutGroup("BUFFER")] public float distanceChecEnemy = 0.1f;
-//    [FoldoutGroup("BUFFER")] public Vector2 vectorSpeed =Vector2.zero;
-//    [FoldoutGroup("BUFFER")] public int attackAirCount;
+    [FoldoutGroup("REFERENCE")] public Object render;
     [FoldoutGroup("BUFFER")] public float speedMove ;
-//    [FoldoutGroup("BUFFER")] public Vector2 originBoxCheckGround2d = new Vector2(.4f, .1f);
     [ShowInInspector]
     [FoldoutGroup("BUFFER")] public List<Immune> currentImunes= new List<Immune>();
-    [FoldoutGroup("BUFFER")] public bool enableAI ;
-
-//    [FoldoutGroup("PROPERTIES")]
-//    public int jumpCount,dashCount;
+    [FoldoutGroup("BUFFER")] public bool enableAI;
     [FoldoutGroup("PROPERTIES")] public float maxSpeedMove = 2f;
-//    [FoldoutGroup("PROPERTIES")] 
-//    public int maxJump,maxDash, maxAttackAirCount;
     [FoldoutGroup("PROPERTIES")] public List<Immune> baseImmunes = new List<Immune>();
     [ShowInInspector]
-    //public List<IAutoAdd<GameEntity>> AutoAdds = new List<IAutoAdd<GameEntity>>();
     public List<AutoAddComponent> AutoAdds = new List<AutoAddComponent>();
     
     [Button("FIND AUTO ADD COMPONENT", ButtonSizes.Gigantic), GUIColor(0.4f, 0.8f, 1),]
@@ -58,8 +42,8 @@ namespace Core.GamePlay
             if(AutoAdds.Contains(component)) continue;
             AutoAdds.Add(component);
         }
-
     }
+    
     public void DisableBehavior()
     {
         enableAI = false;
@@ -74,6 +58,7 @@ namespace Core.GamePlay
         ComponentManagerUtils.AddComponent(this);
         ComponentManagerUtils.AddComponent(rgbody2D);
         CloneImune();
+//        SetupAnim(animator);
     }
     public void CloneImune()
     {
@@ -182,6 +167,28 @@ namespace Core.GamePlay
 //            return false;
 //        }
 //    }
+    public void PlayAnim(string name, AnimationTypeState type , float timestart)
+    {
+        if (animator)
+        {
+            switch (type)
+            {
+                case AnimationTypeState.Trigger:
+                    animator.SetTrigger(name);
+                    break;
+                case AnimationTypeState.PlayAnim:
+                    animator.Play(name,0,timestart);
+                    break;
+            }
+        }
+    }
+    public void SetSpeed(float speed)
+    {
+        if (animator)
+        {
+            animator.speed = speed;
+        }
+    }
     public void Rotate()
     {
         if (speedMove > 0)

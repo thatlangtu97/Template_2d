@@ -12,15 +12,11 @@ namespace Core.GamePlay
         [FoldoutGroup("Current State")] public NameState currentNameState;
         [FoldoutGroup("Previous State")] public NameState previousNameState;
         [FoldoutGroup("State To Clone")] public List<StateClone> States;
-        [FoldoutGroup("Referen")] public List<string> nameTrigger;
         [FoldoutGroup("Referen")] public ComponentManager componentManager;
-        [FoldoutGroup("Referen")] public Animator animator;
-        [FoldoutGroup("Test State")] public List<State> testState= new List<State>();
         private void Awake()
         {
             SpawnState();
             InitState();
-            SetupAnim(animator);
         }
 
         public void Recycle()
@@ -30,24 +26,11 @@ namespace Core.GamePlay
             previousNameState = NameState.UnknowState;
 
         }
-        public void SetupAnim(Animator anim)
-        {
-            if(! anim) return;
-            foreach (AnimatorControllerParameter p in anim.parameters)
-            {
-                if (p.type == AnimatorControllerParameterType.Trigger)
-                {
-                    nameTrigger.Add(p.name);
-                }
-            }
-        }
-
         private void SpawnState()
         {
             dictionaryStateMachine = new Dictionary<NameState, State>();
             foreach (StateClone tempState in States) {
                 State state = Instantiate(tempState.StateToClone);
-                testState.Add(state);
                 if (!dictionaryStateMachine.ContainsKey(tempState.NameState))
                 {
                     dictionaryStateMachine.Add(tempState.NameState, state);
@@ -71,30 +54,6 @@ namespace Core.GamePlay
             currentState = null;
             currentNameState = NameState.UnknowState;
             InitState();
-        }
-
-        public void PlayAnim(string name, AnimationTypeState type , float timestart)
-        {
-            if (animator)
-            {
-                switch (type)
-                {
-                    case AnimationTypeState.Trigger:
-                        animator.SetTrigger(name);
-                        break;
-                    case AnimationTypeState.PlayAnim:
-                        animator.Play(name,0,timestart);
-                        break;
-                }
-            }
-        }
-        
-        public void SetSpeedAnim(float speed)
-        {
-            if (animator)
-            {
-                animator.speed = speed;
-            }
         }
         public virtual void InitStateMachine()
         {
@@ -264,7 +223,19 @@ namespace Core.GamePlay
                 action.Invoke();
             }
         }
+        [Button("TEST CHANGE STATE", ButtonSizes.Gigantic), GUIColor(0.4f, 0.8f, 1),]
+        void TESTCHANGESTATE(NameState nameState)
+        { 
+            ChangeState(nameState);
+        }
+        [Button("ATTACK STATE", ButtonSizes.Gigantic), GUIColor(0.4f, 0.8f, 1),]
+        void TESTATTACK()
+        { 
+            if(currentState)
+            currentState.OnInputAttack();
+        }
     }
+    
     [System.Serializable]
     public struct StateClone
     {

@@ -16,17 +16,17 @@ namespace Core.GamePlay
     public List<Immune> Immunes = new List<Immune>();
     
     public List<EventCollection> eventCollectionData;
-    public virtual void InitState(StateMachineController controller)
+    public void InitState(StateMachineController controller)
     {
         this.controller = controller;
     }
     public virtual void EnterState()
     {
-        foreach (AnimatorControllerParameter p in controller.animator.parameters)
+        foreach (AnimatorControllerParameter p in controller.componentManager.animator.parameters)
         {
             if (p.type == AnimatorControllerParameterType.Trigger)
             {
-                controller.animator.ResetTrigger(p.name);
+                controller.componentManager.animator.ResetTrigger(p.name);
             }
         }
         timeTrigger = 0f;
@@ -35,11 +35,11 @@ namespace Core.GamePlay
     }
     public virtual void ResetTrigger()
     {
-        foreach (AnimatorControllerParameter p in controller.animator.parameters)
+        foreach (AnimatorControllerParameter p in controller.componentManager.animator.parameters)
         {
             if (p.type == AnimatorControllerParameterType.Trigger)
             {
-                controller.animator.ResetTrigger(p.name);
+                controller.componentManager.animator.ResetTrigger(p.name);
             }
         }
 
@@ -62,7 +62,7 @@ namespace Core.GamePlay
     }
     public virtual void UpdateState()
     {
-        controller.SetSpeed( eventCollectionData[idState].curveSpeedAnimation.Evaluate(timeTrigger));
+        controller.componentManager.SetSpeed( eventCollectionData[idState].curveSpeedAnimation.Evaluate(timeTrigger));
         timeTrigger += Time.deltaTime;
         if (eventCollectionData != null && eventCollectionData.Count > idState && idState >= 0)
         {
@@ -87,6 +87,37 @@ namespace Core.GamePlay
         }
 
         
+    }
+
+    protected void PlayAnim(string name, AnimationTypeState type , float timestart)
+    {
+        if (controller.componentManager.animator)
+        {
+            switch (type)
+            {
+                case AnimationTypeState.Trigger:
+                    controller.componentManager.animator.SetTrigger(name);
+                    break;
+                case AnimationTypeState.PlayAnim:
+                    controller.componentManager.animator.Play(name,0,timestart);
+                    break;
+            }
+        }
+    }
+    protected void PlayAnim(EventCollection collection)
+    {
+        if (controller.componentManager.animator)
+        {
+            switch (collection.typeAnim)
+            {
+                case AnimationTypeState.Trigger:
+                    controller.componentManager.animator.SetTrigger(collection.NameTrigger);
+                    break;
+                case AnimationTypeState.PlayAnim:
+                    controller.componentManager.animator.Play(collection.NameTrigger,0,collection.timeStart);
+                    break;
+            }
+        }
     }
     public virtual void ExitState()
     {

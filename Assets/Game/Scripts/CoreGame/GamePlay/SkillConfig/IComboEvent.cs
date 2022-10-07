@@ -3,6 +3,7 @@ using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
 using Spine;
+using Object = System.Object;
 
 namespace Core.GamePlay
 {
@@ -192,8 +193,16 @@ public class EnableComponent : IComboEvent
         switch (Component)
         {
             case TypeComponent.MeshRenderer:
-                MeshRenderer meshRenderer  = entity.stateMachineContainer.value.componentManager.meshRenderer ;
-                if (meshRenderer != null) meshRenderer.enabled = enable;
+                Object render  = entity.stateMachineContainer.value.componentManager.render ;
+                if (render != null)
+                {
+                    if (render.GetType() == typeof(SpriteRenderer))
+                    {
+                        SpriteRenderer spr = render as SpriteRenderer;
+                        spr.enabled = enable;
+                    }
+
+                }
                 break;
         }
     }
