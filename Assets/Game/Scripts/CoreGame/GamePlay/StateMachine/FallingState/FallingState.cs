@@ -34,6 +34,11 @@ namespace Core.GamePlay
         {
             base.ExitState();
         }
+        public override void OnInputDash()
+        {
+            base.OnInputDash();
+            controller.ChangeState(NameState.DashState);
+        }
     }
 }
 

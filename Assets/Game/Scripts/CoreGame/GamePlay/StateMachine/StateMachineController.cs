@@ -198,12 +198,20 @@ namespace Core.GamePlay
         }
         public virtual void OnInputDash()
         {
+            if (currentState)
+            {
+                currentState.OnInputDash();
+            }
         }
         public virtual void OnInputRevive()
         {
         }
         public virtual void OnInputSkill(int idSkill)
         {
+            if (currentState)
+            {
+                currentState.OnInputSkill(idSkill);
+            }
         }
         public virtual void OnHit(Action action)
         {
@@ -278,6 +286,7 @@ namespace Core.GamePlay
         KnockUpState,
         RollOutState,
         LandingState,
+        CounterState,
     }
 }
 

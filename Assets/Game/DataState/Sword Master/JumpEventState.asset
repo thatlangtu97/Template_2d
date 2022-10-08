@@ -37,7 +37,7 @@ MonoBehaviour:
   typeAnim: 1
   NameTrigger: Jump
   timeStart: 0
-  durationAnimation: 0.3
+  durationAnimation: 0.4
   curveX:
     serializedVersion: 2
     m_Curve:
@@ -86,6 +86,15 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0.3
       value: 1.3014636
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.39377812
+      value: 0.009326395
       inSlope: 0
       outSlope: 0
       tangentMode: 0

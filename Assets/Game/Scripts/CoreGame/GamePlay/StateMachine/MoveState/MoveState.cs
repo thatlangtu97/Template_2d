@@ -24,6 +24,11 @@ namespace Core.GamePlay
             {
                 controller.transform.right = new Vector3(controller.componentManager.vectorMove.x,0);
             }
+            
+            if (!controller.componentManager.IsGround)
+            {
+                controller.ChangeState(NameState.FallingState);
+            }
         }
         public override void ExitState()
         {
@@ -39,6 +44,17 @@ namespace Core.GamePlay
         {
             base.OnInputJump();
             controller.ChangeState(NameState.JumpState);
+        }
+        public override void OnInputDash()
+        {
+            base.OnInputDash();
+            controller.ChangeState(NameState.DashState);
+        }
+        
+        public override void OnInputSkill(int idSkill)
+        {
+            base.OnInputSkill(idSkill);
+            controller.ChangeState(NameState.SkillState,idSkill);
         }
     }
 }

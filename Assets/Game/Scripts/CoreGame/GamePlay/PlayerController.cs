@@ -46,5 +46,12 @@ public class PlayerController : MonoBehaviour
                 controller.OnInputDash();
             }
     }  
-    
+    public void SkillInput(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+            if (controller)
+            {
+                controller.OnInputSkill(0);
+            }
+    }  
 }

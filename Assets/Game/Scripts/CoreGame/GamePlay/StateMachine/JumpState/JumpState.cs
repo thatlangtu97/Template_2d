@@ -26,7 +26,7 @@ namespace Core.GamePlay
             {
                 if (controller.componentManager.IsGround)
                 {
-                    controller.ChangeState(NameState.IdleState);
+                    controller.ChangeState(NameState.LandingState);
                     return;
                 }
                 controller.ChangeState(NameState.FallingState);
@@ -44,6 +44,11 @@ namespace Core.GamePlay
             {
                 controller.transform.DOScale(new Vector3(1f, 1f, 0f), 0.1f);
             };
+        }
+        public override void OnInputDash()
+        {
+            base.OnInputDash();
+            controller.ChangeState(NameState.DashState);
         }
     }
 }

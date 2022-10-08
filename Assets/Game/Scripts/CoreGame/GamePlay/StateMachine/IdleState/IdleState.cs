@@ -39,6 +39,18 @@ namespace Core.GamePlay
             base.OnInputJump();
             controller.ChangeState(NameState.JumpState);
         }
+
+        public override void OnInputDash()
+        {
+            base.OnInputDash();
+            controller.ChangeState(NameState.DashState);
+        }
+
+        public override void OnInputSkill(int idSkill)
+        {
+            base.OnInputSkill(idSkill);
+            controller.ChangeState(NameState.SkillState,idSkill);
+        }
     } 
 }
 
