@@ -446,24 +446,9 @@ public class ColliderEvent : IComboEvent
         switch (typeCast)
         {
             case ColliderCast.Box:
-                point = transform.position + new Vector3((localPosition.x + (sizeBox.x / 2f)) * transform.localScale.x,
-                                    localPosition.y, localPosition.z);
-                float angle = 0;
-//                if (!useAngle)
-//                {
-                    angle  = transform.localScale.x > 0 ? 0f : 180f;
-//                }
-//                else
-//                {
-//                    if (transform.localScale.x > 0)
-//                    {
-//                        angle = angleCollider;
-//                    }
-//                    else
-//                    {
-//                        angle = 180f - angleCollider;
-//                    }
-//                }
+                point = transform.position + new Vector3((localPosition.x + (sizeBox.x / 2f)) * (transform.right.x>=0? 1f : -1f), localPosition.y, localPosition.z);
+                
+                float angle  = transform.right.x > 0 ? 0f : 180f;
                 if (useColliderComponent)
                 {
                     countDuration = 0;

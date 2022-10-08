@@ -22,28 +22,28 @@ namespace Core.GamePlay
     }
     public virtual void EnterState()
     {
-        foreach (AnimatorControllerParameter p in controller.componentManager.animator.parameters)
-        {
-            if (p.type == AnimatorControllerParameterType.Trigger)
-            {
-                controller.componentManager.animator.ResetTrigger(p.name);
-            }
-        }
+//        foreach (AnimatorControllerParameter p in controller.componentManager.animator.parameters)
+//        {
+//            if (p.type == AnimatorControllerParameterType.Trigger)
+//            {
+//                controller.componentManager.animator.ResetTrigger(p.name);
+//            }
+//        }
         timeTrigger = 0f;
         idEventTrigged = new Dictionary<int, IComboEvent>();
         controller.componentManager.AddImunes(Immunes);
     }
-    public virtual void ResetTrigger()
-    {
-        foreach (AnimatorControllerParameter p in controller.componentManager.animator.parameters)
-        {
-            if (p.type == AnimatorControllerParameterType.Trigger)
-            {
-                controller.componentManager.animator.ResetTrigger(p.name);
-            }
-        }
-
-    }
+//    public virtual void ResetTrigger()
+//    {
+//        foreach (AnimatorControllerParameter p in controller.componentManager.animator.parameters)
+//        {
+//            if (p.type == AnimatorControllerParameterType.Trigger)
+//            {
+//                controller.componentManager.animator.ResetTrigger(p.name);
+//            }
+//        }
+//
+//    }
     public virtual void ResetEvent()
     {
         idEventTrigged.Clear();

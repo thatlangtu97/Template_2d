@@ -22,7 +22,7 @@ public class HitStopManager : MonoBehaviour
         } 
     }
 
-    public float slowdownTime = .5f;
+    public float slowdownTime = 0f;
     public float slowMotionValue = 0.1f;
     public float checkPointTimeScale = 0.4f;
     private float tempTimeScale;

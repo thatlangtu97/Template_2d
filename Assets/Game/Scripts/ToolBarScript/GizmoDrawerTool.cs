@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GizmoDrawerTool : MonoBehaviour
 {
-    public Mesh mesh;
     public static GizmoDrawerTool instance {
         get { 
             if(skeleton == null)

@@ -34,7 +34,12 @@ public class DamageTextSystem : ReactiveSystem<GameEntity>
         {
             //DamageTextView damageTextView = ObjectPool.instance.SpawnDamageText();
             //DamageTextView damageTextView = ObjectPool.SpawnNotDeactive(textprefab);
+            if(textprefab==null) return;
+            
             DamageTextView damageTextView = PoolManager.Spawn<DamageTextView>(textprefab.gameObject,entity.damageText.position);
+            
+            if (damageTextView == null) return;
+            
             damageTextView.text = entity.damageText.value;
             damageTextView.color = DamageTextManager.GetColor(entity.damageText.damageTextType);
             //damageTextView.transform.position = entity.damageText.position;

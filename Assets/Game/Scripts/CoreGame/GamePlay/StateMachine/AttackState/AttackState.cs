@@ -86,7 +86,7 @@ namespace Core.GamePlay
             PlayAnim(currentState);
             duration = currentState.durationAnimation;
             bufferAttack = false;
-            ResetTimeTrigger();
+            ResetEvent();
             this.PostEvent(EventID.TAKE_DAMAGE);
         }
     }

@@ -921,6 +921,8 @@ GameObject:
   - component: {fileID: 761012799}
   - component: {fileID: 761012800}
   - component: {fileID: 761012795}
+  - component: {fileID: 761012801}
+  - component: {fileID: 761012796}
   m_Layer: 11
   m_Name: Sword Master
   m_TagString: Untagged
@@ -961,6 +963,8 @@ MonoBehaviour:
   boxCheckGround: {x: 0.2, y: 0.1}
   AutoAdds:
   - {fileID: 761012799}
+  - {fileID: 761012801}
+  - {fileID: 761012796}
 --- !u!70 &761012795
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -977,6 +981,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.12}
   m_Size: {x: 0.09, y: 0.24}
   m_Direction: 0
+--- !u!114 &761012796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761012793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 844c2e9915e3dd54da7a3cf2dd8b0299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
 --- !u!4 &761012797
 Transform:
   m_ObjectHideFlags: 0
@@ -1061,6 +1079,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &761012801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761012793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1ef77160bb4e3947a21998ab4a822de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 1
 --- !u!1 &985383188
 GameObject:
   m_ObjectHideFlags: 0
@@ -1161,6 +1192,8 @@ GameObject:
   - component: {fileID: 1091811116}
   - component: {fileID: 1091811115}
   - component: {fileID: 1091811119}
+  - component: {fileID: 1091811122}
+  - component: {fileID: 1091811120}
   m_Layer: 12
   m_Name: DaggerMush
   m_TagString: Untagged
@@ -1235,6 +1268,8 @@ MonoBehaviour:
   boxCheckGround: {x: 0.2, y: 0.1}
   AutoAdds:
   - {fileID: 1091811116}
+  - {fileID: 1091811122}
+  - {fileID: 1091811120}
 --- !u!114 &1091811118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1278,6 +1313,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.11}
   m_Size: {x: 0.17, y: 0.22}
   m_Direction: 0
+--- !u!114 &1091811120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091811114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 844c2e9915e3dd54da7a3cf2dd8b0299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
 --- !u!4 &1091811121
 Transform:
   m_ObjectHideFlags: 0
@@ -1293,6 +1342,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1091811122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091811114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1ef77160bb4e3947a21998ab4a822de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 10
 --- !u!1 &1305990793
 GameObject:
   m_ObjectHideFlags: 0
@@ -1400,6 +1462,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1377389731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1377389733}
+  - component: {fileID: 1377389732}
+  m_Layer: 0
+  m_Name: GizmoTool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1377389732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377389731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86ef01f3e0438d40905f78b23693325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorGimoz: {r: 0, g: 1, b: 0, a: 1}
+  listCollider: []
+  frameDestroy: 10
+--- !u!4 &1377389733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377389731}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.4999598, y: -0.39872003, z: -1.8546884}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1439938308
 GameObject:
