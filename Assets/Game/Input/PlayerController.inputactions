@@ -42,7 +42,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SkillInput",
+                    "name": "CounterInput",
                     "type": "Button",
                     "id": "db30c0f6-0078-4d61-948f-427d5f7d33ee",
                     "expectedControlType": "Button",
@@ -202,7 +202,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SkillInput",
+                    "action": "CounterInput",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -213,7 +213,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SkillInput",
+                    "action": "CounterInput",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

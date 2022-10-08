@@ -51,6 +51,11 @@ namespace Core.GamePlay
             base.OnInputSkill(idSkill);
             controller.ChangeState(NameState.SkillState,idSkill);
         }
+        public override void OnInputCounter()
+        {
+            base.OnInputCounter();
+            controller.ChangeState(NameState.CounterState);
+        }
     } 
 }
 

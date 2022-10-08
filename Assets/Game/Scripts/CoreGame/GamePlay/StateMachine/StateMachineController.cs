@@ -213,6 +213,15 @@ namespace Core.GamePlay
                 currentState.OnInputSkill(idSkill);
             }
         }
+        
+        
+        public virtual void OnInputCounter()
+        {
+            if (currentState)
+            {
+                currentState.OnInputCounter();
+            }
+        }
         public virtual void OnHit(Action action)
         {
             if(componentManager.HasImmune(Immune.HIT)) 
@@ -259,7 +268,9 @@ namespace Core.GamePlay
     [System.Serializable]
     public struct StateClone
     {
+        [HideLabel]
         public NameState NameState;
+        [HideLabel]
         public State StateToClone;
     }
     public enum NameState

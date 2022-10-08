@@ -145,6 +145,11 @@ namespace Core.GamePlay
     public virtual void OnRevive()
     {
     }
+
+    public virtual void OnInputCounter()
+    {
+        
+    }
 }
 
 }

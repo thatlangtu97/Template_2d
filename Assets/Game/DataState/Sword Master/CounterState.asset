@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d27183991ccac3e4bb061ec7a5dd07ff, type: 3}
-  m_Name: SkillState
+  m_Script: {fileID: 11500000, guid: 4e568f88463320b4fb4ec2afc7cfe6e9, type: 3}
+  m_Name: CounterState
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -27,3 +27,4 @@ MonoBehaviour:
   Immunes: 
   eventCollectionData:
   - {fileID: 11400000, guid: 2bb1d1ca33d80224aa6f85114e6bcc6c, type: 2}
+  ListenerEvent: 0

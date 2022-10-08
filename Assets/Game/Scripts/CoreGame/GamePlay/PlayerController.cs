@@ -54,4 +54,13 @@ public class PlayerController : MonoBehaviour
                 controller.OnInputSkill(0);
             }
     }  
+    
+    public void CounterInput(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+            if (controller)
+            {
+                controller.OnInputCounter();
+            }
+    }  
 }

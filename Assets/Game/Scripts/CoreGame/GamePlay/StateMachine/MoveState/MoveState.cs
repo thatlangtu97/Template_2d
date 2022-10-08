@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using Sirenix.OdinInspector;
+using UnityEngine;
 
 namespace Core.GamePlay
 {
@@ -6,15 +8,66 @@ namespace Core.GamePlay
     public class MoveState : State
     {
         private EventCollection currentState;
+        public bool usePointSpeed;
+        [ShowIf("usePointSpeed")] 
+        public List<float> pointSpeed = new List<float>();
+        protected override void OnBeforeSerialize()
+        {
+            if (eventCollectionData == null) return;
+            if (eventCollectionData.Count==0 ) return;
+
+            if (pointSpeed.Count < eventCollectionData.Count)
+            {
+                pointSpeed.Add(0f);
+            }
+            else
+            {
+                if (pointSpeed.Count > eventCollectionData.Count)
+                {
+                    pointSpeed.RemoveAt(pointSpeed.Count-1);
+                }
+            }
+        }
         public override void EnterState()
         {
             base.EnterState();
-            currentState = eventCollectionData[idState];
-            PlayAnim(currentState);
+            
+            if (usePointSpeed)
+            {
+                idState = -1;
+                CheckSpeed();
+            }
+            else
+            {
+                idState = 0;
+                currentState = eventCollectionData[idState];
+                PlayAnim(currentState);
+            }
+        }
+
+        void CheckSpeed()
+        {
+            int tempIdState = 0;
+            for (int i = 0; i < pointSpeed.Count; i++)
+            {
+                if (Mathf.Abs(controller.componentManager.vectorMove.x) > pointSpeed[i] )
+                {
+                    tempIdState = i;
+                }
+            }
+
+            if (tempIdState != idState)
+            {
+                idState = tempIdState;
+                currentState = eventCollectionData[idState];
+                PlayAnim(currentState);
+            }
         }
         public override void UpdateState()
         {
             base.UpdateState();
+            if(usePointSpeed)
+                CheckSpeed();
             controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.vectorMove.x * controller.componentManager.maxSpeedMove,controller.componentManager.rgbody2D.velocity.y);
             if (controller.componentManager.vectorMove == Vector2.zero)
             {
@@ -33,6 +86,7 @@ namespace Core.GamePlay
         public override void ExitState()
         {
             base.ExitState();
+            
         }
         public override void OnInputAttack()
         {
@@ -55,6 +109,11 @@ namespace Core.GamePlay
         {
             base.OnInputSkill(idSkill);
             controller.ChangeState(NameState.SkillState,idSkill);
+        }
+        public override void OnInputCounter()
+        {
+            base.OnInputCounter();
+            controller.ChangeState(NameState.CounterState);
         }
     }
 }
