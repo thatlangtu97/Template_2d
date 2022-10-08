@@ -263,6 +263,17 @@ namespace Core.GamePlay
         }
         return false;
     }
+
+    public void AddBufferImmunes(Immune immunesAdd)
+    {
+        if(!currentImunes.Contains(immunesAdd))
+            currentImunes.Add(immunesAdd);
+    }
+    public void RemoveBufferImmunes(Immune immunesAdd)
+    {
+        if(currentImunes.Contains(immunesAdd))
+            currentImunes.Remove(immunesAdd);
+    }
 }
 }
 

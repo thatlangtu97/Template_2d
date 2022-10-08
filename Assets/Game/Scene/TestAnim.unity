@@ -1123,6 +1123,8 @@ MonoBehaviour:
     StateToClone: {fileID: 11400000, guid: a904b5c9ec68af548ad1e18e2befb708, type: 2}
   - NameState: 22
     StateToClone: {fileID: 11400000, guid: 942d7da20bd8aad4e99f3feab831162d, type: 2}
+  - NameState: 6
+    StateToClone: {fileID: 11400000, guid: 2f8a9134086d6eb4c89de33aafce7dcb, type: 2}
   componentManager: {fileID: 761012794}
 --- !u!114 &761012799
 MonoBehaviour:
@@ -1372,9 +1374,11 @@ MonoBehaviour:
   - NameState: 8
     StateToClone: {fileID: 11400000, guid: 7fe70d5815502aa42b96c6a8d7f4aa6e, type: 2}
   - NameState: 13
-    StateToClone: {fileID: 11400000, guid: 38bb35593e3b2a444835ee36dd3b237d, type: 2}
+    StateToClone: {fileID: 11400000, guid: 38921b5b4da209a40a08c6890fae6ee2, type: 2}
   - NameState: 18
     StateToClone: {fileID: 11400000, guid: 7edc3fbb28bc7de44a7ecff2218b8e94, type: 2}
+  - NameState: 6
+    StateToClone: {fileID: 11400000, guid: f4facbf3646698541845dcaf55fa025a, type: 2}
   componentManager: {fileID: 1091811117}
 --- !u!70 &1091811119
 CapsuleCollider2D:
@@ -1414,7 +1418,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091811114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.49, z: 0}
+  m_LocalPosition: {x: -0.55, y: -0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1659443208}

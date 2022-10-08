@@ -5,10 +5,14 @@ namespace Core.GamePlay
     [CreateAssetMenu(fileName = "DieState", menuName = "CoreGame/State/DieState")]
     public class DieState : State
     {
-        public bool canRevive;
+        private EventCollection currentState;
+        private float duration;
         public override void EnterState()
         {
             base.EnterState();
+            currentState = eventCollectionData[idState];
+            PlayAnim(currentState);
+            duration = currentState.durationAnimation;
         }
         public override void UpdateState()
         {

@@ -8,27 +8,34 @@ namespace Core.GamePlay
     public class CounterState : State
     {
         private EventCollection currentState;
-        public bool ListenerEvent;
+
+        public override void InitState(StateMachineController controller)
+        {
+            base.InitState(controller);
+            this.RegisterListener(EventID.TAKE_DAMAGE, (sender, param) =>Counter( param));
+        }
+
         public override void EnterState()
         {
             base.EnterState();
-            if (!ListenerEvent)
-            {
-                this.RegisterListener(EventID.TAKE_DAMAGE, (sender, param) =>Counter());
-                ListenerEvent = true;
-            }
+            //controller.componentManager.AddImunes(new List<Immune>(){Immune.HIT});
             idState = 0;
+            controller.componentManager.AddBufferImmunes(Immune.BLOCK);
             controller.componentManager.Rotate();
             currentState = eventCollectionData[idState];
             PlayAnim(currentState);
         }
 
-        void Counter()
+        void Counter(object obj)
         {
-            if (controller.currentNameState == NameState.CounterState)
-            {
-                Debug.Log("Counter Success");
-            }
+            Debug.Log("Counter Enter");
+            StateMachineController smc= obj as StateMachineController;
+            if(smc == controller)
+                if (controller.currentNameState == NameState.CounterState)
+                {
+                    
+                    controller.ChangeState(NameState.AttackState);
+                }
         }
         public override void UpdateState()
         {
@@ -54,6 +61,7 @@ namespace Core.GamePlay
         public override void ExitState()
         {
             base.ExitState();
+            controller.componentManager.RemoveBufferImmunes(Immune.BLOCK);
         }
         
     }

@@ -18,7 +18,6 @@ namespace Core.GamePlay
             SpawnState();
             InitState();
         }
-
         public void Recycle()
         {
             currentState = null;
@@ -224,6 +223,7 @@ namespace Core.GamePlay
         }
         public virtual void OnHit(Action action)
         {
+            if(currentNameState == NameState.CounterState) return;
             if(componentManager.HasImmune(Immune.HIT)) 
                 return;
             if (action != null)
