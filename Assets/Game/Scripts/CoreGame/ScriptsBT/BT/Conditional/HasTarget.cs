@@ -25,8 +25,8 @@ namespace Core.AI
                     {
                         componentManager.Value.enemy = null;
                         componentManager.Value.stateMachine.ChangeState(NameState.IdleState, 0, true);
-                        componentManager.Value.speedMove = 0;
-//                        componentManager.Value.vectorSpeed = Vector2.zero;
+                        //componentManager.Value.speedMove = 0;
+                        componentManager.Value.vectorMove = Vector2.zero;
                         return TaskStatus.Failure;
                     }
                 }

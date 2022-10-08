@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d42c7c183e1534eadf2f7efe4306d3, type: 3}
+  m_Name: DaggerMush
+  m_EditorClassIdentifier: 
+  mBehaviorSource:
+    behaviorName: Behavior
+    behaviorDescription: 
+    mTaskData:
+      types: []
+      parentIndex: 
+      startIndex: 
+      variableStartIndex: 
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(-286.4651,-19154.2246)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-2.2777195,131.811554)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(1.34881973,136.988708)"},"ID":2,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(0.479255676,135.467224)"},"ID":3,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-0.869606,121.300354)"},"ID":4,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"Core.AI.ChangeState","NodeData":{"Offset":"(-565.1277,146.67543)"},"ID":5,"Name":"Change
+        State","Instant":true,"Disabled":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"component","IsShared":true},"NameStatenameState":"AttackState","Int32idState":0,"BooleanforceChangeState":false},{"Type":"Core.AI.ChangeInputState","NodeData":{"Offset":"(-383.57605,163.536209)"},"ID":6,"Name":"Change
+        Input State","Instant":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"component","IsShared":true},"NameStatenameState":"AttackState","Int32idState":0},{"Type":"WaitTimeTask","NodeData":{"Offset":"(-202.998932,162.005432)"},"ID":7,"Name":"Wait
+        Time Task","Instant":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"component","IsShared":true},"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1.5},"BooleanuseRandomWaitTime":false,"SingleminWaitTime":0.3,"SinglemaxWaitTime":1},{"Type":"Core.AI.ChangeState","NodeData":{"Offset":"(-2.17388916,159.130859)"},"ID":8,"Name":"Change
+        State","Instant":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"component","IsShared":true},"NameStatenameState":"IdleState","Int32idState":0,"BooleanforceChangeState":false}]}]}]}]},"Variables":[{"Type":"SharedComponentManager","Name":"component","IsShared":true}]}'
+      fieldSerializationData:
+        typeName: []
+        fieldNameHash: 
+        startIndex: 
+        dataPosition: 
+        unityObjects: []
+        byteData: 
+        byteDataArray: 
+      Version: 1.6.8

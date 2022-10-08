@@ -19,8 +19,8 @@ public class CheckCanMove : Conditional
         {
             if (timeCountTarget <= 0)
             {
-                componentManager.Value.speedMove = 0;
-
+                //componentManager.Value.speedMove = 0;
+                componentManager.Value.vectorMove = Vector2.zero;
                 return TaskStatus.Failure;
             }
             else
@@ -34,16 +34,18 @@ public class CheckCanMove : Conditional
         }
         if (rangeToEnemy.Value < distanceStop)
         {
-            componentManager.Value.speedMove = 0;
+            //componentManager.Value.speedMove = 0;
+            componentManager.Value.vectorMove = Vector2.zero;
             return TaskStatus.Failure;
         }
+        
         if (componentManager.Value.transform.localScale.x < 0)
         {
-            componentManager.Value.speedMove = -componentManager.Value.maxSpeedMove;
+            //componentManager.Value.speedMove = -componentManager.Value.maxSpeedMove;
         }
         else if (componentManager.Value.transform.localScale.x > 0)
         {
-            componentManager.Value.speedMove = componentManager.Value.maxSpeedMove;
+            //componentManager.Value.speedMove = componentManager.Value.maxSpeedMove;
         }
         return TaskStatus.Success;
 

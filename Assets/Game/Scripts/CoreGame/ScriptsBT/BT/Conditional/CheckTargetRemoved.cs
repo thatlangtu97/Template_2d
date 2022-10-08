@@ -24,8 +24,8 @@ namespace Core.AI
             frameCount += 1;
             if (componentManager.Value.enemy == null)
             {
-                componentManager.Value.speedMove = 0;
-//                componentManager.Value.vectorSpeed=Vector2.zero;
+                //componentManager.Value.speedMove = 0;
+                componentManager.Value.vectorMove = Vector2.zero;
                 return TaskStatus.Success;
 
 

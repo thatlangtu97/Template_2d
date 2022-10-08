@@ -25,7 +25,7 @@ namespace Core.GamePlay
     [HideInInspector]
     [FoldoutGroup("REFERENCE")] public DamageInfoEvent damageInfoEvent;
     [FoldoutGroup("REFERENCE")] public Object render;
-    [FoldoutGroup("BUFFER")] public float speedMove ;
+    //[FoldoutGroup("BUFFER")] public float speedMove ;
     [FoldoutGroup("BUFFER")] public Vector2 vectorMove ;
     [ShowInInspector]
     [FoldoutGroup("BUFFER")] public List<Immune> currentImunes= new List<Immune>();

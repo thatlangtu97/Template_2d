@@ -23,7 +23,12 @@ namespace Core.GamePlay
             base.UpdateState();
             if (timeTrigger >= duration)
             {
-                controller.ChangeState(NameState.IdleState);
+                if(controller.componentManager.IsGround)
+                    controller.ChangeState(NameState.IdleState);
+                else
+                {
+                    controller.ChangeState(NameState.FallingState);
+                }
             }
         }
         public override void ExitState()
