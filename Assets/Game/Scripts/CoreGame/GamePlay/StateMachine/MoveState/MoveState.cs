@@ -15,6 +15,15 @@ namespace Core.GamePlay
         public override void UpdateState()
         {
             base.UpdateState();
+            controller.componentManager.rgbody2D.velocity = new Vector2(controller.componentManager.vectorMove.x * controller.componentManager.maxSpeedMove,controller.componentManager.rgbody2D.velocity.y);
+            if (controller.componentManager.vectorMove == Vector2.zero)
+            {
+                controller.ChangeState(NameState.IdleState);
+            }
+            else
+            {
+                controller.transform.right = new Vector3(controller.componentManager.vectorMove.x,0);
+            }
         }
         public override void ExitState()
         {
@@ -24,6 +33,12 @@ namespace Core.GamePlay
         {
             base.OnInputAttack();
             controller.ChangeState(NameState.AttackState);
+        }
+        
+        public override void OnInputJump()
+        {
+            base.OnInputJump();
+            controller.ChangeState(NameState.JumpState);
         }
     }
 }

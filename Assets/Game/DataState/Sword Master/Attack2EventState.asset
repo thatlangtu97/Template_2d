@@ -40,7 +40,34 @@ MonoBehaviour:
   durationAnimation: 0.417
   curveX:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.9146627
+      outSlope: -0.9146627
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.12810203
+      value: 0.88282984
+      inSlope: -2.7691221
+      outSlope: -2.7691221
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.44313133
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.2
+      value: 0
+      inSlope: -12.278926
+      outSlope: -12.278926
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

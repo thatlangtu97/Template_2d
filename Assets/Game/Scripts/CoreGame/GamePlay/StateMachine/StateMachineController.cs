@@ -173,6 +173,10 @@ namespace Core.GamePlay
         }
         public virtual void OnInputAttack()
         {
+            if (currentState)
+            {
+                currentState.OnInputAttack();
+            }
         }
         public virtual void OnInputAttack(int idState)
         {
@@ -180,9 +184,17 @@ namespace Core.GamePlay
         }
         public virtual void OnInputJump()
         {
+            if (currentState)
+            {
+                currentState.OnInputJump();
+            }
         }
         public virtual void OnInputMove()
         {
+            if (currentState)
+            {
+                currentState.OnInputMove();
+            }
         }
         public virtual void OnInputDash()
         {
@@ -265,6 +277,7 @@ namespace Core.GamePlay
         FallingState,
         KnockUpState,
         RollOutState,
+        LandingState,
     }
 }
 

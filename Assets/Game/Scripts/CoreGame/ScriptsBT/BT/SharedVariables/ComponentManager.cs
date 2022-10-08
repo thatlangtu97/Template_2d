@@ -3,6 +3,7 @@ using BehaviorDesigner.Runtime;
 using Entitas.Unity;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using Doozy.Engine.Extensions;
 using Entitas;
 using Sirenix.OdinInspector;
@@ -25,11 +26,14 @@ namespace Core.GamePlay
     [FoldoutGroup("REFERENCE")] public DamageInfoEvent damageInfoEvent;
     [FoldoutGroup("REFERENCE")] public Object render;
     [FoldoutGroup("BUFFER")] public float speedMove ;
+    [FoldoutGroup("BUFFER")] public Vector2 vectorMove ;
     [ShowInInspector]
     [FoldoutGroup("BUFFER")] public List<Immune> currentImunes= new List<Immune>();
     [FoldoutGroup("BUFFER")] public bool enableAI;
     [FoldoutGroup("PROPERTIES")] public float maxSpeedMove = 2f;
     [FoldoutGroup("PROPERTIES")] public List<Immune> baseImmunes = new List<Immune>();
+    [FoldoutGroup("PROPERTIES")] public LayerMask layerMaskGround;
+    [FoldoutGroup("PROPERTIES")] public Vector2 boxCheckGround;
     [ShowInInspector]
     public List<AutoAddComponent> AutoAdds = new List<AutoAddComponent>();
     
@@ -84,6 +88,13 @@ namespace Core.GamePlay
         DisableBehavior();
         DestroyEntity();
     }
+    public void PingPong()
+    {
+        transform.DOScale(Vector3.one*.8f, 0.1f ).onComplete+= () =>
+        {
+            transform.DOScale(Vector3.one, 0.05f);
+        };
+    }
     public void OnInputChangeFacing()
     {
 //        if(enemy)
@@ -129,20 +140,22 @@ namespace Core.GamePlay
 //        get { return attackAirCount < maxAttackAirCount; }
 //    }
     
-//    public bool checkGround()
-//    {
-//        RaycastHit2D hit = Physics2D.BoxCast((Vector2)transform.position , originBoxCheckGround2d,0, Vector2.down,0f, layerMaskGround);
-//        if (hit.collider != null)
-//        {
-//            isOnGround = true;
-//            return true;
-//        }
-//        else
-//        {
-//            isOnGround = false;
-//            return false;
-//        }
-//    }
+    public bool IsGround
+    {
+        get
+        {
+            RaycastHit2D hit = Physics2D.BoxCast((Vector2) transform.position, boxCheckGround, 0, Vector2.down, 0f,
+                layerMaskGround);
+            if (hit.collider != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
 //    public bool checkWall()
 //    {
 //        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(1,0)* transform.localScale.x, distanceCheckWall, layerMaskWall);
@@ -191,13 +204,13 @@ namespace Core.GamePlay
     }
     public void Rotate()
     {
-        if (speedMove > 0)
+        if (vectorMove == Vector2.zero)
         {
-            transform.localScale = new Vector3(1f, 1f, 1f);
+                
         }
-        if (speedMove == -maxSpeedMove)
+        else
         {
-            transform.localScale = new Vector3(-1f, 1f, 1f);
+            transform.right = new Vector3(vectorMove.x,0);
         }
     }
     public void DestroyEntity()

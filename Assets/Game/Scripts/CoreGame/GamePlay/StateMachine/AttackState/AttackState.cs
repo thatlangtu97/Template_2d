@@ -31,11 +31,13 @@ namespace Core.GamePlay
         public override void EnterState()
         {
             base.EnterState();
+            idState = 0;
             Cast();
         }
         public override void UpdateState()
         {
             base.UpdateState();
+            controller.componentManager.rgbody2D.velocity = new Vector2(currentState.curveX.Evaluate(timeTrigger) * controller.transform.right.x,currentState.curveY.Evaluate(timeTrigger) + controller.componentManager.rgbody2D.velocity.y );
             if (timeTrigger >= duration)
             {
                 if (bufferAttack)
@@ -45,8 +47,19 @@ namespace Core.GamePlay
                 }
                 else
                 {
-                    idState = 0;
-                    controller.ChangeState(NameState.IdleState);
+                    if (controller.componentManager.IsGround)
+                    {
+                        if (controller.componentManager.vectorMove != Vector2.zero)
+                        {
+                            controller.ChangeState(NameState.MoveState);
+                            return;
+                        }
+                        controller.ChangeState(NameState.IdleState);
+                    }
+                    else
+                    {
+                        controller.ChangeState(NameState.FallingState);
+                    }
                 }
             }
         }
@@ -58,11 +71,17 @@ namespace Core.GamePlay
         public override void OnInputAttack()
         {
             base.OnInputAttack();
+            if (idState >= eventCollectionData.Count - 1)
+            {
+                bufferAttack = false;
+                return;
+            }
             bufferAttack = true;
         }
 
         void Cast()
         {
+            controller.componentManager.Rotate();
             currentState = eventCollectionData[idState];
             PlayAnim(currentState);
             duration = currentState.durationAnimation;

@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace Core.GamePlay
 {
-    [CreateAssetMenu(fileName = "IdleState", menuName = "CoreGame/State/IdleState")]
-    public class IdleState : State
+    [CreateAssetMenu(fileName = "LandingState", menuName = "CoreGame/State/LandingState")]
+    public class LandingState : State
     {
         private EventCollection currentState;
         public override void EnterState()
@@ -15,13 +17,23 @@ namespace Core.GamePlay
         public override void UpdateState()
         {
             base.UpdateState();
+            if (timeTrigger > currentState.durationAnimation)
+            {
+                if (controller.componentManager.vectorMove!=Vector2.zero)
+                {
+                    controller.ChangeState(NameState.MoveState);
+                    return;
+                }
+                controller.ChangeState(NameState.IdleState);
+               
+
+            }
             
         }
         public override void ExitState()
         {
             base.ExitState();
         }
-
         public override void OnInputAttack()
         {
             base.OnInputAttack();
@@ -31,7 +43,8 @@ namespace Core.GamePlay
         public override void OnInputMove()
         {
             base.OnInputMove();
-            controller.ChangeState(NameState.MoveState);
+            if (timeTrigger > currentState.durationAnimation)
+                controller.ChangeState(NameState.MoveState);
         }
 
         public override void OnInputJump()
@@ -39,6 +52,5 @@ namespace Core.GamePlay
             base.OnInputJump();
             controller.ChangeState(NameState.JumpState);
         }
-    } 
+    }
 }
-

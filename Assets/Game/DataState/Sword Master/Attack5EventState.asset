@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ebed730887a86b4ba06c1a18d85cad2, type: 3}
-  m_Name: Attack3EventState
+  m_Name: Attack5EventState
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -35,12 +35,48 @@ MonoBehaviour:
       Entry: 8
       Data: 
   typeAnim: 1
-  NameTrigger: Attack3
+  NameTrigger: Attack5
   timeStart: 0
-  durationAnimation: 0.583
+  durationAnimation: 0.84
   curveX:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.487623
+    - serializedVersion: 3
+      time: 0.4719572
+      value: 0.62951064
+      inSlope: -2.2312093
+      outSlope: -2.2312093
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.64314026
+      value: 0
+      inSlope: 0.0024634146
+      outSlope: 0.0024634146
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.87554646
+    - serializedVersion: 3
+      time: 0.84
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -58,16 +94,7 @@ MonoBehaviour:
       value: 1
       inSlope: 0
       outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0

@@ -140,19 +140,19 @@ public class EventDispatcher : MonoBehaviour {
 }
 public static class EventDispatcherExtendsion
 {
-    public static void registerListener(this object sender, EventID eventId, Action<object, object> callback)
+    public static void RegisterListener(this object sender, EventID eventId, Action<object, object> callback)
     {
         EventDispatcher.Instance.registerListener(eventId, callback);
     }
-    public static void postEvent(this object sender, EventID eventId, object param)
+    public static void PostEvent(this object sender, EventID eventId, object param)
     {
         EventDispatcher.Instance.postEvent(eventId, sender, param);
     }
-    public static void postEvent(this object sender, EventID eventID)
+    public static void PostEvent(this object sender, EventID eventID)
     {
         EventDispatcher.Instance.postEvent(eventID, sender, null);
     }
-    public static void removeListener(this object sender, EventID eventID, Action<object, object> callback)
+    public static void RemoveListener(this object sender, EventID eventID, Action<object, object> callback)
     {
         EventDispatcher.Instance.removeListener(eventID, callback);
     }
