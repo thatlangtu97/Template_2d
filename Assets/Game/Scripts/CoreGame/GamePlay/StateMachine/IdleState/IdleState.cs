@@ -15,6 +15,10 @@ namespace Core.GamePlay
         public override void UpdateState()
         {
             base.UpdateState();
+            if (controller.componentManager.vectorMove != Vector2.zero)
+            {
+                controller.ChangeState(NameState.MoveState);
+            }
             
         }
         public override void ExitState()
