@@ -8,22 +8,34 @@ namespace Core.GamePlay
     public class StateMachineController : MonoBehaviour
     {
         public Dictionary<NameState, State> dictionaryStateMachine = new Dictionary<NameState, State>();
-        [FoldoutGroup("Current State")] public State currentState;
-        [FoldoutGroup("Current State")] public NameState currentNameState;
-        [FoldoutGroup("Previous State")] public NameState previousNameState;
+        
+        public State currentState
+        {
+            get { return current.StateToClone; }
+            set { current.StateToClone = value; }
+        }
+
+        public NameState currentNameState
+        {
+            get { return current.NameState; }
+            set { current.NameState = value; }
+        }
+        [LabelText("CURRENT STATE")]
+        [ReadOnly]
+        public StateClone current;
+
+        
+        
         [FoldoutGroup("State To Clone")] public List<StateClone> States;
         [FoldoutGroup("Referen")] public ComponentManager componentManager;
         private void Awake()
         {
             SpawnState();
-            //InitState();
         }
         public void Recycle()
         {
             currentState = null;
             currentNameState = NameState.UnknowState;
-            previousNameState = NameState.UnknowState;
-
         }
         private void SpawnState()
         {
@@ -107,8 +119,6 @@ namespace Core.GamePlay
                         {
                             currentState.ExitState();
                         }
-
-                        previousNameState = currentNameState;
                         currentState = newState;
                         currentNameState = nameState;
                         currentState.EnterState();
@@ -121,7 +131,6 @@ namespace Core.GamePlay
                 {
                     currentState.ExitState();
                 }
-                previousNameState = currentNameState;
                 currentState = newState;
                 currentNameState = nameState;
                 currentState.EnterState();
@@ -142,7 +151,6 @@ namespace Core.GamePlay
                         {
                             currentState.ExitState();
                         }
-                        previousNameState = currentNameState;
                         currentState = newState;
                         currentNameState = nameState;
                         currentState.EnterState();
@@ -155,7 +163,6 @@ namespace Core.GamePlay
                 {
                     currentState.ExitState();
                 }
-                previousNameState = currentNameState;
                 currentState = newState;
                 currentNameState = nameState;
                 currentState.EnterState();
@@ -269,7 +276,9 @@ namespace Core.GamePlay
     public struct StateClone
     {
         [HideLabel]
+        [HorizontalGroup(100)]
         public NameState NameState;
+        [HorizontalGroup]
         [HideLabel]
         public State StateToClone;
     }

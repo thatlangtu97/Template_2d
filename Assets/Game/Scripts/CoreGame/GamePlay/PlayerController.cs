@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Com.LuisPedroFonseca.ProCamera2D;
 using Core.GamePlay;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,8 +8,10 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public Vector2 vMove;
-
+    public ProCamera2D camera2D;
+    public float distance;
     public StateMachineController controller;
+    
     public void MoveInput(InputAction.CallbackContext context)
     {
         vMove = context.ReadValue<Vector2>();
@@ -18,6 +21,14 @@ public class PlayerController : MonoBehaviour
             controller.componentManager.vectorMove = vMove;
             if(vMove!=Vector2.zero)
                 controller.OnInputMove();
+        }
+
+        if (camera2D && controller)
+        {
+            float value = 0;
+            value = controller.transform.right.x * distance;
+
+            camera2D.OverallOffset = new Vector2(value,0);
         }
     }
 

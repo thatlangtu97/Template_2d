@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e568f88463320b4fb4ec2afc7cfe6e9, type: 3}
-  m_Name: CounterState
+  m_Script: {fileID: 11500000, guid: 1770a4831ce354f40870420c25fcef33, type: 3}
+  m_Name: AirAttackState
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -26,5 +26,4 @@ MonoBehaviour:
   idState: 0
   Immunes: 
   eventCollectionData:
-  - {fileID: 11400000, guid: 2bb1d1ca33d80224aa6f85114e6bcc6c, type: 2}
-  - {fileID: 11400000, guid: acb75c244d43ad2448f17e6e3082855d, type: 2}
+  - {fileID: 11400000, guid: 1cf9eb9c8eab5864fbd551cdb1380b8d, type: 2}

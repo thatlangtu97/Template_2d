@@ -29,9 +29,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e8da9659a6d4ca6409b12bd4e6316d4a, type: 2}
   - {fileID: 11400000, guid: a387d0dd3b42d94409c77d30ae49401f, type: 2}
   - {fileID: 11400000, guid: 549e71b458810a8479b61fb19356ca8e, type: 2}
-  - {fileID: 11400000, guid: 95465efc12cff23469f63f75c2b79aee, type: 2}
   timeBuffers:
-  - 0
   - 0
   - 0
   - 0

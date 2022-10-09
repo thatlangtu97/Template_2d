@@ -37,7 +37,7 @@ MonoBehaviour:
   typeAnim: 1
   NameTrigger: Counter
   timeStart: 0
-  durationAnimation: 0.5
+  durationAnimation: 0.3
   curveX:
     serializedVersion: 2
     m_Curve: []
