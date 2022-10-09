@@ -8,53 +8,65 @@ namespace Core.GamePlay
     public class CounterState : State
     {
         private EventCollection currentState;
-
+        private float duration;
+        private bool successCounter, counted;
         public override void InitState(StateMachineController controller)
         {
             base.InitState(controller);
-            this.RegisterListener(EventID.TAKE_DAMAGE, (sender, param) =>Counter( param));
+            this.RegisterListener(EventID.TAKE_DAMAGE, (sender, param) => Counter(param));
         }
 
         public override void EnterState()
         {
             base.EnterState();
-            //controller.componentManager.AddImunes(new List<Immune>(){Immune.HIT});
             idState = 0;
             controller.componentManager.AddBufferImmunes(Immune.BLOCK);
-            controller.componentManager.Rotate();
-            currentState = eventCollectionData[idState];
-            PlayAnim(currentState);
+            successCounter = false;
+            counted = false;
+            Cast();
         }
 
         void Counter(object obj)
         {
-            Debug.Log("Counter Enter");
             StateMachineController smc= obj as StateMachineController;
             if(smc == controller)
                 if (controller.currentNameState == NameState.CounterState)
                 {
+                    successCounter = true;
                     
-                    controller.ChangeState(NameState.AttackState);
                 }
         }
         public override void UpdateState()
         {
             base.UpdateState();
             controller.componentManager.rgbody2D.velocity = new Vector2(currentState.curveX.Evaluate(timeTrigger) * controller.transform.right.x,currentState.curveY.Evaluate(timeTrigger) + controller.componentManager.rgbody2D.velocity.y );
-            if (timeTrigger >= currentState.durationAnimation)
+            if (timeTrigger >= duration)
             {
-                if (controller.componentManager.IsGround)
+                if (!successCounter || counted )
                 {
-                    if (controller.componentManager.vectorMove != Vector2.zero)
+                    if (controller.componentManager.IsGround)
                     {
-                        controller.ChangeState(NameState.MoveState);
-                        return;
+                        if (controller.componentManager.vectorMove != Vector2.zero)
+                        {
+                            controller.ChangeState(NameState.MoveState);
+                            return;
+                        }
+
+                        controller.ChangeState(NameState.IdleState);
                     }
-                    controller.ChangeState(NameState.IdleState);
+                    else
+                    {
+                        controller.ChangeState(NameState.FallingState);
+                    }
                 }
                 else
                 {
-                    controller.ChangeState(NameState.FallingState);
+                    if (idState + 1 < eventCollectionData.Count)
+                    {
+                        idState += 1;
+                        counted = true;
+                        Cast();
+                    }
                 }
             }
         }
@@ -63,6 +75,13 @@ namespace Core.GamePlay
             base.ExitState();
             controller.componentManager.RemoveBufferImmunes(Immune.BLOCK);
         }
-        
+        void Cast()
+        {
+            controller.componentManager.Rotate();
+            currentState = eventCollectionData[idState];
+            PlayAnim(currentState);
+            duration = currentState.durationAnimation;
+            ResetEvent();
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace Core.GamePlay
         private void Awake()
         {
             SpawnState();
-            InitState();
+            //InitState();
         }
         public void Recycle()
         {

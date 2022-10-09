@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e568f88463320b4fb4ec2afc7cfe6e9, type: 3}
-  m_Name: CounterState
+  m_Script: {fileID: 11500000, guid: 1fcbc8aa0fcf14f4aa54c55def7bbafa, type: 3}
+  m_Name: HitState
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -26,5 +26,4 @@ MonoBehaviour:
   idState: 0
   Immunes: 
   eventCollectionData:
-  - {fileID: 11400000, guid: 2bb1d1ca33d80224aa6f85114e6bcc6c, type: 2}
-  - {fileID: 11400000, guid: 95465efc12cff23469f63f75c2b79aee, type: 2}
+  - {fileID: 11400000, guid: bf69a218ae61e9545a9acab0d841879a, type: 2}

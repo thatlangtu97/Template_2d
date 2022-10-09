@@ -58,6 +58,7 @@ public class TakeDamageSystem : ReactiveSystem<GameEntity>
                 return;
             }
             this.PostEvent(EventID.TAKE_DAMAGE ,stateMachine );
+            
             if (!stateMachine.componentManager.HasImmune(Immune.BLOCK))
             {
                 int damageTake=(int) (damageInfoSend.damageProperties *
