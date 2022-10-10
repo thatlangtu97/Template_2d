@@ -19,14 +19,15 @@ namespace Core.GamePlay
             base.UpdateState();
             if (timeTrigger > currentState.durationAnimation)
             {
-                if (controller.componentManager.vectorMove!=Vector2.zero)
-                {
-                    controller.ChangeState(NameState.MoveState);
-                    return;
-                }
+                
                 controller.ChangeState(NameState.IdleState);
                
 
+            }
+            if (controller.componentManager.vectorMove!=Vector2.zero)
+            {
+                controller.ChangeState(NameState.MoveState);
+                return;
             }
             
         }
