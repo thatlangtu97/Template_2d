@@ -71,6 +71,7 @@ namespace Core.GamePlay
     [Button("SETUP ENTITY", ButtonSizes.Gigantic), GUIColor(0.4f, 0.8f, 1),]
     public void SetupEntity()
     {
+        if (entity != null) return;
         entity = PoolManager.SpawnEntity();
         link = gameObject.Link(entity);
         foreach (var component in AutoAdds)
