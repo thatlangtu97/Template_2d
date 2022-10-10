@@ -17,18 +17,21 @@ public class WaitTimeTask : Action
     public override void OnAwake()
     {
         base.OnAwake();
-        if (useRandomWaitTime)
-        {
-            startTime = Random.Range(minWaitTime, maxWaitTime);
-        }
     }
 
     public override void OnStart()
     {
         // Remember the start time.
         
-        startTime =waitTime.Value;
-
+       
+        if (useRandomWaitTime)
+        {
+            startTime = Random.Range(minWaitTime, maxWaitTime);
+        }
+        else
+        {
+            startTime =waitTime.Value;  
+        }
     }
 
     public override TaskStatus OnUpdate()

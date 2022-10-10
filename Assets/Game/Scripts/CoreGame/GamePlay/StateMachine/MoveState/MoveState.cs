@@ -91,7 +91,7 @@ namespace Core.GamePlay
         public override void OnInputAttack()
         {
             base.OnInputAttack();
-            controller.ChangeState(NameState.AttackState);
+            controller.ChangeState(NameState.AttackState,0);
         }
         
         public override void OnInputJump()

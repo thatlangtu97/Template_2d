@@ -12,6 +12,7 @@ namespace Core.GamePlay
             base.EnterState();
             currentState = eventCollectionData[idState];
             PlayAnim(currentState);
+            controller.componentManager.AddImunes(Immune.HIT);
         }
         public override void UpdateState()
         {
@@ -36,6 +37,7 @@ namespace Core.GamePlay
         public override void ExitState()
         {
             base.ExitState();
+            controller.componentManager.RemoveImmunes(Immune.HIT);
         }
         
     }

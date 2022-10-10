@@ -6095,15 +6095,16 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(-286.4651,-19154.2246)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"Core.AI.FindWayPatrol","NodeData":{"Offset":"(3.534912,115.775391)"},"ID":1,"Name":"Find
-        Way Patrol","Instant":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"Component","IsShared":true,"ComponentManagermValue":0},"Singlerange":3,"Vector2Pos1":"(0,0)","Vector2Pos2":"(0,0)","LayerMasklayer":8704},"Variables":[{"Type":"SharedComponentManager","Name":"Component","IsShared":true,"ComponentManagermValue":1},{"Type":"BehaviorDesigner.Runtime.SharedVector2","Name":"SpawnPosition","IsShared":true,"Vector2mValue":"(0,0)"},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"RangePatrol","IsShared":true,"SinglemValue":0}]}'
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(-286.4651,-19154.2246)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.UnknownTask","NodeData":{"Offset":"(3.534912,115.775391)","Comment":"Unknown
+        Task. Right click and Replace to locate new task."},"ID":1,"Name":"Unknown
+        Find Way Patrol","Instant":true,"StringJSONSerialization":"{\"Type\":\"Core.AI.FindWayPatrol\",\"NodeData\":{\"Offset\":\"(3.534912,115.775391)\"},\"ID\":1,\"Name\":\"Find
+        Way Patrol\",\"Instant\":true,\"SharedComponentManagercomponentManager\":{\"Type\":\"SharedComponentManager\",\"Name\":\"Component\",\"IsShared\":true,\"ComponentManagermValue\":0},\"Singlerange\":3,\"Vector2Pos1\":\"(0,0)\",\"Vector2Pos2\":\"(0,0)\",\"LayerMasklayer\":8704}","List`1fieldNameHash":[],"List`1startIndex":[],"List`1dataPosition":[],"List`1unityObjects":[],"List`1byteData":[]},"Variables":[{"Type":"SharedComponentManager","Name":"Component","IsShared":true,"ComponentManagermValue":0},{"Type":"BehaviorDesigner.Runtime.SharedVector2","Name":"SpawnPosition","IsShared":true,"Vector2mValue":"(0,0)"},{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Target","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"RangeTarget","IsShared":true,"SinglemValue":0},{"Type":"BehaviorDesigner.Runtime.SharedVector2","Name":"PatrolTargetPosition","IsShared":true,"Vector2mValue":"(0,0)"}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
         startIndex: 
         dataPosition: 
         unityObjects:
-        - {fileID: 365860388}
         - {fileID: 365860388}
         byteData: 
         byteDataArray: 
@@ -6546,6 +6547,8 @@ GameObject:
   - component: {fileID: 701889174}
   - component: {fileID: 701889176}
   - component: {fileID: 701889175}
+  - component: {fileID: 701889178}
+  - component: {fileID: 701889177}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6742,6 +6745,44 @@ MonoBehaviour:
   profile: {fileID: 11400000, guid: 82310dfd7a370d54c978d7127017f6d1, type: 2}
   ub: {fileID: 2100000, guid: 1e274b34f167f8543b55f5c4508f0190, type: 2}
   gm: {fileID: 2100000, guid: a5e1c8f35889879478f0d1a0bbdc1cb7, type: 2}
+--- !u!114 &701889177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701889170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8247377a624e0754dbeec36f0533962a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  proCamera2DShake: {fileID: 701889178}
+  minX: 0
+  maxX: 0
+--- !u!114 &701889178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701889170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac0ec3d6ad5f4a3d9d184bc3773a3a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProCamera2D: {fileID: 701889174}
+  Strength: {x: 10, y: 10}
+  Duration: 0.5
+  Vibrato: 10
+  Randomness: 0.1
+  Smoothness: 0.1
+  InitialAngle: 0
+  UseRandomInitialAngle: 1
+  Rotation: {x: 0, y: 0, z: 0}
+  IgnoreTimeScale: 0
+  ShakePresets: []
 --- !u!1 &702888496
 GameObject:
   m_ObjectHideFlags: 0
@@ -7350,8 +7391,6 @@ MonoBehaviour:
     StateToClone: {fileID: 11400000, guid: 2f8a9134086d6eb4c89de33aafce7dcb, type: 2}
   - NameState: 9
     StateToClone: {fileID: 11400000, guid: 57301bef9a94d03478e49f98bfbcca2f, type: 2}
-  - NameState: 1
-    StateToClone: {fileID: 11400000, guid: 6484401828f8e194796d5547d3d54d82, type: 2}
   componentManager: {fileID: 761012794}
 --- !u!114 &761012799
 MonoBehaviour:
@@ -8396,7 +8435,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091811114}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e68bdb1e26e907498768dbeca9d120e, type: 3}
   m_Name: 
@@ -8420,7 +8459,7 @@ MonoBehaviour:
       JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(-286.4651,-19154.2246)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.UnknownTask","NodeData":{"Offset":"(3.534912,115.775391)","Comment":"Unknown
         Task. Right click and Replace to locate new task."},"ID":1,"Name":"Unknown
         Find Way Patrol","Instant":true,"StringJSONSerialization":"{\"Type\":\"Core.AI.FindWayPatrol\",\"NodeData\":{\"Offset\":\"(3.534912,115.775391)\"},\"ID\":1,\"Name\":\"Find
-        Way Patrol\",\"Instant\":true,\"SharedComponentManagercomponentManager\":{\"Type\":\"SharedComponentManager\",\"Name\":\"Component\",\"IsShared\":true,\"ComponentManagermValue\":0},\"Singlerange\":3,\"Vector2Pos1\":\"(0,0)\",\"Vector2Pos2\":\"(0,0)\",\"LayerMasklayer\":8704}","List`1fieldNameHash":[],"List`1startIndex":[],"List`1dataPosition":[],"List`1unityObjects":[],"List`1byteData":[]},"Variables":[{"Type":"SharedComponentManager","Name":"Component","IsShared":true,"ComponentManagermValue":0},{"Type":"BehaviorDesigner.Runtime.SharedVector2","Name":"SpawnPosition","IsShared":true,"Vector2mValue":"(0,0)"},{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Target","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"RangeTarget","IsShared":true,"SinglemValue":0}]}'
+        Way Patrol\",\"Instant\":true,\"SharedComponentManagercomponentManager\":{\"Type\":\"SharedComponentManager\",\"Name\":\"Component\",\"IsShared\":true,\"ComponentManagermValue\":0},\"Singlerange\":3,\"Vector2Pos1\":\"(0,0)\",\"Vector2Pos2\":\"(0,0)\",\"LayerMasklayer\":8704}","List`1fieldNameHash":[],"List`1startIndex":[],"List`1dataPosition":[],"List`1unityObjects":[],"List`1byteData":[]},"Variables":[{"Type":"SharedComponentManager","Name":"Component","IsShared":true,"ComponentManagermValue":0},{"Type":"BehaviorDesigner.Runtime.SharedVector2","Name":"SpawnPosition","IsShared":true,"Vector2mValue":"(-0.55,-0.66)"},{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Target","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"RangeTarget","IsShared":true,"SinglemValue":0},{"Type":"BehaviorDesigner.Runtime.SharedVector2","Name":"PatrolTargetPosition","IsShared":true,"Vector2mValue":"(0,0)"}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 

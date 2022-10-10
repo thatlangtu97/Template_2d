@@ -31,7 +31,6 @@ namespace Core.GamePlay
         public override void EnterState()
         {
             base.EnterState();
-            idState = 0;
             Cast();
         }
         public override void UpdateState()

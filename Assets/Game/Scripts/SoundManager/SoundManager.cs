@@ -13,8 +13,10 @@ public class SoundManager : MonoBehaviour
             if (_instance == null)
             {
 
-                GameObject soundManager = Instantiate( Resources.Load<GameObject>("SoundManager"));
-                _instance = soundManager.GetComponent<SoundManager>();
+//                GameObject soundManager = Instantiate( Resources.Load<GameObject>("SoundManager"));
+//                _instance = soundManager.GetComponent<SoundManager>();
+                GameObject soundManager = new GameObject("SoundManager");
+                _instance = soundManager.AddComponent<SoundManager>();
                 DontDestroyOnLoad(soundManager);
             }
             return _instance;
@@ -118,7 +120,9 @@ public class SoundManager : MonoBehaviour
 
         return null;
     }
-    public void StopSound(AudioClip audioClip)
+
+
+    public void stopSound(AudioClip audioClip)
     {
         for (int i = 0; i < audioSourcePool.Count; i++)
         {
@@ -128,5 +132,13 @@ public class SoundManager : MonoBehaviour
                 audioSourcePool[i].Stop();
             }
         }
+    }
+    public static AudioSource PlaySound(AudioClip clip, bool checkInterrupt, float volume, bool loop, float speed)
+    {
+        return instance.playSound(clip, checkInterrupt, volume, loop, speed);
+    }
+    public static void StopSound(AudioClip audioClip)
+    {
+        instance.stopSound(audioClip);
     }
 }

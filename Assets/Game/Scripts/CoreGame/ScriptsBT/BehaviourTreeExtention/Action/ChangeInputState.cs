@@ -12,22 +12,28 @@ namespace Core.AI
         public SharedComponentManager componentManager;
         public NameState nameState;
         public int idState;
+        public bool forceChangeState;
         public override void OnStart()
         {
-            switch (nameState)
+            if(!forceChangeState)
+                switch (nameState)
+                {
+                    case NameState.AttackState:
+                        componentManager.Value.stateMachine.OnInputAttack();
+                        break;
+                    case NameState.DashState:
+                        componentManager.Value.stateMachine.OnInputDash();
+                      break;
+                    case NameState.SkillState:
+                        componentManager.Value.stateMachine.OnInputSkill(idState);
+                        break;
+                    case NameState.MoveState:
+                        componentManager.Value.stateMachine.OnInputMove();
+                        break;
+                }
+            else
             {
-                case NameState.AttackState:
-                    componentManager.Value.stateMachine.OnInputAttack();
-                    break;
-                case NameState.DashState:
-                    componentManager.Value.stateMachine.OnInputDash();
-                  break;
-                case NameState.SkillState:
-                    componentManager.Value.stateMachine.OnInputSkill(idState);
-                    break;
-                case NameState.MoveState:
-                    componentManager.Value.stateMachine.OnInputMove();
-                    break;
+                componentManager.Value.stateMachine.ChangeState(nameState,idState,true);
             }
             base.OnStart();
         }

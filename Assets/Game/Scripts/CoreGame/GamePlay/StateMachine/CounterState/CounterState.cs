@@ -20,7 +20,7 @@ namespace Core.GamePlay
         {
             base.EnterState();
             idState = 0;
-            controller.componentManager.AddBufferImmunes(Immune.BLOCK);
+            controller.componentManager.AddImunes(Immune.BLOCK);
             successCounter = false;
             counted = false;
             Cast();
@@ -73,7 +73,7 @@ namespace Core.GamePlay
         public override void ExitState()
         {
             base.ExitState();
-            controller.componentManager.RemoveBufferImmunes(Immune.BLOCK);
+            controller.componentManager.RemoveImmunes(Immune.BLOCK);
         }
         void Cast()
         {

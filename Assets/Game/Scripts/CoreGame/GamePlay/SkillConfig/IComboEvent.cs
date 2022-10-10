@@ -85,84 +85,6 @@ public class CastAddForce : IComboEvent
 }
 #endregion
 
-#region CAST VFX
-public class CastVfxEvent : IComboEvent
-{
-    [FoldoutGroup("CAST VFX")]
-    [ReadOnly]
-    public int idEvent;
-
-    [FoldoutGroup("CAST VFX")]
-    public float timeTriggerEvent;
-    
-    [FoldoutGroup("CAST VFX")]
-    public float duration = 0.5f;
-
-    [FoldoutGroup("CAST VFX")]
-    public GameObject Prefab;
-
-    [FoldoutGroup("CAST VFX")]
-    public Vector3 Localosition;
-
-    [FoldoutGroup("CAST VFX")]
-    public Vector3 LocalRotation;
-
-    [FoldoutGroup("CAST VFX")]
-    public Vector3 LocalScale;
-
-    [FoldoutGroup("CAST VFX")]
-    public bool setParent = true;
-
-    [FoldoutGroup("CAST VFX")]
-    public bool recycleWhenFinishDuration = false;
-    
-    public int id { get { return idEvent; } set { idEvent = value; } }
-    public float timeTrigger { get { return timeTriggerEvent; } }
-    private GameObject prefabSpawned;
-    public void OnEventTrigger(GameEntity entity)
-    {
-        if (Prefab)
-        {
-            //prefabSpawned = ObjectPool.Spawn(Prefab);
-            Transform baseTransform = entity.stateMachineContainer.value.transform;
-            prefabSpawned = PoolManager.Spawn(Prefab,baseTransform);
-            //prefabSpawned.transform.parent = baseTransform;
-            prefabSpawned.transform.localPosition = new Vector3(Localosition.x , Localosition.y , Localosition.z );
-            prefabSpawned.transform.localRotation = Quaternion.Euler(LocalRotation);
-            prefabSpawned.transform.localScale = LocalScale;
-            if (!setParent)
-            {
-                prefabSpawned.transform.parent = null;
-            }
-            PoolManager.Recycle(prefabSpawned,duration);
-            //ObjectPool.instance.Recycle(prefabSpawned, duration);
-            
-        }
-    }
-    public void Recycle()
-    {
-        if (recycleWhenFinishDuration)
-        {
-            if (prefabSpawned)
-            {
-                //ObjectPool.Recycle(prefabSpawned);
-                PoolManager.Recycle(prefabSpawned,duration);
-            }
-        }
-        else
-        {
-            if (prefabSpawned)
-                prefabSpawned.transform.parent = null;
-        }
-    }
-
-    public void OnUpdateTrigger()
-    {
-        
-    }
-}
-#endregion
-
 /// <summary>
 /// //////////////////////
 /// </summary>
@@ -799,14 +721,14 @@ public class PlaySound : IComboEvent
     
     [FoldoutGroup("SOUND")] 
     [Range(0,1f)]
-    public float volume;
+    public float volume = 1f;
     
     [FoldoutGroup("SOUND")] 
     public bool loop;
     
     [FoldoutGroup("SOUND")] 
     [Range(0,2f)]
-    public float pitch;
+    public float pitch = 1f;
     
     [FoldoutGroup("SOUND")]
     public bool useStop;
@@ -832,14 +754,14 @@ public class PlaySound : IComboEvent
     private AudioSource source;
     public void OnEventTrigger(GameEntity entity)
     {
-        source = SoundManager.instance.playSound(clip,false,volume,loop,pitch);
+        source = SoundManager.PlaySound(clip,false,volume,loop,pitch);
         timecount = 0;
     }
     public void Recycle()
     {
         if (useStop)
         {
-            SoundManager.instance.StopSound(clip);
+            SoundManager.StopSound(clip);
         }
     }
 
@@ -854,87 +776,11 @@ public class PlaySound : IComboEvent
             {
                 if (timecount >= duration)
                 {
-                    SoundManager.instance.StopSound(clip);
+                    SoundManager.StopSound(clip);
                     source = null;
                 }
             }
         }
-    }
-}
-#endregion
-
-#region CAMERA TARGET
-public class CameraTarget : IComboEvent
-{
-    [FoldoutGroup("CAMERA TARGET")]
-    [ReadOnly]
-    public int idEvent;
-
-    [FoldoutGroup("CAMERA TARGET")] 
-    public float timeTriggerEvent;
-    
-    [FoldoutGroup("CAMERA TARGET")] 
-    public Vector2 offset;
-
-    [FoldoutGroup("CAMERA TARGET")]
-    public bool mainTarget;
-
-    
-    public int id { get { return idEvent; } set { idEvent = value; } }
-    public float timeTrigger { get { return timeTriggerEvent; } }
-    
-    public void OnEventTrigger(GameEntity entity)
-    {
-        Transform baseTransform = entity.stateMachineContainer.value.transform;
-        CameraController.instance.AddTarget(baseTransform);
-        CameraController.instance.FollowTarget(baseTransform,offset);
-        if(mainTarget)
-            CameraController.instance.SetMainTarget(baseTransform,offset);
-    }
-    public void Recycle()
-    {
-        CameraController.instance.RestoneMainTarget();
-    }
-
-    public void OnUpdateTrigger()
-    {
-        
-    }
-}
-#endregion
-
-#region REMOVE CAMERA TARGET
-public class RemoveCameraTarget : IComboEvent
-{
-    [FoldoutGroup("CAMERA TARGET")]
-    [ReadOnly]
-    public int idEvent;
-
-    [FoldoutGroup("CAMERA TARGET")] 
-    public float timeTriggerEvent;
-    
-//    [FoldoutGroup("CAMERA TARGET")] 
-//    public Vector2 offset;
-//
-//    [FoldoutGroup("CAMERA TARGET")]
-//    public bool mainTarget;
-
-    
-    public int id { get { return idEvent; } set { idEvent = value; } }
-    public float timeTrigger { get { return timeTriggerEvent; } }
-    
-    public void OnEventTrigger(GameEntity entity)
-    {
-        Transform baseTransform = entity.stateMachineContainer.value.transform;
-        CameraController.instance.RemoveTarget(baseTransform);
-    }
-    public void Recycle()
-    {
-    }
-
-    public void OnUpdateTrigger()
-    {
-        
     }
 }
 #endregion
@@ -962,7 +808,7 @@ public class ShakeCamera : IComboEvent
     
     public void OnEventTrigger(GameEntity entity)
     {
-        CameraController.instance.ShakeCamera(strength,duration);
+        CameraController.Shake(strength,duration);
     }
     public void Recycle()
     {

@@ -243,7 +243,21 @@ namespace Core.GamePlay
             tempImmune.Add(immuneItem);
         }
         currentImunes = tempImmune;
-        //new addimune 
+    }
+
+    public void AddImunes(Immune immunesAdd)
+    {
+        List<Immune> tempImmune = new List<Immune>();
+        foreach (var immuneItem in baseImmunes)
+        {
+            tempImmune.Add(immuneItem);
+        }
+        if (!baseImmunes.Contains(immunesAdd)) ;
+        {
+            tempImmune.Add(immunesAdd);
+        }
+        currentImunes = tempImmune;
+
     }
     public void RemoveImmunes(List<Immune> immunesRemove)
     {
@@ -255,6 +269,13 @@ namespace Core.GamePlay
                 currentImunes.Remove(immuneItem);
         }
     }
+    public void RemoveImmunes(Immune immunesRemove)
+    {
+        if (baseImmunes.Contains(immunesRemove))
+            return;
+        if(currentImunes.Contains(immunesRemove))
+            currentImunes.Remove(immunesRemove);
+    }
     public bool HasImmune(Immune immune)
     {
         if (currentImunes.Contains(immune))
@@ -262,17 +283,6 @@ namespace Core.GamePlay
             return true;
         }
         return false;
-    }
-
-    public void AddBufferImmunes(Immune immunesAdd)
-    {
-        if(!currentImunes.Contains(immunesAdd))
-            currentImunes.Add(immunesAdd);
-    }
-    public void RemoveBufferImmunes(Immune immunesAdd)
-    {
-        if(currentImunes.Contains(immunesAdd))
-            currentImunes.Remove(immunesAdd);
     }
 }
 }
