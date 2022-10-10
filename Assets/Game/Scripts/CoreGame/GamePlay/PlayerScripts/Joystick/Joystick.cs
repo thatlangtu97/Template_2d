@@ -12,29 +12,16 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
     [SerializeField]
     public Image BackGround, PointJoystick;
     public Vector3 posStart, posEnd, ForceVector;
+    public PlayerController controller;
     [Range(1.5f, 4f)]
     public float space =2.5f;
     public Transform effectLook;
-//    public ComponentManager componentManager;
-    // GAME PAD
-    private Gamepad gamePad;
-    public Vector2 VectorMove;
-    //
-    private bool isPress = false;
-    
-    IEnumerator delayActive(GameObject obj, float time)
-    {
-        yield return new WaitForSeconds(time);
-        obj.SetActive(true);
-    }
     void Start()
     {
         posStart = Vector3.zero;
-        gamePad = Gamepad.current;
     }
     public void OnDrag(PointerEventData eventData)
     {
-        isPress = true;
         Vector2 pos;
         Vector2 sizeDelta;
         if (RectTransformUtility.ScreenPointToLocalPointInRectangle(BackGround.rectTransform
@@ -49,8 +36,12 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
             posEnd = (posEnd.magnitude >= 1f) ? posEnd.normalized : posEnd;
             ForceVector = new Vector3(posEnd.x, posEnd.y,0f);
             PointJoystick.rectTransform.anchoredPosition = new Vector3((posEnd.x *sizeDelta.x) / space, (posEnd.y * sizeDelta.y) / space);
-            effectLook.gameObject.SetActive(true);
-            effectLook.up = new Vector3(ForceVector.x, ForceVector.y,0);
+            if (effectLook)
+            {
+                effectLook.gameObject.SetActive(true);
+                effectLook.up = new Vector3(ForceVector.x, ForceVector.y, 0);
+            }
+
             OnMove();
         }
     }
@@ -61,107 +52,33 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
     }
     public void OnPointerUp(PointerEventData eventData)
     {
-        isPress = false;
         posEnd = Vector3.zero;
         ForceVector = Vector3.zero;
         PointJoystick.rectTransform.anchoredPosition = posEnd;
-        effectLook.gameObject.SetActive(false);
+        if (effectLook)
+            effectLook.gameObject.SetActive(false);
         OnStop();
+    }
+
+    public Vector2 GetValue
+    {
+        get
+        {
+            return ForceVector;
+        }
     }
     void OnMove()
     {
+        if (controller)
+        {
+            controller.Move(GetValue);
+        }
     }
     void OnStop()
     {
-    }
-
-    public void LeftStick(Gamepad gamePad)
-    {
-        if (gamePad!=null )
+        if (controller)
         {
-            Vector2 sizeDelta = BackGround.rectTransform.sizeDelta;
-                VectorMove = gamePad.leftStick.ReadValue();
-                PointJoystick.rectTransform.anchoredPosition = new Vector3((VectorMove.x * sizeDelta.x) / space,
-                    (VectorMove.y * sizeDelta.y) / space);
-                ForceVector = VectorMove;
-                if (gamePad.leftStick.IsPressed())
-                    OnMove();
-                else
-                {
-                    OnStop();
-                }
-        }
-    }
-
-    public void DPad(Gamepad gamePad)
-    {
-        if (gamePad!=null)
-        {
-            Vector2 sizeDelta = BackGround.rectTransform.sizeDelta;
-                VectorMove = gamePad.dpad.ReadValue();
-                PointJoystick.rectTransform.anchoredPosition = new Vector3((VectorMove.x * sizeDelta.x) / space,
-                    (VectorMove.y * sizeDelta.y) / space);
-                ForceVector = VectorMove;
-                if (gamePad.dpad.IsPressed())
-                    OnMove();
-                else
-                {
-                    OnStop();
-                    PointJoystick.rectTransform.anchoredPosition = Vector3.zero;
-                }
-
-        }
-    }
-
-    public void MoveGamePad(Gamepad gamePad)
-    {
-        if (!isPress)
-        {
-            if (gamePad != null)
-            {
-                Vector2 sizeDelta = BackGround.rectTransform.sizeDelta;
-                VectorMove = gamePad.dpad.ReadValue();
-                PointJoystick.rectTransform.anchoredPosition = new Vector3((VectorMove.x * sizeDelta.x) / space,
-                    (VectorMove.y * sizeDelta.y) / space);
-                ForceVector = VectorMove;
-                if (gamePad.dpad.IsPressed())
-                    OnMove();
-                else
-                {
-                    VectorMove = gamePad.leftStick.ReadValue();
-                    PointJoystick.rectTransform.anchoredPosition = new Vector3((VectorMove.x * sizeDelta.x) / space,
-                        (VectorMove.y * sizeDelta.y) / space);
-                    ForceVector = VectorMove;
-                    if (gamePad.leftStick.IsPressed())
-                        OnMove();
-                    else
-                    {
-                        OnStop();
-                        PointJoystick.rectTransform.anchoredPosition = Vector3.zero;
-                    }
-                }
-            }
-        }
-    }
-
-    public void MoveHorizontal(float horizontal)
-    {
-        if (!isPress)
-        {
-            Vector2 sizeDelta = BackGround.rectTransform.sizeDelta;
-            VectorMove = new Vector2(horizontal, 0f);
-            PointJoystick.rectTransform.anchoredPosition = new Vector3((VectorMove.x * sizeDelta.x) / space,
-                (VectorMove.y * sizeDelta.y) / space);
-            ForceVector = VectorMove;
-            if (horizontal != 0)
-            {
-                OnMove();
-            }
-            else
-            {
-                OnStop();
-                PointJoystick.rectTransform.anchoredPosition = Vector3.zero;
-            }
+            controller.Move(GetValue);
         }
     }
 }

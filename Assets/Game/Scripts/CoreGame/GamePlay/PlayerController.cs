@@ -15,7 +15,51 @@ public class PlayerController : MonoBehaviour
     public void MoveInput(InputAction.CallbackContext context)
     {
         vMove = context.ReadValue<Vector2>();
-        
+//        camera2D.CameraTargets[0].TargetTransform = controller.transform;
+//        if (controller)
+//        {
+//            controller.componentManager.vectorMove = vMove;
+//            if(vMove!=Vector2.zero)
+//                controller.OnInputMove();
+//        }
+//
+//        if (camera2D && controller)
+//        {
+//            float value = 0;
+//            value = controller.transform.right.x * distance;
+//
+//            camera2D.OverallOffset = new Vector2(value,0);
+//        }
+        Move(vMove);
+    }
+
+    public void AttackInput(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            Attack();
+    }
+
+    public void JumpInput(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+            Jump();
+    }
+    public void DashInput(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+            Dash();
+    }
+
+    public void CounterInput(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+            Counter();
+    }
+
+    public void Move(Vector2 valueJoystick)
+    {
+        vMove = valueJoystick;
+        camera2D.CameraTargets[0].TargetTransform = controller.transform;
         if (controller)
         {
             controller.componentManager.vectorMove = vMove;
@@ -32,46 +76,35 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void AttackInput(InputAction.CallbackContext context)
+    public void Attack()
     {
-        if(context.performed)
-            if (controller)
-            {
-                controller.OnInputAttack();
-            }
+        if (controller)
+        {
+            controller.OnInputAttack();
+        }
     }
 
-    public void JumpInput(InputAction.CallbackContext context)
+    public void Dash()
     {
-        if(context.performed)
-            if (controller)
-            {
-                controller.OnInputJump();
-            }
+        if (controller)
+        {
+            controller.OnInputDash();
+        }
     }
-    public void DashInput(InputAction.CallbackContext context)
+
+    public void Counter()
     {
-        if(context.performed)
-            if (controller)
-            {
-                controller.OnInputDash();
-            }
-    }  
-    public void SkillInput(InputAction.CallbackContext context)
+        if (controller)
+        {
+            controller.OnInputCounter();
+        }
+    }
+
+    public void Jump()
     {
-        if(context.performed)
-            if (controller)
-            {
-                controller.OnInputSkill(0);
-            }
-    }  
-    
-    public void CounterInput(InputAction.CallbackContext context)
-    {
-        if(context.performed)
-            if (controller)
-            {
-                controller.OnInputCounter();
-            }
-    }  
+        if (controller)
+        {
+            controller.OnInputJump();
+        }
+    }
 }

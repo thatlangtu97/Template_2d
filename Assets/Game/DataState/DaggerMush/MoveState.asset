@@ -27,3 +27,8 @@ MonoBehaviour:
   Immunes: 
   eventCollectionData:
   - {fileID: 11400000, guid: 8882addf7b9a83840b98ad9ede369148, type: 2}
+  - {fileID: 11400000, guid: dab73809162f87040861b950e85a5f75, type: 2}
+  usePointSpeed: 1
+  pointSpeed:
+  - 0
+  - 0.5
