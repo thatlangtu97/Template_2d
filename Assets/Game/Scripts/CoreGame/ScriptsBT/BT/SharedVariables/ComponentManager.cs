@@ -24,7 +24,7 @@ namespace Core.GamePlay
     [FoldoutGroup("REFERENCE")] public GameEntity entity;
     [HideInInspector]
     [FoldoutGroup("REFERENCE")] public DamageInfoEvent damageInfoEvent;
-    [FoldoutGroup("REFERENCE")] public Object render;
+    [FoldoutGroup("REFERENCE")] public GameObject render;
     //[FoldoutGroup("BUFFER")] public float speedMove ;
     [FoldoutGroup("BUFFER")] public Vector2 vectorMove ;
     [ShowInInspector]

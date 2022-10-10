@@ -264,12 +264,6 @@ namespace Core.GamePlay
         { 
             ChangeState(nameState);
         }
-        [Button("ATTACK STATE", ButtonSizes.Gigantic), GUIColor(0.4f, 0.8f, 1),]
-        void TESTATTACK()
-        { 
-            if(currentState)
-            currentState.OnInputAttack();
-        }
     }
     
     [System.Serializable]

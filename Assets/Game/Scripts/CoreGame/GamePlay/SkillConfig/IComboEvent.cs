@@ -193,15 +193,10 @@ public class EnableComponent : IComboEvent
         switch (Component)
         {
             case TypeComponent.MeshRenderer:
-                Object render  = entity.stateMachineContainer.value.componentManager.render ;
+                GameObject render  = entity.stateMachineContainer.value.componentManager.render ;
                 if (render != null)
                 {
-                    if (render.GetType() == typeof(SpriteRenderer))
-                    {
-                        SpriteRenderer spr = render as SpriteRenderer;
-                        spr.enabled = enable;
-                    }
-
+                    render.GetComponent<SpriteRenderer>().enabled = enable;
                 }
                 break;
         }
