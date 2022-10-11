@@ -343,6 +343,10 @@ public class ColliderEvent : IComboEvent
     
     [FoldoutGroup("COLLIDER EVENT")] 
     public DamageInfoEvent damageInfoEvent;
+
+    [LabelText("ON HIT PHASE")] 
+    [FoldoutGroup("COLLIDER EVENT")]
+    public HitPhase hitPhaseData = new HitPhase();
     
     private GameObject col;
     private int countCast;
@@ -404,6 +408,8 @@ public class ColliderEvent : IComboEvent
                                 DamageInfoSend damageInfoSend = new DamageInfoSend(damageInfoEventTemp,damageProperties,Action);
                                 //DealDmgManager.DealDamage(col, entity,damageInfoSend);
                                 DealDmgManager.DealDamage(componentManager.entity, entity,damageInfoSend);
+                                if(hitPhaseData!=null)
+                                    EventUpdate.SetEvent(hitPhaseData.hitPhaseEvents, entity);
                                 
                             }
                         }
@@ -459,6 +465,8 @@ public class ColliderEvent : IComboEvent
                                 DamageInfoSend damageInfoSend =new DamageInfoSend(damageInfoEventTemp, damageProperties, action);
                                 //DealDmgManager.DealDamage(col, entity, damageInfoSend);
                                 DealDmgManager.DealDamage(componentManager.entity, entity, damageInfoSend);
+                                    if(hitPhaseData!=null)
+                                EventUpdate.SetEvent(hitPhaseData.hitPhaseEvents, entity);
                             }
                         }
                         if(cols.Length>0)
@@ -821,5 +829,25 @@ public class ShakeCamera : IComboEvent
 }
 #endregion
 
+public class HitPhase
+{
+    public List<IComboEvent> hitPhaseEvents = new List<IComboEvent>();
+    [Button("ACCEPT MODIFY",ButtonSizes.Gigantic), GUIColor(0.4f, 0.8f, 1),]
 
+    public void Modify()
+    {
+        if (hitPhaseEvents != null)
+        {
+            for (int i = 0; i < hitPhaseEvents.Count; i++)
+            {
+                
+                hitPhaseEvents[i].id = i*100;
+            }
+        }
+        else
+        {
+            hitPhaseEvents = new List<IComboEvent>();
+        }
+    }
+}
 }
