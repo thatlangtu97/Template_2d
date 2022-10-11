@@ -524,7 +524,7 @@ MonoBehaviour:
       JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(-286.4651,-19154.2246)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.UnknownTask","NodeData":{"Offset":"(3.534912,115.775391)","Comment":"Unknown
         Task. Right click and Replace to locate new task."},"ID":1,"Name":"Unknown
         Find Way Patrol","Instant":true,"StringJSONSerialization":"{\"Type\":\"Core.AI.FindWayPatrol\",\"NodeData\":{\"Offset\":\"(3.534912,115.775391)\"},\"ID\":1,\"Name\":\"Find
-        Way Patrol\",\"Instant\":true,\"SharedComponentManagercomponentManager\":{\"Type\":\"SharedComponentManager\",\"Name\":\"Component\",\"IsShared\":true,\"ComponentManagermValue\":0},\"Singlerange\":3,\"Vector2Pos1\":\"(0,0)\",\"Vector2Pos2\":\"(0,0)\",\"LayerMasklayer\":8704}","List`1fieldNameHash":[],"List`1startIndex":[],"List`1dataPosition":[],"List`1unityObjects":[],"List`1byteData":[]},"Variables":[{"Type":"SharedComponentManager","Name":"Component","IsShared":true,"ComponentManagermValue":0},{"Type":"BehaviorDesigner.Runtime.SharedVector2","Name":"SpawnPosition","IsShared":true,"Vector2mValue":"(0,0)"},{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Target","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"RangeTarget","IsShared":true,"SinglemValue":0}]}'
+        Way Patrol\",\"Instant\":true,\"SharedComponentManagercomponentManager\":{\"Type\":\"SharedComponentManager\",\"Name\":\"Component\",\"IsShared\":true,\"ComponentManagermValue\":0},\"Singlerange\":3,\"Vector2Pos1\":\"(0,0)\",\"Vector2Pos2\":\"(0,0)\",\"LayerMasklayer\":8704}","List`1fieldNameHash":[],"List`1startIndex":[],"List`1dataPosition":[],"List`1unityObjects":[],"List`1byteData":[]},"Variables":[{"Type":"SharedComponentManager","Name":"Component","IsShared":true,"ComponentManagermValue":0},{"Type":"BehaviorDesigner.Runtime.SharedVector2","Name":"SpawnPosition","IsShared":true,"Vector2mValue":"(0,0)"},{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Target","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"RangeTarget","IsShared":true,"SinglemValue":0},{"Type":"BehaviorDesigner.Runtime.SharedVector2","Name":"PatrolTargetPosition","IsShared":true,"Vector2mValue":"(0,0)"}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -649,6 +649,7 @@ MonoBehaviour:
   - {fileID: 122251836}
   - {fileID: 122251833}
   - {fileID: 122251832}
+  autoSetupEntity: 0
 --- !u!114 &122251838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6223,6 +6224,7 @@ MonoBehaviour:
   - {fileID: 365860387}
   - {fileID: 365860384}
   - {fileID: 365860383}
+  autoSetupEntity: 0
 --- !u!114 &365860389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7041,6 +7043,7 @@ MonoBehaviour:
   - {fileID: 719215867}
   - {fileID: 719215864}
   - {fileID: 719215863}
+  autoSetupEntity: 0
 --- !u!114 &719215869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7270,7 +7273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &761012794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7306,6 +7309,7 @@ MonoBehaviour:
   - {fileID: 761012799}
   - {fileID: 761012801}
   - {fileID: 761012796}
+  autoSetupEntity: 1
 --- !u!70 &761012795
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -8339,6 +8343,7 @@ MonoBehaviour:
   - {fileID: 1091811116}
   - {fileID: 1091811122}
   - {fileID: 1091811120}
+  autoSetupEntity: 1
 --- !u!114 &1091811118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8367,6 +8372,8 @@ MonoBehaviour:
     StateToClone: {fileID: 11400000, guid: 7edc3fbb28bc7de44a7ecff2218b8e94, type: 2}
   - NameState: 6
     StateToClone: {fileID: 11400000, guid: f4facbf3646698541845dcaf55fa025a, type: 2}
+  - NameState: 0
+    StateToClone: {fileID: 11400000, guid: 2f3685b011d6aad45bbcffb772d87340, type: 2}
   componentManager: {fileID: 1091811117}
 --- !u!70 &1091811119
 CapsuleCollider2D:
@@ -8433,7 +8440,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091811114}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e68bdb1e26e907498768dbeca9d120e, type: 3}
   m_Name: 
@@ -13950,6 +13957,7 @@ MonoBehaviour:
   - {fileID: 1409358634}
   - {fileID: 1409358631}
   - {fileID: 1409358630}
+  autoSetupEntity: 0
 --- !u!114 &1409358636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15407,6 +15415,50 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 20}
   m_EdgeRadius: 0
+--- !u!1 &1863261100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1863261102}
+  - component: {fileID: 1863261101}
+  m_Layer: 0
+  m_Name: Danger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1863261101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863261100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d9befa8a257144db233035db8d0911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1863261102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863261100}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.14, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2055835680}
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1871981019
 GameObject:
   m_ObjectHideFlags: 0
@@ -15804,6 +15856,107 @@ SpriteRenderer:
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 3.13, y: 1.92}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &2055835679
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2055835680}
+  - component: {fileID: 2055835682}
+  - component: {fileID: 2055835681}
+  m_Layer: 0
+  m_Name: DangerIcon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2055835680
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055835679}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_Children: []
+  m_Father: {fileID: 1863261102}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2055835681
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055835679}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f004d8adac1fd0f41a1cb36be9725280, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!212 &2055835682
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055835679}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 9
+  m_Sprite: {fileID: 21300000, guid: ebfac7f476635874ea49c71e23038984, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.5, y: 0.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

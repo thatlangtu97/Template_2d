@@ -16,11 +16,10 @@ public static class GameComponentsLookup {
     public const int PlayerFlag = 5;
     public const int Power = 6;
     public const int ProjectileContainer = 7;
-    public const int SkeletonMecanim = 8;
-    public const int StateMachineContainer = 9;
-    public const int TakeDamage = 10;
+    public const int StateMachineContainer = 8;
+    public const int TakeDamage = 9;
 
-    public const int TotalComponents = 11;
+    public const int TotalComponents = 10;
 
     public static readonly string[] componentNames = {
         "BehaviourTree",
@@ -31,7 +30,6 @@ public static class GameComponentsLookup {
         "PlayerFlag",
         "Power",
         "ProjectileContainer",
-        "SkeletonMecanim",
         "StateMachineContainer",
         "TakeDamage"
     };
@@ -44,7 +42,6 @@ public static class GameComponentsLookup {
         typeof(PlayerFlagComponent),
         typeof(PowerComponent),
         typeof(ProjectileContainerComponent),
-        typeof(SkeletonMecanimComponent),
         typeof(StateMachineContainerComponent),
         typeof(TakeDamageComponent)
     };

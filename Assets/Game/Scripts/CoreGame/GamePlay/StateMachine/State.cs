@@ -150,6 +150,8 @@ namespace Core.GamePlay
     {
         
     }
+
+    public virtual bool IsFinishDuration { get; }
 }
 
 }

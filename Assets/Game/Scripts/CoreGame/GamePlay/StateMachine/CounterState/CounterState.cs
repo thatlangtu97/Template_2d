@@ -28,8 +28,8 @@ namespace Core.GamePlay
 
         void Counter(object obj)
         {
-            StateMachineController smc= obj as StateMachineController;
-            if(smc == controller)
+            DataDamageTake dt = obj as DataDamageTake;
+            if(dt.source == controller)
                 if (controller.currentNameState == NameState.CounterState)
                 {
                     successCounter = true;
@@ -82,6 +82,23 @@ namespace Core.GamePlay
             PlayAnim(currentState);
             duration = currentState.durationAnimation;
             ResetEvent();
+        }
+    }
+
+    public class DataDamageTake
+    {
+        public StateMachineController source;
+        public StateMachineController target;
+
+        public DataDamageTake()
+        {
+            
+        }
+
+        public DataDamageTake(StateMachineController s, StateMachineController t)
+        {
+            source = s;
+            target = t;
         }
     }
 }

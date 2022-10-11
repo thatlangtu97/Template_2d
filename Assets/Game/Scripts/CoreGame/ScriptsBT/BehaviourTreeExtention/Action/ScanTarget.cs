@@ -15,18 +15,28 @@ namespace Core.AI
         public Vector2 positionFoward;
         public LayerMask layerTarget;
         public Color colorGizmo = Color.red;
+        public float timeHoldTarget = 1f;
+        private float triggerHoldTarget;
         public override void OnStart()
         {
             base.OnStart();
             Collider2D[] cols = null;
-            cols = Physics2D.OverlapBoxAll((Vector2)component.Value.transform.position + new Vector2(component.Value.transform.right.x * positionFoward.x, component.Value.transform.right.y * positionFoward.y), boxScan, 0, layerTarget);
+            cols = Physics2D.OverlapBoxAll((Vector2)component.Value.transform.position + new Vector2(component.Value.transform.right.x * positionFoward.x, /*component.Value.transform.right.y * */positionFoward.y), boxScan, 0, layerTarget);
             if (cols != null && cols.Length > 0)
             {
                 target.Value = cols[0].transform;
             }
             else
             {
-                target.Value = null;
+                if (target.Value != null)
+                {
+                    triggerHoldTarget+= Time.deltaTime;
+                    if (triggerHoldTarget >= timeHoldTarget)
+                    {
+                        triggerHoldTarget = 0;
+                        target.Value = null;
+                    }
+                }
             }
 
         }
@@ -35,7 +45,8 @@ namespace Core.AI
         {
             base.OnDrawGizmos();
             Gizmos.color = colorGizmo;
-            Gizmos.DrawWireCube((Vector2)component.Value.transform.position + new Vector2(component.Value.transform.right.x * positionFoward.x, component.Value.transform.right.y * positionFoward.y), boxScan);
+            Gizmos.DrawWireCube((Vector2)component.Value.transform.position + new Vector2(component.Value.transform.right.x * positionFoward.x, /*component.Value.transform.right.y * */ positionFoward.y), boxScan);
+            
         }
     }
 

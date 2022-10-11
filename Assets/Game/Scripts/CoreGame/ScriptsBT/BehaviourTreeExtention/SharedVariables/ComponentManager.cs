@@ -36,7 +36,8 @@ namespace Core.GamePlay
     [FoldoutGroup("PROPERTIES")] public Vector2 boxCheckGround;
     [ShowInInspector]
     public List<AutoAddComponent> AutoAdds = new List<AutoAddComponent>();
-    
+
+    public bool autoSetupEntity;
     [Button("FIND AUTO ADD COMPONENT", ButtonSizes.Gigantic), GUIColor(0.4f, 0.8f, 1),]
     void FindComponentEntitas()
     { 
@@ -64,6 +65,13 @@ namespace Core.GamePlay
         CloneImune();
 //        SetupAnim(animator);
     }
+
+    private void Start()
+    {
+        if(autoSetupEntity)
+            SetupEntity();
+    }
+
     public void CloneImune()
     {
         currentImunes = baseImmunes.Clone();

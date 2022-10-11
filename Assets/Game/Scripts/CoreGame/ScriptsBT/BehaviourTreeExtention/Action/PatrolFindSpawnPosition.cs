@@ -11,11 +11,33 @@ namespace Core.AI
     {
         public SharedComponentManager component;
         public SharedVector2 spawnPosition;
+        public bool spawnGround;
         public override void OnStart()
         {
             base.OnStart();
-            spawnPosition.Value = component.Value.transform.position;
+            
 
+        }
+
+        public override TaskStatus OnUpdate()
+        {
+            if (spawnGround)
+            {
+                if (component.Value.IsGround)
+                {
+                    spawnPosition.Value = component.Value.transform.position;
+                    return TaskStatus.Success;
+                }
+                else
+                {
+                    return TaskStatus.Running;
+                }
+            }
+            else
+            {
+                spawnPosition.Value = component.Value.transform.position;
+                return TaskStatus.Success;
+            }
         }
     }
    

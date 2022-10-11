@@ -16,6 +16,7 @@ namespace Core.AI
         {
             base.OnStart();
             component.Value.vectorMove = (target.Value.transform.position - component.Value.transform.position).normalized;
+            component.Value.stateMachine.OnInputMove();
         }
     }
 

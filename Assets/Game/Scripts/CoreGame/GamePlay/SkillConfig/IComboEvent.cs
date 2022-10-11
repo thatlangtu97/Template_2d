@@ -2,7 +2,6 @@
 using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
-using Spine;
 using Object = System.Object;
 
 namespace Core.GamePlay
