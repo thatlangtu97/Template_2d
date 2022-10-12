@@ -33,7 +33,13 @@ namespace Core.GamePlay
                 if (controller.currentNameState == NameState.CounterState)
                 {
                     successCounter = true;
-                    
+                    HitStopManager.DefaultSlowMotion();
+                    if (idState + 1 < eventCollectionData.Count)
+                    {
+                        idState += 1;
+                        counted = true;
+                        Cast();
+                    }
                 }
         }
         public override void UpdateState()
@@ -42,31 +48,45 @@ namespace Core.GamePlay
             controller.componentManager.rgbody2D.velocity = new Vector2(currentState.curveX.Evaluate(timeTrigger) * controller.transform.right.x,currentState.curveY.Evaluate(timeTrigger) + controller.componentManager.rgbody2D.velocity.y );
             if (timeTrigger >= duration)
             {
-                if (!successCounter || counted )
+//                if (!successCounter || counted )
+//                {
+//                    if (controller.componentManager.IsGround)
+//                    {
+//                        if (controller.componentManager.vectorMove != Vector2.zero)
+//                        {
+//                            controller.ChangeState(NameState.MoveState);
+//                            return;
+//                        }
+//
+//                        controller.ChangeState(NameState.IdleState);
+//                    }
+//                    else
+//                    {
+//                        controller.ChangeState(NameState.FallingState);
+//                    }
+//                }
+//                else
+//                {
+//                    if (idState + 1 < eventCollectionData.Count)
+//                    {
+//                        idState += 1;
+//                        counted = true;
+//                        Cast();
+//                    }
+//                }
+                if (controller.componentManager.IsGround)
                 {
-                    if (controller.componentManager.IsGround)
+                    if (controller.componentManager.vectorMove != Vector2.zero)
                     {
-                        if (controller.componentManager.vectorMove != Vector2.zero)
-                        {
-                            controller.ChangeState(NameState.MoveState);
-                            return;
-                        }
+                        controller.ChangeState(NameState.MoveState);
+                        return;
+                    }
 
-                        controller.ChangeState(NameState.IdleState);
-                    }
-                    else
-                    {
-                        controller.ChangeState(NameState.FallingState);
-                    }
+                    controller.ChangeState(NameState.IdleState);
                 }
                 else
                 {
-                    if (idState + 1 < eventCollectionData.Count)
-                    {
-                        idState += 1;
-                        counted = true;
-                        Cast();
-                    }
+                    controller.ChangeState(NameState.FallingState);
                 }
             }
         }

@@ -427,8 +427,8 @@ public class ColliderEvent : IComboEvent
                                 
                             }
                         }
-                        if(cols.Length>0)
-                            HitStopManager.HitStop();
+//                        if(cols.Length>0)
+//                            HitStopManager.HitStop();
                     }
 #if UNITY_EDITOR
                     GizmoDrawerTool.instance.draw(point, sizeBox, GizmoDrawerTool.colliderType.Box,angle);
@@ -487,8 +487,8 @@ public class ColliderEvent : IComboEvent
                                 }  
                             }
                         }
-                        if(cols.Length>0)
-                            HitStopManager.HitStop();
+//                        if(cols.Length>0)
+//                            HitStopManager.HitStop();
                     }
                     
                 }
@@ -834,6 +834,49 @@ public class ShakeCamera : IComboEvent
     public void OnEventTrigger(GameEntity entity)
     {
         CameraController.Shake(strength,duration);
+    }
+    public void Recycle()
+    {
+
+    }
+
+    public void OnUpdateTrigger()
+    {
+        
+    }
+}
+#endregion
+
+#region SLOW MOTION
+public class SlowMotionCamera : IComboEvent
+{
+    [FoldoutGroup("SLOW MOTION")]
+    [ReadOnly]
+    public int idEvent;
+
+    [FoldoutGroup("SLOW MOTION")] 
+    public float timeTriggerEvent;
+
+    [FoldoutGroup("SLOW MOTION")] 
+    public float duration;
+    
+    [FoldoutGroup("SLOW MOTION")] 
+    public float startValue;
+    
+    [FoldoutGroup("SLOW MOTION")] 
+    public float endValue;
+
+    [FoldoutGroup("SLOW MOTION")] 
+    public float stepValue;
+    
+
+    
+    public int id { get { return idEvent; } set { idEvent = value; } }
+    public float timeTrigger { get { return timeTriggerEvent; } }
+    
+    public void OnEventTrigger(GameEntity entity)
+    {
+        HitStopManager.HitStop(duration, startValue , endValue, stepValue);
     }
     public void Recycle()
     {

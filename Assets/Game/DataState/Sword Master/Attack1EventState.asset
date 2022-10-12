@@ -17,7 +17,6 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 8300000, guid: 5fcd43ed24811444f93ed7283b0d067d, type: 3}
-    - {fileID: 4352969145355502840, guid: f5aba6cc0d50ea04e8721b5a0e2df5d5, type: 3}
     - {fileID: 8300000, guid: 26e2ed6d23974004cae0f2f107d52f57, type: 3}
     - {fileID: 8300000, guid: bb8058ad4903df040850acbd4a5dbf9a, type: 3}
     SerializedBytesString: 
@@ -253,8 +252,8 @@ MonoBehaviour:
       Entry: 4
       Data: 0.5
     - Name: Prefab
-      Entry: 10
-      Data: 1
+      Entry: 6
+      Data: 
     - Name: localPosition
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
@@ -345,6 +344,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: targetHitPhaseData
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -359,7 +361,7 @@ MonoBehaviour:
       Data: 0
     - Name: clip
       Entry: 10
-      Data: 2
+      Data: 1
     - Name: volume
       Entry: 4
       Data: 1
@@ -452,7 +454,7 @@ MonoBehaviour:
       Data: 0
     - Name: clip
       Entry: 10
-      Data: 3
+      Data: 2
     - Name: volume
       Entry: 4
       Data: 1

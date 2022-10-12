@@ -25,6 +25,7 @@ public class HitStopManager : MonoBehaviour
     public float slowdownTime = 0f;
     public float slowMotionValue = 0.1f;
     public float checkPointTimeScale = 0.4f;
+    public float stepValue=0.02f;
     private float tempTimeScale;
     private void Update()
     {
@@ -35,23 +36,46 @@ public class HitStopManager : MonoBehaviour
             //tempTimeScale = 1f;
             Time.timeScale = tempTimeScale;
         }
-        Time.fixedDeltaTime = Time.timeScale * 0.02f;
+        Time.fixedDeltaTime = Time.timeScale * stepValue;
     }
 
     public void ActionHitStop()
     {
         Time.timeScale = slowMotionValue;
         tempTimeScale = slowMotionValue;
-        Time.fixedDeltaTime = Time.timeScale * 0.02f;
+        Time.fixedDeltaTime = Time.timeScale * stepValue;
     }
 
+    public void ActionHitStop(float slowdownTime , float slowMotionValue, float checkPointTimeScale, float stepValue)
+    {
+        this.slowdownTime = slowdownTime;
+        this.slowMotionValue = slowMotionValue;
+        this.checkPointTimeScale = checkPointTimeScale;
+        ActionHitStop();
+
+    }
+
+    public void SlowMotion(float slowdownTime , float slowMotionValue, float checkPointTimeScale, float stepValue)
+    {
+        ActionHitStop(slowdownTime, slowMotionValue, checkPointTimeScale, stepValue);
+    }
     public void ActionSlowmotion()
     {
         
     }
 
-    public static void HitStop()
+//    public static void HitStop()
+//    {
+//        Instance.ActionHitStop();
+//    }
+
+    public static void HitStop(float slowdownTime , float slowMotionValue , float checkPointTimeScale, float stepValue)
     {
-        Instance.ActionHitStop();
+        Instance.ActionHitStop(slowdownTime, slowMotionValue, checkPointTimeScale , stepValue);
+    }
+
+    public static void DefaultSlowMotion()
+    {
+        Instance.SlowMotion(.5f, .05f, .2f, 0.01f);
     }
 }
