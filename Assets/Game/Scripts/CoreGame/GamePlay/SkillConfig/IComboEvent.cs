@@ -336,8 +336,7 @@ public class ColliderEvent : IComboEvent
 //    [FoldoutGroup("COLLIDER EVENT")]
 //    [ShowIf("useColliderComponent")] 
 //    public bool useAngle;
-    
-    [FoldoutGroup("COLLIDER EVENT")] 
+     
     [ShowIf("useColliderComponent")] 
     public GameObject prefab;
     
@@ -346,7 +345,18 @@ public class ColliderEvent : IComboEvent
 
     [LabelText("ON HIT PHASE")] 
     [FoldoutGroup("COLLIDER EVENT")]
+    [BoxGroup("SOURCE")]
+    [Title("Source when cast success", "", TitleAlignments.Centered)]
+    [HideReferenceObjectPicker]
     public HitPhase hitPhaseData = new HitPhase();
+    
+    [LabelText("ON HIT PHASE")] 
+    
+    [FoldoutGroup("COLLIDER EVENT")]
+    [BoxGroup("TARGET")]
+    [Title("Target when hit", "", TitleAlignments.Centered)]
+    [HideReferenceObjectPicker]
+    public HitPhase targetHitPhaseData = new HitPhase();
     
     private GameObject col;
     private int countCast;
@@ -410,6 +420,10 @@ public class ColliderEvent : IComboEvent
                                 DealDmgManager.DealDamage(componentManager.entity, entity,damageInfoSend);
                                 if(hitPhaseData!=null)
                                     EventUpdate.SetEvent(hitPhaseData.hitPhaseEvents, entity);
+                                if (targetHitPhaseData != null)
+                                {
+                                    EventUpdate.SetEvent(targetHitPhaseData.hitPhaseEvents,componentManager.entity);
+                                }
                                 
                             }
                         }
@@ -465,8 +479,12 @@ public class ColliderEvent : IComboEvent
                                 DamageInfoSend damageInfoSend =new DamageInfoSend(damageInfoEventTemp, damageProperties, action);
                                 //DealDmgManager.DealDamage(col, entity, damageInfoSend);
                                 DealDmgManager.DealDamage(componentManager.entity, entity, damageInfoSend);
-                                    if(hitPhaseData!=null)
-                                EventUpdate.SetEvent(hitPhaseData.hitPhaseEvents, entity);
+                                if(hitPhaseData!=null)
+                                    EventUpdate.SetEvent(hitPhaseData.hitPhaseEvents, entity);
+                                if (targetHitPhaseData != null)
+                                {
+                                    EventUpdate.SetEvent(targetHitPhaseData.hitPhaseEvents,componentManager.entity);
+                                }  
                             }
                         }
                         if(cols.Length>0)
@@ -831,6 +849,7 @@ public class ShakeCamera : IComboEvent
 
 public class HitPhase
 {
+    [HideReferenceObjectPicker]
     public List<IComboEvent> hitPhaseEvents = new List<IComboEvent>();
     [Button("ACCEPT MODIFY",ButtonSizes.Gigantic), GUIColor(0.4f, 0.8f, 1),]
 
@@ -849,5 +868,6 @@ public class HitPhase
             hitPhaseEvents = new List<IComboEvent>();
         }
     }
+    public HitPhase (){}
 }
 }
