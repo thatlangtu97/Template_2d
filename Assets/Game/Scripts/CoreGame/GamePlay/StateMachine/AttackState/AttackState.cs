@@ -8,6 +8,7 @@ namespace Core.GamePlay
     public class AttackState : State
     {
         public List<float> timeBuffers = new List<float>();
+        public List<CheckTarget> checkTargets = new List<CheckTarget>(); 
         private EventCollection currentState;
         private float duration;
         private bool bufferAttack;
@@ -19,12 +20,15 @@ namespace Core.GamePlay
             if (timeBuffers.Count < eventCollectionData.Count)
             {
                 timeBuffers.Add(0f);
+                checkTargets.Add(new CheckTarget());
             }
             else
             {
                 if (timeBuffers.Count > eventCollectionData.Count)
                 {
-                    timeBuffers.RemoveAt(timeBuffers.Count-1);
+                    int index = timeBuffers.Count - 1;
+                    timeBuffers.RemoveAt(index);
+                    checkTargets.RemoveAt(index);
                 }
             }
         }
@@ -37,6 +41,11 @@ namespace Core.GamePlay
         {
             base.UpdateState();
             controller.componentManager.rgbody2D.velocity = new Vector2(currentState.curveX.Evaluate(timeTrigger) * controller.transform.right.x,currentState.curveY.Evaluate(timeTrigger) + controller.componentManager.rgbody2D.velocity.y );
+            
+            if(checkTargets[idState].CanStop(controller.transform))
+                controller.componentManager.rgbody2D.velocity = new Vector2(0,currentState.curveY.Evaluate(timeTrigger) + controller.componentManager.rgbody2D.velocity.y);
+            
+            
             if (timeTrigger >= duration)
             {
                 if (bufferAttack)
@@ -88,6 +97,26 @@ namespace Core.GamePlay
             ResetEvent();
         }
     }
+    [System.Serializable]
+    public class CheckTarget
+    {
+        public bool useCheck;
+        public float distance = 0.1f;
+        public LayerMask layerStop;
 
+        public bool CanStop(Transform transform)
+        {
+             
+             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, distance, layerStop);
+             if (hit.collider.transform != null)
+             {
+                 return true;
+             }
+             else
+             {
+                 return false;
+             }
+        }
+    }
 }
 

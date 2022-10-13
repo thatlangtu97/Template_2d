@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b6d3eb2417d382459149b5f4e76b277, type: 3}
-  m_Name: AttackState
+  m_Script: {fileID: 11500000, guid: 43a4a4c2d1bb3ca4ca3241eb1e2aa058, type: 3}
+  m_Name: UnknowState
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -26,11 +26,5 @@ MonoBehaviour:
   idState: 0
   Immunes: 
   eventCollectionData:
-  - {fileID: 11400000, guid: 2b4e62a61749ca44ea0d9417d9dd4525, type: 2}
-  - {fileID: 11400000, guid: 10773394e5026ac4680d07082444e6d3, type: 2}
-  - {fileID: 11400000, guid: 2836034a108fe5947b2b036e2fcc8d73, type: 2}
-  timeBuffers:
-  - 0
-  - 0
-  - 0
-  checkTargets: []
+  - {fileID: 11400000, guid: a31206c85564a0443a4b8cde96422edb, type: 2}
+  - {fileID: 11400000, guid: 6c1b0e08d7c64494b808b6d29e60270f, type: 2}
