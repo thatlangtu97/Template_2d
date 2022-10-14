@@ -27,7 +27,18 @@ namespace Core.GamePlay
                 if (timeBuffers.Count > eventCollectionData.Count)
                 {
                     int index = timeBuffers.Count - 1;
-                    timeBuffers.RemoveAt(index);
+                    checkTargets.RemoveAt(index);
+                }
+            }
+            if (checkTargets.Count < eventCollectionData.Count)
+            {
+                checkTargets.Add(new CheckTarget());
+            }
+            else
+            {
+                if (checkTargets.Count > eventCollectionData.Count)
+                {
+                    int index = checkTargets.Count - 1;
                     checkTargets.RemoveAt(index);
                 }
             }
@@ -37,12 +48,27 @@ namespace Core.GamePlay
             base.EnterState();
             Cast();
         }
+
+        public bool CanStop(Transform transform)
+        {
+            if (checkTargets.Count <= idState) return false;
+            if (!checkTargets[idState].useCheck) return false;
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right,checkTargets[idState].distance, checkTargets[idState].layerStop);
+            if (hit.collider.transform != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public override void UpdateState()
         {
             base.UpdateState();
             controller.componentManager.rgbody2D.velocity = new Vector2(currentState.curveX.Evaluate(timeTrigger) * controller.transform.right.x,currentState.curveY.Evaluate(timeTrigger) + controller.componentManager.rgbody2D.velocity.y );
             
-            if(checkTargets[idState].CanStop(controller.transform))
+            if(CanStop(controller.transform))
                 controller.componentManager.rgbody2D.velocity = new Vector2(0,currentState.curveY.Evaluate(timeTrigger) + controller.componentManager.rgbody2D.velocity.y);
             
             
@@ -100,23 +126,14 @@ namespace Core.GamePlay
     [System.Serializable]
     public class CheckTarget
     {
+        [BoxGroup]
         public bool useCheck;
+        [BoxGroup]
         public float distance = 0.1f;
+        [BoxGroup]
         public LayerMask layerStop;
 
-        public bool CanStop(Transform transform)
-        {
-             
-             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, distance, layerStop);
-             if (hit.collider.transform != null)
-             {
-                 return true;
-             }
-             else
-             {
-                 return false;
-             }
-        }
+
     }
 }
 
