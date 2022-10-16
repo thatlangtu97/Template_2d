@@ -22,8 +22,8 @@ TagManager:
   - DmgBoxEnemy
   - BackGround
   - PlatForm
-  - 
-  - 
+  - HitBoxEnemy
+  - HitBoxPlayer
   - 
   - 
   - 

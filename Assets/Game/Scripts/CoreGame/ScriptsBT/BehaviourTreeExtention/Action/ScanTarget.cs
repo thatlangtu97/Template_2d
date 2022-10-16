@@ -45,7 +45,8 @@ namespace Core.AI
         {
             base.OnDrawGizmos();
             Gizmos.color = colorGizmo;
-            Gizmos.DrawWireCube((Vector2)component.Value.transform.position + new Vector2(component.Value.transform.right.x * positionFoward.x, /*component.Value.transform.right.y * */ positionFoward.y), boxScan);
+            if(component!=null && component.Value!=null)
+                Gizmos.DrawWireCube((Vector2)component.Value.transform.position + new Vector2(component.Value.transform.right.x * positionFoward.x, /*component.Value.transform.right.y * */ positionFoward.y), boxScan);
             
         }
     }

@@ -16,7 +16,8 @@ namespace Core.GamePlay
 }
 public enum TypeComponent
 {
-    MeshRenderer,
+    Renderer,
+    Collider,
     
 }
 public enum TypeSpawn
@@ -113,12 +114,20 @@ public class EnableComponent : IComboEvent
     {
         switch (Component)
         {
-            case TypeComponent.MeshRenderer:
+            case TypeComponent.Renderer:
                 GameObject render  = entity.stateMachineContainer.value.componentManager.render ;
                 if (render != null)
                 {
                     render.GetComponent<SpriteRenderer>().enabled = enable;
                 }
+                break;
+            case TypeComponent.Collider:
+                Collider2D colider = entity.stateMachineContainer.value.componentManager.collider;
+                if (colider)
+                {
+                    colider.enabled = enable;
+                }
+
                 break;
         }
     }
@@ -382,7 +391,6 @@ public class ColliderEvent : IComboEvent
                 if (useColliderComponent)
                 {
                     countDuration = 0;
-                    //col = ObjectPool.Spawn(prefab);
                     col = PoolManager.Spawn(prefab);
                     damageCollider = col.GetComponent<DamageCollider>();
                     damageCollider.SetCollider(typeCast, sizeBox, entity.power.value, damageInfoEvent, entity);
@@ -406,17 +414,15 @@ public class ColliderEvent : IComboEvent
                                 int damageProperties = entity.power.value;
                                 DamageInfoEvent damageInfoEventTemp = new DamageInfoEvent(damageInfoEvent);
                                 damageInfoEventTemp.forcePower = damageInfoEvent.forcePower * direction;
-                                //ComponentManager componentManager = col.GetComponent<ComponentManager>();
-                                ComponentManager componentManager =
-                                    ComponentManagerUtils.GetComponentByInstanceId(col.gameObject.GetInstanceID());
+                                
+                                HitBoxComponent hitBox =ComponentManagerUtils.GetHitBoxByInstanceId(col.gameObject.GetInstanceID());
+                                ComponentManager componentManager = hitBox.component;
                                 void Action()
                                 {
                                     componentManager.rgbody2D.velocity = new Vector2(0,componentManager.rgbody2D.velocity.y);
                                     componentManager.rgbody2D.AddForceAtPosition(damageInfoEventTemp.forcePower, col.transform.position);
-                                    //col.GetComponent<Rigidbody2D>().AddForceAtPosition(damageInfoEventTemp.forcePower, col.transform.position);
                                 }
                                 DamageInfoSend damageInfoSend = new DamageInfoSend(damageInfoEventTemp,damageProperties,Action);
-                                //DealDmgManager.DealDamage(col, entity,damageInfoSend);
                                 DealDmgManager.DealDamage(componentManager.entity, entity,damageInfoSend);
                                 if(hitPhaseData!=null)
                                     EventUpdate.SetEvent(hitPhaseData.hitPhaseEvents, entity);
@@ -427,8 +433,6 @@ public class ColliderEvent : IComboEvent
                                 
                             }
                         }
-//                        if(cols.Length>0)
-//                            HitStopManager.HitStop();
                     }
 #if UNITY_EDITOR
                     GizmoDrawerTool.instance.draw(point, sizeBox, GizmoDrawerTool.colliderType.Box,angle);
@@ -442,7 +446,6 @@ public class ColliderEvent : IComboEvent
                 if (useColliderComponent)
                 {
                     countDuration = 0;
-                    //col = ObjectPool.Spawn(prefab);
                     col = PoolManager.Spawn(prefab);
                     
                     damageCollider = col.GetComponent<DamageCollider>();
@@ -467,17 +470,15 @@ public class ColliderEvent : IComboEvent
                                 int damageProperties = entity.power.value;
                                 DamageInfoEvent damageInfoEventTemp = new DamageInfoEvent(damageInfoEvent);
                                 damageInfoEventTemp.forcePower = damageInfoEvent.forcePower * direction;
-                                //ComponentManager componentManager = col.GetComponent<ComponentManager>();
-                                ComponentManager componentManager =
-                                    ComponentManagerUtils.GetComponentByInstanceId(col.gameObject.GetInstanceID());
+                                HitBoxComponent hitBox =ComponentManagerUtils.GetHitBoxByInstanceId(col.gameObject.GetInstanceID());
+                                ComponentManager componentManager = hitBox.component;
+                                
                                 Action action = delegate
                                 {
                                     componentManager.rgbody2D.velocity = new Vector2(0,componentManager.rgbody2D.velocity.y);
                                     componentManager.rgbody2D.AddForceAtPosition(damageInfoEventTemp.forcePower, col.transform.position);
-                                    //col.GetComponent<Rigidbody2D>().AddForceAtPosition(damageInfoEventTemp.forcePower, col.transform.position);
                                 };
                                 DamageInfoSend damageInfoSend =new DamageInfoSend(damageInfoEventTemp, damageProperties, action);
-                                //DealDmgManager.DealDamage(col, entity, damageInfoSend);
                                 DealDmgManager.DealDamage(componentManager.entity, entity, damageInfoSend);
                                 if(hitPhaseData!=null)
                                     EventUpdate.SetEvent(hitPhaseData.hitPhaseEvents, entity);
@@ -487,8 +488,6 @@ public class ColliderEvent : IComboEvent
                                 }  
                             }
                         }
-//                        if(cols.Length>0)
-//                            HitStopManager.HitStop();
                     }
                     
                 }

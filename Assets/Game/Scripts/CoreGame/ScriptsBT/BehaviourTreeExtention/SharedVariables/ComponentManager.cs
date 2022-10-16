@@ -25,6 +25,7 @@ namespace Core.GamePlay
     [HideInInspector]
     [FoldoutGroup("REFERENCE")] public DamageInfoEvent damageInfoEvent;
     [FoldoutGroup("REFERENCE")] public GameObject render;
+    [FoldoutGroup("REFERENCE")] public Collider2D collider;
     //[FoldoutGroup("BUFFER")] public float speedMove ;
     [FoldoutGroup("BUFFER")] public Vector2 vectorMove ;
     [ShowInInspector]
@@ -49,6 +50,15 @@ namespace Core.GamePlay
         }
     }
     
+    private void OnValidate()
+    {
+        var components = GetComponentsInChildren<AutoAddComponent>();
+        foreach (var component in components)
+        {
+            if(AutoAdds.Contains(component)) continue;
+            AutoAdds.Add(component);
+        }
+    }
     public void DisableBehavior()
     {
         enableAI = false;

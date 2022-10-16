@@ -11,7 +11,7 @@ namespace Core.GamePlay
         static Dictionary<int, ProjectileComponent> projectileComponentByInstanceId = new Dictionary<int, ProjectileComponent>();
         static Dictionary<int, ComponentManager> componentByInstanceId = new Dictionary<int, ComponentManager>();
         static Dictionary<int, Rigidbody2D> rigidbodyByInstanceId = new Dictionary<int, Rigidbody2D>();
-
+        static Dictionary<int, HitBoxComponent> hitBoxComponents = new Dictionary<int, HitBoxComponent>();
         public static void AddComponent(ComponentManager component)
         {
             int instanceId = component.gameObject.GetInstanceID();
@@ -34,6 +34,15 @@ namespace Core.GamePlay
             if (!rigidbodyByInstanceId.Keys.Contains(instanceId))
             {
                 rigidbodyByInstanceId.Add(instanceId,component);
+            }
+        }
+        
+        public static void AddComponent(HitBoxComponent component)
+        {
+            int instanceId = component.gameObject.GetInstanceID();
+            if (!hitBoxComponents.Keys.Contains(instanceId))
+            {
+                hitBoxComponents.Add(instanceId,component);
             }
         }
         public static void ResetAll()
@@ -63,9 +72,13 @@ namespace Core.GamePlay
         {
             return componentByInstanceId[id];
         }
-        public static Rigidbody2D getRigidbodyByInstanceId(int id)
+        public static Rigidbody2D GetRigidbodyByInstanceId(int id)
         {
             return rigidbodyByInstanceId[id];
+        }
+        public static HitBoxComponent GetHitBoxByInstanceId(int id)
+        {
+            return hitBoxComponents[id];
         }
     }
 
