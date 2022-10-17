@@ -28,3 +28,4 @@ MonoBehaviour:
   eventCollectionData:
   - {fileID: 11400000, guid: a31206c85564a0443a4b8cde96422edb, type: 2}
   - {fileID: 11400000, guid: 6c1b0e08d7c64494b808b6d29e60270f, type: 2}
+  - {fileID: 11400000, guid: 691626c118f8a0044a9a1be79bcbcaa0, type: 2}

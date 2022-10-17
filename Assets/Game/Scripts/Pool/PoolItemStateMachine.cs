@@ -18,7 +18,6 @@ public class PoolItemStateMachine : PoolItem
 
     public override void Spawn()
     {
-        stateMachine.componentManager.DisableBehavior();
         GetComponent<Rigidbody2D>().isKinematic = false;
     }
 

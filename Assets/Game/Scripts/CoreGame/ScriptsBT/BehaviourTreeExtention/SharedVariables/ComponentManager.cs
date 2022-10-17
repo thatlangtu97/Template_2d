@@ -14,23 +14,27 @@ namespace Core.GamePlay
 {
     public class ComponentManager : MonoBehaviour
 {
-    [HideInInspector]
-    [FoldoutGroup("REFERENCE")] public Transform enemy;
+
+    [ChildGameObjectsOnly]
     [FoldoutGroup("REFERENCE")] public StateMachineController stateMachine;
+    [ChildGameObjectsOnly]
     [FoldoutGroup("REFERENCE")] public Rigidbody2D rgbody2D;
+    [ChildGameObjectsOnly]
     [FoldoutGroup("REFERENCE")] public Animator animator;
     [HideInInspector]
     [FoldoutGroup("REFERENCE")] public EntityLink link;
     [FoldoutGroup("REFERENCE")] public GameEntity entity;
     [HideInInspector]
     [FoldoutGroup("REFERENCE")] public DamageInfoEvent damageInfoEvent;
+    
+    [ChildGameObjectsOnly]
     [FoldoutGroup("REFERENCE")] public GameObject render;
+    
+    [ChildGameObjectsOnly]
     [FoldoutGroup("REFERENCE")] public Collider2D collider;
-    //[FoldoutGroup("BUFFER")] public float speedMove ;
     [FoldoutGroup("BUFFER")] public Vector2 vectorMove ;
     [ShowInInspector]
     [FoldoutGroup("BUFFER")] public List<Immune> currentImunes= new List<Immune>();
-    [FoldoutGroup("BUFFER")] public bool enableAI;
     [FoldoutGroup("PROPERTIES")] public float maxSpeedMove = 2f;
     [FoldoutGroup("PROPERTIES")] public List<Immune> baseImmunes = new List<Immune>();
     [FoldoutGroup("PROPERTIES")] public LayerMask layerMaskGround;
@@ -58,15 +62,6 @@ namespace Core.GamePlay
             if(AutoAdds.Contains(component)) continue;
             AutoAdds.Add(component);
         }
-    }
-    public void DisableBehavior()
-    {
-        enableAI = false;
-    }
-
-    public void EnableBehavior()
-    {
-        enableAI = true;
     }
     private void Awake()
     {
@@ -96,7 +91,6 @@ namespace Core.GamePlay
         {
             component.AddComponent(entity);
         }
-        DisableBehavior();
     }
     private void OnDisable()
     {
@@ -104,7 +98,6 @@ namespace Core.GamePlay
         {
             return;
         }
-        DisableBehavior();
         DestroyEntity();
     }
     public void PingPong()

@@ -27,6 +27,7 @@ namespace Core.GamePlay
         
         
         [FoldoutGroup("State To Clone")] public List<StateClone> States;
+        [ChildGameObjectsOnly]
         [FoldoutGroup("Referen")] public ComponentManager componentManager;
         private void Awake()
         {
