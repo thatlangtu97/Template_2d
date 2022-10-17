@@ -45,7 +45,7 @@ MonoBehaviour:
       Data: UnityEngine.LayerMask, UnityEngine.CoreModule
     - Name: 
       Entry: 3
-      Data: 4096
+      Data: 131072
     - Name: 
       Entry: 8
       Data: 
@@ -343,6 +343,9 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 8
+      Data: 
+    - Name: targetHitPhaseData
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8

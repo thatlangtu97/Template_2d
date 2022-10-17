@@ -308,10 +308,6 @@ public class ColliderEvent : IComboEvent
     [ShowIf("typeCast", ColliderCast.Circle)]
     public float radius;
 
-//    [FoldoutGroup("COLLIDER EVENT")]
-//    [ShowIf("useAngle")]
-//    public float angleCollider;
-
     [FoldoutGroup("COLLIDER EVENT")]
     public bool castByTime;
 
@@ -331,23 +327,19 @@ public class ColliderEvent : IComboEvent
     [ShowIf("castByTime")]
     public int maxCastByTime;
 
-    [FoldoutGroup("COLLIDER EVENT")]
-    public bool useColliderComponent;
-    
-    [FoldoutGroup("COLLIDER EVENT")] 
-    [ShowIf("useColliderComponent")] 
-    public float duration;
-    
-    [FoldoutGroup("COLLIDER EVENT")] 
-    [ShowIf("useColliderComponent")] 
-    public bool setParen;
-    
 //    [FoldoutGroup("COLLIDER EVENT")]
+//    public bool useColliderComponent;
+//    
+//    [FoldoutGroup("COLLIDER EVENT")] 
 //    [ShowIf("useColliderComponent")] 
-//    public bool useAngle;
-     
-    [ShowIf("useColliderComponent")] 
-    public GameObject prefab;
+//    public float duration;
+    
+//    [FoldoutGroup("COLLIDER EVENT")] 
+//    [ShowIf("useColliderComponent")] 
+//    public bool setParen;
+
+//    [ShowIf("useColliderComponent")] 
+//    public GameObject prefab;
     
     [FoldoutGroup("COLLIDER EVENT")] 
     public DamageInfoEvent damageInfoEvent;
@@ -367,10 +359,10 @@ public class ColliderEvent : IComboEvent
     [HideReferenceObjectPicker]
     public HitPhase targetHitPhaseData = new HitPhase();
     
-    private GameObject col;
+//    private GameObject col;
     private int countCast;
     private float countDuration;
-    private DamageCollider damageCollider;
+//    private DamageCollider damageCollider;
     
     public int id { get { return idEvent; } set { idEvent = value; } }
     public float timeTrigger { get { return timeTriggerEvent; } }
@@ -388,20 +380,20 @@ public class ColliderEvent : IComboEvent
                 point = transform.position + new Vector3((localPosition.x + (sizeBox.x / 2f)) * (transform.right.x>=0? 1f : -1f), localPosition.y, localPosition.z);
                 
                 float angle  = transform.right.x > 0 ? 0f : 180f;
-                if (useColliderComponent)
-                {
-                    countDuration = 0;
-                    col = PoolManager.Spawn(prefab);
-                    damageCollider = col.GetComponent<DamageCollider>();
-                    damageCollider.SetCollider(typeCast, sizeBox, entity.power.value, damageInfoEvent, entity);
-                    col.transform.position = point;
-                    if (setParen)
-                    {
-                        col.transform.parent = transform;
-                    }
-                }
-                else
-                {
+//                if (useColliderComponent)
+//                {
+//                    countDuration = 0;
+//                    col = PoolManager.Spawn(prefab);
+//                    damageCollider = col.GetComponent<DamageCollider>();
+//                    damageCollider.SetCollider(typeCast, sizeBox, entity.power.value, damageInfoEvent, entity);
+//                    col.transform.position = point;
+//                    if (setParen)
+//                    {
+//                        col.transform.parent = transform;
+//                    }
+//                }
+//                else
+//                {
                     cols = Physics2D.OverlapBoxAll(point, sizeBox, angle, layerMaskEnemy);
                     if (cols != null)
                     {
@@ -437,28 +429,28 @@ public class ColliderEvent : IComboEvent
 #if UNITY_EDITOR
                     GizmoDrawerTool.instance.draw(point, sizeBox, GizmoDrawerTool.colliderType.Box,angle);
 #endif
-                }
+//                }
                 break;
             
             case ColliderCast.Circle:
                 point = transform.position + new Vector3(localPosition.x * transform.localScale.x, localPosition.y, localPosition.z);
                 
-                if (useColliderComponent)
-                {
-                    countDuration = 0;
-                    col = PoolManager.Spawn(prefab);
-                    
-                    damageCollider = col.GetComponent<DamageCollider>();
-                    int damageProperties = entity.power.value;
-                    damageCollider.SetCollider(typeCast, radius, damageProperties, damageInfoEvent, entity);
-                    col.transform.position = point;
-                    if (setParen)
-                    {
-                        col.transform.parent = transform;
-                    }
-                }
-                else
-                {
+//                if (useColliderComponent)
+//                {
+//                    countDuration = 0;
+//                    col = PoolManager.Spawn(prefab);
+//                    
+//                    damageCollider = col.GetComponent<DamageCollider>();
+//                    int damageProperties = entity.power.value;
+//                    damageCollider.SetCollider(typeCast, radius, damageProperties, damageInfoEvent, entity);
+//                    col.transform.position = point;
+//                    if (setParen)
+//                    {
+//                        col.transform.parent = transform;
+//                    }
+//                }
+//                else
+//                {
                     cols = Physics2D.OverlapCircleAll(point, radius, layerMaskEnemy);
                     if (cols != null)
                     {
@@ -490,7 +482,7 @@ public class ColliderEvent : IComboEvent
                         }
                     }
                     
-                }
+//                }
 #if UNITY_EDITOR
                 GizmoDrawerTool.instance.draw(point, new Vector3(radius,0f,0f), GizmoDrawerTool.colliderType.Circle,0);
 #endif
@@ -510,20 +502,20 @@ public class ColliderEvent : IComboEvent
             }
         }
 
-        if (useColliderComponent)
-        {
-            countDuration += Time.deltaTime;
-            if (countDuration > duration)
-            {
-                if (col)
-                {
-                    damageCollider.Recycle();
-                    //ObjectPool.Recycle(col);
-                    PoolManager.Recycle(col);
-                }
-                    
-            }
-        }
+//        if (useColliderComponent)
+//        {
+//            countDuration += Time.deltaTime;
+//            if (countDuration > duration)
+//            {
+//                if (col)
+//                {
+//                    damageCollider.Recycle();
+//                    //ObjectPool.Recycle(col);
+//                    PoolManager.Recycle(col);
+//                }
+//                    
+//            }
+//        }
     }
 
     public void Recycle()
@@ -535,12 +527,12 @@ public class ColliderEvent : IComboEvent
             countCast = 0;
         }
 
-        if (col)
-        {
-            damageCollider.Recycle();
-            //ObjectPool.Recycle(col);
-            PoolManager.Recycle(col);
-        }
+//        if (col)
+//        {
+//            damageCollider.Recycle();
+//            //ObjectPool.Recycle(col);
+//            PoolManager.Recycle(col);
+//        }
     }
 }
 #endregion
