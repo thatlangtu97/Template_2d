@@ -343,19 +343,20 @@ public class ColliderEvent : IComboEvent
     
     [FoldoutGroup("COLLIDER EVENT")] 
     public DamageInfoEvent damageInfoEvent;
-
-    [LabelText("ON HIT PHASE")] 
-    [FoldoutGroup("COLLIDER EVENT")]
+    
+//    [FoldoutGroup("COLLIDER EVENT")]
     [BoxGroup("SOURCE")]
     [Title("Source when cast success", "", TitleAlignments.Centered)]
+    [GUIColor(0.3f, 0.8f, 0.8f, 1f)]
     [HideReferenceObjectPicker]
     public HitPhase hitPhaseData = new HitPhase();
     
     [LabelText("ON HIT PHASE")] 
     
-    [FoldoutGroup("COLLIDER EVENT")]
+//    [FoldoutGroup("COLLIDER EVENT")]
     [BoxGroup("TARGET")]
     [Title("Target when hit", "", TitleAlignments.Centered)]
+    [GUIColor(1, 0.6f, 0.4f)]
     [HideReferenceObjectPicker]
     public HitPhase targetHitPhaseData = new HitPhase();
     

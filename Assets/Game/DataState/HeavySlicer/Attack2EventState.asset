@@ -98,18 +98,6 @@ MonoBehaviour:
     - Name: maxCastByTime
       Entry: 3
       Data: 0
-    - Name: useColliderComponent
-      Entry: 5
-      Data: false
-    - Name: duration
-      Entry: 4
-      Data: 0
-    - Name: setParen
-      Entry: 5
-      Data: false
-    - Name: prefab
-      Entry: 6
-      Data: 
     - Name: damageInfoEvent
       Entry: 7
       Data: 2|Core.GamePlay.DamageInfoEvent, Assembly-CSharp
@@ -135,17 +123,49 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: hitPhaseData
-      Entry: 6
+      Entry: 7
+      Data: 3|Core.GamePlay.HitPhase, Assembly-CSharp
+    - Name: hitPhaseEvents
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[Core.GamePlay.IComboEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: targetHitPhaseData
-      Entry: 6
+      Entry: 7
+      Data: 5|Core.GamePlay.HitPhase, Assembly-CSharp
+    - Name: hitPhaseEvents
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[Core.GamePlay.IComboEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 3|Core.GamePlay.SpawnGameObject, Assembly-CSharp
+      Data: 7|Core.GamePlay.SpawnGameObject, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 100
@@ -241,7 +261,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 4|Core.GamePlay.SpawnGameObject, Assembly-CSharp
+      Data: 8|Core.GamePlay.SpawnGameObject, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 200

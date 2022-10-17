@@ -99,18 +99,6 @@ MonoBehaviour:
     - Name: maxCastByTime
       Entry: 3
       Data: 0
-    - Name: useColliderComponent
-      Entry: 5
-      Data: false
-    - Name: duration
-      Entry: 4
-      Data: 0
-    - Name: setParen
-      Entry: 5
-      Data: false
-    - Name: prefab
-      Entry: 6
-      Data: 
     - Name: damageInfoEvent
       Entry: 7
       Data: 2|Core.GamePlay.DamageInfoEvent, Assembly-CSharp
@@ -136,17 +124,49 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: hitPhaseData
-      Entry: 6
+      Entry: 7
+      Data: 3|Core.GamePlay.HitPhase, Assembly-CSharp
+    - Name: hitPhaseEvents
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[Core.GamePlay.IComboEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: targetHitPhaseData
-      Entry: 6
+      Entry: 7
+      Data: 5|Core.GamePlay.HitPhase, Assembly-CSharp
+    - Name: hitPhaseEvents
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[Core.GamePlay.IComboEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 3|Core.GamePlay.PlaySound, Assembly-CSharp
+      Data: 7|Core.GamePlay.PlaySound, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 100
@@ -179,10 +199,10 @@ MonoBehaviour:
       Data: 0
     - Name: curveVolume
       Entry: 7
-      Data: 4|UnityEngine.AnimationCurve, UnityEngine.CoreModule
+      Data: 8|UnityEngine.AnimationCurve, UnityEngine.CoreModule
     - Name: 
       Entry: 7
-      Data: 5|UnityEngine.Keyframe[], UnityEngine.CoreModule
+      Data: 9|UnityEngine.Keyframe[], UnityEngine.CoreModule
     - Name: 
       Entry: 12
       Data: 1
@@ -239,7 +259,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|Core.GamePlay.PlaySound, Assembly-CSharp
+      Data: 10|Core.GamePlay.PlaySound, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 200
@@ -272,10 +292,10 @@ MonoBehaviour:
       Data: 0
     - Name: curveVolume
       Entry: 7
-      Data: 7|UnityEngine.AnimationCurve, UnityEngine.CoreModule
+      Data: 11|UnityEngine.AnimationCurve, UnityEngine.CoreModule
     - Name: 
       Entry: 7
-      Data: 8|UnityEngine.Keyframe[], UnityEngine.CoreModule
+      Data: 12|UnityEngine.Keyframe[], UnityEngine.CoreModule
     - Name: 
       Entry: 12
       Data: 1
