@@ -18,6 +18,8 @@ MonoBehaviour:
     ReferencedUnityObjects:
     - {fileID: 8300000, guid: 5fcd43ed24811444f93ed7283b0d067d, type: 3}
     - {fileID: 8300000, guid: 98861660e77d0014484d0c831e326b36, type: 3}
+    - {fileID: 1103464484556320335, guid: 9573684b03d561549a6dc073a8823bea, type: 3}
+    - {fileID: 6248087401434533543, guid: 3208d6770e621c34b9612028e2359bbf, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -29,7 +31,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 3
     - Name: 
       Entry: 7
       Data: 1|Core.GamePlay.ColliderEvent, Assembly-CSharp
@@ -44,7 +46,7 @@ MonoBehaviour:
       Data: UnityEngine.LayerMask, UnityEngine.CoreModule
     - Name: 
       Entry: 3
-      Data: 131072
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -344,6 +346,81 @@ MonoBehaviour:
     - Name: 
       Entry: 3
       Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|Core.GamePlay.InteractiveGrassWind, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 200
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0
+    - Name: duration
+      Entry: 4
+      Data: 0.25
+    - Name: localPosition
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: mode
+      Entry: 3
+      Data: 2
+    - Name: FoliageObj
+      Entry: 10
+      Data: 2
+    - Name: space
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: FoliageObjRigidbody2D
+      Entry: 10
+      Data: 3
+    - Name: velocity
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 2
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: scale
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.25
     - Name: 
       Entry: 8
       Data: 

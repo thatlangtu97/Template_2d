@@ -2,6 +2,7 @@
 using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using Object = System.Object;
 
 namespace Core.GamePlay
@@ -882,6 +883,98 @@ public class SlowMotionCamera : IComboEvent
 }
 #endregion
 
+#region INTERACTIVE GRASS
+public class InteractiveGrassWind : IComboEvent
+{
+
+
+    [FoldoutGroup("INTERACTIVE GRASS")]
+    [ReadOnly]
+    public int idEvent;
+
+    [FoldoutGroup("INTERACTIVE GRASS")] 
+    public float timeTriggerEvent;
+
+    [FoldoutGroup("INTERACTIVE GRASS")] 
+    public float duration;
+    
+    
+    [FoldoutGroup("INTERACTIVE GRASS")] 
+    public Vector3 localPosition;
+    [FoldoutGroup("INTERACTIVE GRASS")] 
+    public Aarthificial.PixelGraphics.Common.VelocityEmitter.EmitterMode mode;
+    
+    [FoldoutGroup("INTERACTIVE GRASS")] 
+    [ShowIf("mode", Aarthificial.PixelGraphics.Common.VelocityEmitter.EmitterMode.Translation)] 
+    public GameObject FoliageObj = Resources.Load<GameObject>("FoliageTranslation");
+    
+    [FoldoutGroup("INTERACTIVE GRASS")] 
+    [ShowIf("mode", Aarthificial.PixelGraphics.Common.VelocityEmitter.EmitterMode.Translation)] 
+    public Vector2 space;
+    [FoldoutGroup("INTERACTIVE GRASS")] 
+    [ShowIf("mode", Aarthificial.PixelGraphics.Common.VelocityEmitter.EmitterMode.Rigidbody2D)] 
+    public GameObject FoliageObjRigidbody2D = Resources.Load<GameObject>("FoliageRigidbody2D");
+    
+    [FoldoutGroup("INTERACTIVE GRASS")] 
+    [ShowIf("mode", Aarthificial.PixelGraphics.Common.VelocityEmitter.EmitterMode.Rigidbody2D)] 
+    public Vector2 velocity;
+    
+    [FoldoutGroup("INTERACTIVE GRASS")] 
+    public Vector2 scale = new Vector2(.1f,.1f);
+//    [FoldoutGroup("INTERACTIVE GRASS")] 
+//    public float endValue;
+//
+//    [FoldoutGroup("INTERACTIVE GRASS")] 
+//    public float stepValue;
+    
+//    public  AnimationCurve remapping = AnimationCurve.Linear(0, 0, 1, 1);
+    
+    public int id { get { return idEvent; } set { idEvent = value; } }
+    public float timeTrigger { get { return timeTriggerEvent; } }
+    
+    private GameObject _foliageObj;
+    public void OnEventTrigger(GameEntity entity)
+    {
+        Transform transform = entity.stateMachineContainer.value.transform;
+        switch (mode)
+        {
+            case Aarthificial.PixelGraphics.Common.VelocityEmitter.EmitterMode.Rigidbody2D:
+                if (FoliageObjRigidbody2D)
+                {
+                    _foliageObj = PoolManager.Spawn(FoliageObjRigidbody2D, null, transform.position + localPosition, Quaternion.identity);
+                    Vector2 _velocity = new Vector2(velocity.x * transform.right.x , velocity.y * transform.right.y);
+                    _foliageObj.transform.localScale = scale;
+                    _foliageObj.GetComponent<Rigidbody2D>().velocity = _velocity;
+                    
+                }
+                break;
+            case Aarthificial.PixelGraphics.Common.VelocityEmitter.EmitterMode.Translation:
+                if (FoliageObj)
+                {
+                    _foliageObj = PoolManager.Spawn(FoliageObj, null, transform.position  + localPosition, Quaternion.identity);
+                    Vector2 endPosition = new Vector2(transform.position.x + localPosition.x + transform.right.x * space.x, transform.position.y + localPosition.y + transform.right.y * space.y);
+                    _foliageObj.transform.localScale = scale;
+                    _foliageObj.transform.DOMove(endPosition, duration);
+                }
+                break;   
+                
+        }
+        if(_foliageObj)
+            PoolManager.Recycle(_foliageObj, duration);
+       
+    }
+    public void Recycle()
+    {
+        
+    }
+
+    public void OnUpdateTrigger()
+    {
+        
+    }
+}
+#endregion
+
 public class HitPhase
 {
     [HideReferenceObjectPicker]
@@ -906,3 +999,4 @@ public class HitPhase
     public HitPhase (){}
 }
 }
+
