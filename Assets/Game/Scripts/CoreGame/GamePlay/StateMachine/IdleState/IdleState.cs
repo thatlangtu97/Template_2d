@@ -19,6 +19,11 @@ namespace Core.GamePlay
             {
                 controller.ChangeState(NameState.MoveState);
             }
+
+            if (!controller.componentManager.IsGround)
+            {
+                controller.ChangeState(NameState.FallingState);
+            }
             
         }
         public override void ExitState()
