@@ -41,6 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Projectile
+  - name: MapBehind
     uniqueID: 1485561897
+    locked: 0
+  - name: MapCenter
+    uniqueID: 1496528053
+    locked: 0
+  - name: Character
+    uniqueID: 1620572135
+    locked: 0
+  - name: Effect
+    uniqueID: 805342323
+    locked: 0
+  - name: MapFirstLayer
+    uniqueID: 918425557
     locked: 0
