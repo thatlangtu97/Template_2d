@@ -29,26 +29,26 @@ public class DamageTextSystem : ReactiveSystem<GameEntity>
     }
     protected override void Execute(List<GameEntity> entities)
     {
-        //Debug.Log(entities.Count);
-        foreach (GameEntity entity in entities)
-        {
-            //DamageTextView damageTextView = ObjectPool.instance.SpawnDamageText();
-            //DamageTextView damageTextView = ObjectPool.SpawnNotDeactive(textprefab);
-            if(textprefab==null) return;
-            
-            DamageTextView damageTextView = PoolManager.Spawn<DamageTextView>(textprefab.gameObject,entity.damageText.position);
-            
-            if (damageTextView == null) return;
-            
-            damageTextView.text = entity.damageText.value;
-            damageTextView.color = DamageTextManager.GetColor(entity.damageText.damageTextType);
-            //damageTextView.transform.position = entity.damageText.position;
-            damageTextView.transform.DOMove(damageTextView.transform.position + new Vector3(0f,.3f,0f),.4f);
-            damageTextView.PlayAnim();
-            PoolManager.Recycle(damageTextView.gameObject,.5f);
-            //ObjectPool.instance.RecycleDamageText(damageTextView);
-            PoolManager.RecycleEntity(entity);
-        }
+//        //Debug.Log(entities.Count);
+//        foreach (GameEntity entity in entities)
+//        {
+//            //DamageTextView damageTextView = ObjectPool.instance.SpawnDamageText();
+//            //DamageTextView damageTextView = ObjectPool.SpawnNotDeactive(textprefab);
+//            if(textprefab==null) return;
+//            
+//            DamageTextView damageTextView = PoolManager.Spawn<DamageTextView>(textprefab.gameObject,entity.damageText.position);
+//            
+//            if (damageTextView == null) return;
+//            
+//            damageTextView.text = entity.damageText.value;
+//            damageTextView.color = DamageTextManager.GetColor(entity.damageText.damageTextType);
+//            //damageTextView.transform.position = entity.damageText.position;
+//            damageTextView.transform.DOMove(damageTextView.transform.position + new Vector3(0f,.3f,0f),.4f);
+//            damageTextView.PlayAnim();
+//            PoolManager.Recycle(damageTextView.gameObject,.5f);
+//            //ObjectPool.instance.RecycleDamageText(damageTextView);
+//            PoolManager.RecycleEntity(entity);
+//        }
     }
 
 }
