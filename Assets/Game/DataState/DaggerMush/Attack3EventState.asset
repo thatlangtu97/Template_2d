@@ -38,7 +38,7 @@ MonoBehaviour:
       Data: 0
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.6
+      Data: 0.4
     - Name: layerMaskEnemy
       Entry: 7
       Data: UnityEngine.LayerMask, UnityEngine.CoreModule
@@ -359,7 +359,7 @@ MonoBehaviour:
   typeAnim: 1
   NameTrigger: Attack3
   timeStart: 0
-  durationAnimation: 1
+  durationAnimation: 0.58
   curveX:
     serializedVersion: 2
     m_Curve: []

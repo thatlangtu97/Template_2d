@@ -178,7 +178,7 @@ MonoBehaviour:
       Data: UnityEngine.LayerMask, UnityEngine.CoreModule
     - Name: 
       Entry: 3
-      Data: 2048
+      Data: 262144
     - Name: 
       Entry: 8
       Data: 
