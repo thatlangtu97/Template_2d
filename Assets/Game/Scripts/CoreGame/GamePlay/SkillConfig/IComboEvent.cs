@@ -20,6 +20,7 @@ public enum TypeComponent
     Renderer,
     Collider,
     HPBar,
+    BehaviourTree,
     
 }
 public enum TypeSpawn
@@ -135,6 +136,22 @@ public class EnableComponent : IComboEvent
                 if (entity.hasHPBar)
                 {
                     entity.hPBar.value.gameObject.SetActive(enable);
+                }
+
+                break;
+            case TypeComponent.BehaviourTree:
+                BehaviorDesigner.Runtime.BehaviorTree bt = entity.stateMachineContainer.value
+                    .GetComponent<BehaviorDesigner.Runtime.BehaviorTree>();
+                if (bt != null)
+                {
+                    if (!enable)
+                    {
+                        bt.DisableBehavior();
+                    }
+                    else
+                    {
+                        bt.EnableBehavior();
+                    }
                 }
 
                 break;

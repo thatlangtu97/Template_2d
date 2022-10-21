@@ -16,7 +16,7 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 8300000, guid: d90b84553ffcb1e49aa59c9d020f8781, type: 3}
+    - {fileID: 8300000, guid: d7669b3cdc3829b4b92a923f8d8770ff, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -43,13 +43,13 @@ MonoBehaviour:
       Data: 0
     - Name: volume
       Entry: 4
-      Data: 1
+      Data: 0.3
     - Name: loop
       Entry: 5
       Data: false
     - Name: pitch
       Entry: 4
-      Data: 1.36
+      Data: 1.3
     - Name: useStop
       Entry: 5
       Data: false

@@ -812,7 +812,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &70261019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1269,6 +1269,8 @@ MonoBehaviour:
     StateToClone: {fileID: 11400000, guid: f4facbf3646698541845dcaf55fa025a, type: 2}
   - NameState: 0
     StateToClone: {fileID: 11400000, guid: 2f3685b011d6aad45bbcffb772d87340, type: 2}
+  - NameState: 1
+    StateToClone: {fileID: 11400000, guid: cc5e0af5fea0c2645864c332668abf21, type: 2}
   componentManager: {fileID: 70261025}
 --- !u!4 &70261027
 Transform:
@@ -1285,7 +1287,7 @@ Transform:
   - {fileID: 259089082}
   - {fileID: 2007550096}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &70261028
 MonoBehaviour:
@@ -11149,7 +11151,7 @@ Transform:
   m_GameObject: {fileID: 585102086}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 419978081}
   m_RootOrder: 0
@@ -11933,7 +11935,7 @@ Transform:
   m_GameObject: {fileID: 610142325}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2007550096}
   m_RootOrder: 0
@@ -12813,7 +12815,7 @@ Transform:
   m_GameObject: {fileID: 651522353}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 654761699}
   m_RootOrder: 0
@@ -14116,7 +14118,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &731795220
 GameObject:
@@ -17655,6 +17657,8 @@ MonoBehaviour:
     StateToClone: {fileID: 11400000, guid: 9307e4738d88c8f41adfecd0750ea46c, type: 2}
   - NameState: 6
     StateToClone: {fileID: 11400000, guid: 13f814af8e1f7f944b25d0d13acf0f27, type: 2}
+  - NameState: 1
+    StateToClone: {fileID: 11400000, guid: 4ffb57459a2f0bb4d85e0ff726aafc48, type: 2}
   componentManager: {fileID: 901104712}
 --- !u!4 &901104714
 Transform:
@@ -23895,7 +23899,7 @@ Transform:
   m_Children:
   - {fileID: 62939577}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1269803237
 GameObject:
@@ -27216,7 +27220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!50 &1446725871
 Rigidbody2D:
   serializedVersion: 4
@@ -32599,6 +32603,8 @@ MonoBehaviour:
     StateToClone: {fileID: 11400000, guid: 850d3f251c71ca84299aab9a0ef266e6, type: 2}
   - NameState: 6
     StateToClone: {fileID: 11400000, guid: 0bfc93dc91d52f34a841f1ef91ada21c, type: 2}
+  - NameState: 1
+    StateToClone: {fileID: 11400000, guid: fc1f20f76b5cf8342b6a7437f728fa6f, type: 2}
   componentManager: {fileID: 1712886897}
 --- !u!4 &1712886899
 Transform:
@@ -37949,7 +37955,7 @@ Transform:
   m_GameObject: {fileID: 1946248192}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1644606679}
   m_RootOrder: 0
@@ -40126,6 +40132,8 @@ MonoBehaviour:
     StateToClone: {fileID: 11400000, guid: bb6e103b38025dc4d809b1a09cfdc921, type: 2}
   - NameState: 0
     StateToClone: {fileID: 11400000, guid: 51b48c30b7a00c041b8a2209d556f8f2, type: 2}
+  - NameState: 1
+    StateToClone: {fileID: 11400000, guid: 579b57ec7dd133b47b90b1399ebe6280, type: 2}
   componentManager: {fileID: 2094127310}
 --- !u!4 &2094127312
 Transform:
