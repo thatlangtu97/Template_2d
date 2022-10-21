@@ -26251,7 +26251,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1464972784
 Transform:
   m_ObjectHideFlags: 0
@@ -26526,8 +26526,7 @@ SpriteRenderer:
   m_SortingLayerID: 1620572135
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2631816233364401133, guid: 7cf57a272cf84e34f84001f5c1f1850a,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0e2e1243fc0df4a48a8ba8fc2ba6358b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -29446,7 +29445,7 @@ Transform:
   m_GameObject: {fileID: 1644606677}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.08, y: 0.22, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1946248193}
   m_Father: {fileID: 2094127312}
@@ -36371,7 +36370,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1946127976
 Transform:
   m_ObjectHideFlags: 0
@@ -38273,7 +38272,7 @@ MonoBehaviour:
         Input State","Instant":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"Component","IsShared":true,"ComponentManagermValue":9},"NameStatenameState":"UnknowState","Int32idState":0,"BooleanforceChangeState":true},{"Type":"Core.AI.StopMove","NodeData":{"Offset":"(-142.2348,150)"},"ID":22,"Name":"Stop
         Move","Instant":true,"SharedComponentManagercomponent":{"Type":"SharedComponentManager","Name":"Component","IsShared":true,"ComponentManagermValue":10}},{"Type":"WaitTimeTask","NodeData":{"Offset":"(-22.2347641,150)"},"ID":23,"Name":"Wait
         Time Task","Instant":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"Component","IsShared":true,"ComponentManagermValue":11},"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5},"BooleanuseRandomWaitTime":false,"SingleminWaitTime":0.6,"SinglemaxWaitTime":1.5},{"Type":"Core.AI.TelePortToForwardTarget","NodeData":{"Offset":"(136.76059,153.272766)"},"ID":24,"Name":"Tele
-        Port To Forward Target","Instant":true,"SharedComponentManagercomponent":{"Type":"SharedComponentManager","Name":"Component","IsShared":true,"ComponentManagermValue":12},"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Target","IsShared":true},"Vector3foward":"(0.5,0,0)"},{"Type":"Core.AI.LookAtTarget","NodeData":{"Offset":"(297.674072,157.457443)"},"ID":25,"Name":"Look
+        Port To Forward Target","Instant":true,"SharedComponentManagercomponent":{"Type":"SharedComponentManager","Name":"Component","IsShared":true,"ComponentManagermValue":12},"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Target","IsShared":true},"Vector3foward":"(0.5,0,0)","LayerMasklayerLimit":0},{"Type":"Core.AI.LookAtTarget","NodeData":{"Offset":"(297.674072,157.457443)"},"ID":25,"Name":"Look
         At Target","Instant":true,"SharedComponentManagercomponent":{"Type":"SharedComponentManager","Name":"Component","IsShared":true,"ComponentManagermValue":13},"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Target","IsShared":true}},{"Type":"Core.AI.ChangeInputState","NodeData":{"Offset":"(437.675262,148.368591)"},"ID":26,"Name":"Change
         Input State","Instant":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"Component","IsShared":true,"ComponentManagermValue":14},"NameStatenameState":"UnknowState","Int32idState":1,"BooleanforceChangeState":true},{"Type":"WaitTimeTask","NodeData":{"Offset":"(571.3965,148.373047)"},"ID":27,"Name":"Wait
         Time Task","Instant":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"Component","IsShared":true,"ComponentManagermValue":15},"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.3},"BooleanuseRandomWaitTime":false,"SingleminWaitTime":0.6,"SinglemaxWaitTime":1.5},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(770.7142,995.1836)","Comment":"Attack1"},"ID":28,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"Core.AI.CheckRange","NodeData":{"Offset":"(-410,150)"},"ID":29,"Name":"Check
@@ -38319,7 +38318,7 @@ MonoBehaviour:
         Time Task","Instant":true,"SharedComponentManagercomponentManager":{"Type":"SharedComponentManager","Name":"Component","IsShared":true,"ComponentManagermValue":53},"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0},"BooleanuseRandomWaitTime":true,"SingleminWaitTime":0.3,"SinglemaxWaitTime":1}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(20,180)"},"ID":77,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(-120,160)"},"ID":78,"Name":"Inverter","Instant":true,"Children":[{"Type":"Core.AI.PatrolCheck","NodeData":{"Offset":"(0,130)"},"ID":79,"Name":"Patrol
         Check","Instant":true,"SharedComponentManagercomponent":{"Type":"SharedComponentManager","Name":"Component","IsShared":true,"ComponentManagermValue":54},"SharedVector2patrolTargetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector2","Name":"PatrolTargetPosition","IsShared":true,"Vector2mValue":"(0,0)"},"SinglerangeStop":0.05}]},{"Type":"BehaviorDesigner.Runtime.Tasks.ReturnSuccess","NodeData":{"Offset":"(60,160)"},"ID":80,"Name":"Return
         Success","Instant":true,"Children":[{"Type":"Core.AI.PatrolStartMove","NodeData":{"Offset":"(0,130)"},"ID":81,"Name":"Patrol
-        Start Move","Instant":true,"SharedComponentManagercomponent":{"Type":"SharedComponentManager","Name":"Component","IsShared":true,"ComponentManagermValue":55},"SharedVector2patrolTargetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector2","Name":"PatrolTargetPosition","IsShared":true,"Vector2mValue":"(0,0)"}}]}]}]}]}]}]}]}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedVector2","Name":"PatrolTargetPosition","IsShared":true,"Vector2mValue":"(0,0)"},{"Type":"BehaviorDesigner.Runtime.SharedVector2","Name":"SpawnPosition","IsShared":true,"Vector2mValue":"(0,0)"},{"Type":"SharedComponentManager","Name":"Component","IsShared":true,"ComponentManagermValue":56},{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Target","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"RangeTarget","IsShared":true,"SinglemValue":0},{"Type":"SharedActionData","Name":"CurrenAction","IsShared":true,"ActionDatamValue":{"Int32index":0,"BooleanisDone":false,"List`1listAction":[0,1,2,3]}}]}'
+        Start Move","Instant":true,"SharedComponentManagercomponent":{"Type":"SharedComponentManager","Name":"Component","IsShared":true,"ComponentManagermValue":55},"SharedVector2patrolTargetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector2","Name":"PatrolTargetPosition","IsShared":true,"Vector2mValue":"(0,0)"}}]}]}]}]}]}]}]}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedVector2","Name":"PatrolTargetPosition","IsShared":true,"Vector2mValue":"(0,0)"},{"Type":"BehaviorDesigner.Runtime.SharedVector2","Name":"SpawnPosition","IsShared":true,"Vector2mValue":"(0,0)"},{"Type":"SharedComponentManager","Name":"Component","IsShared":true,"ComponentManagermValue":56},{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Target","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"RangeTarget","IsShared":true,"SinglemValue":0},{"Type":"SharedActionData","Name":"CurrenAction","IsShared":true,"ActionDatamValue":{"Int32index":0,"BooleanisDone":false,"List`1listAction":[0,1,2,3,4,5]}}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -38519,7 +38518,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094127303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.97, y: -0.682404, z: 0}
+  m_LocalPosition: {x: -0.33000004, y: -0.682404, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1473620182}
