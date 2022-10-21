@@ -28,6 +28,24 @@ MonoBehaviour:
   eventCollectionData:
   - {fileID: 11400000, guid: 385276772276d2b45b1af78d9624c9e2, type: 2}
   - {fileID: 11400000, guid: 16e5250335ab22448bc75aced821df1b, type: 2}
+  - {fileID: 11400000, guid: c8241ca99524fd94cb5fff6e03e4e098, type: 2}
   timeBuffers:
   - 0
   - 0
+  - 0
+  checkTargets:
+  - useCheck: 1
+    distance: 0.3
+    layerStop:
+      serializedVersion: 2
+      m_Bits: 2048
+  - useCheck: 1
+    distance: 0.3
+    layerStop:
+      serializedVersion: 2
+      m_Bits: 2048
+  - useCheck: 1
+    distance: 0.3
+    layerStop:
+      serializedVersion: 2
+      m_Bits: 2048

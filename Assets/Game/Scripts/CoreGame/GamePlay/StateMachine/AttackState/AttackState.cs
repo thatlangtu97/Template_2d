@@ -54,9 +54,16 @@ namespace Core.GamePlay
             if (checkTargets.Count <= idState) return false;
             if (!checkTargets[idState].useCheck) return false;
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right,checkTargets[idState].distance, checkTargets[idState].layerStop);
-            if (hit.collider.transform != null)
+            if (hit.collider != null)
             {
-                return true;
+                if (hit.collider.transform != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {

@@ -55,7 +55,7 @@ MonoBehaviour:
   typeAnim: 1
   NameTrigger: Death
   timeStart: 0
-  durationAnimation: 12.25
+  durationAnimation: 3
   curveX:
     serializedVersion: 2
     m_Curve: []
