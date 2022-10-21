@@ -172,7 +172,7 @@ MonoBehaviour:
       Data: 100
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.8
+      Data: 0.6
     - Name: layerMaskEnemy
       Entry: 7
       Data: UnityEngine.LayerMask, UnityEngine.CoreModule
@@ -399,7 +399,7 @@ MonoBehaviour:
       Data: 300
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.7
+      Data: 0.5
     - Name: clip
       Entry: 10
       Data: 1
@@ -498,7 +498,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.10916111
+      time: 0.06453055
       value: 0
       inSlope: 2.660048
       outSlope: 2.660048
@@ -507,7 +507,7 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 1
     - serializedVersion: 3
-      time: 0.22430345
+      time: 0.1796729
       value: 3
       inSlope: 0
       outSlope: 0
@@ -516,7 +516,7 @@ MonoBehaviour:
       inWeight: 0.9234284
       outWeight: 1
     - serializedVersion: 3
-      time: 0.2442388
+      time: 0.19960824
       value: 0
       inSlope: Infinity
       outSlope: Infinity
@@ -525,7 +525,7 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.6780559
+      time: 0.45809096
       value: 0
       inSlope: 2.1727173
       outSlope: 2.1727173
@@ -534,7 +534,7 @@ MonoBehaviour:
       inWeight: 0.78580004
       outWeight: 1
     - serializedVersion: 3
-      time: 0.7932856
+      time: 0.5733207
       value: 3
       inSlope: -0.00018640564
       outSlope: -0.00018640564
@@ -543,7 +543,7 @@ MonoBehaviour:
       inWeight: 1
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.8207193
+      time: 0.6007544
       value: 0
       inSlope: Infinity
       outSlope: Infinity
