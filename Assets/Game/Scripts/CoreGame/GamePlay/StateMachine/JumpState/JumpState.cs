@@ -60,7 +60,15 @@ namespace Core.GamePlay
 //        public override void OnInputJump()
 //        {
 //            base.OnInputJump();
-//            base.EnterState();
+//            if (doubleJump == false)
+//            {
+//                base.EnterState();
+//                currentState = eventCollectionData[idState];
+//                PlayAnim(currentState);
+//                PingPongJump();
+//                doubleJump = true;
+//            }
+//            
 //
 //        }
     }
