@@ -63,7 +63,12 @@ public class TakeDamageSystem : ReactiveSystem<GameEntity>
             {
                 int damageTake=(int) (damageInfoSend.damageProperties *
                                       damageInfoSend.damageInfoEvent.damageScale);
-                targetEnemy.health.health -= damageTake; 
+                targetEnemy.health.health -= damageTake;
+
+                if (targetEnemy.hasHPBar)
+                {
+                    targetEnemy.hPBar.value.SetValue(   Mathf.Clamp01((float)targetEnemy.health.health/(float)targetEnemy.health.maxHealth));
+                }
                 if (targetEnemy.health.health <= 0)
                 {
                     stateMachine.ChangeState(NameState.DieState);

@@ -2,18 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//public class HpBarAutoAdd : AutoAddComponent
-//{
-//    public HPBarUI prefab;
-//    public bool left;
-//    public override bool AddComponent(GameEntity e)
-//    {
-//        HPBarUI temp = GameUIController.instance.SpawnHPBar(prefab, left);
-//        e.AddHealthBarUI(temp);
-//        return true;
-//    }
-////    public override void CoppyData()
-////    {
-////        base.CoppyData();
-////    }
-//}
+public class HpBarAutoAdd : AutoAddComponent
+{
+    public HPBar prefab;
+    public override bool AddComponent(GameEntity e)
+    {
+        e.AddHPBar(prefab);
+        return true;
+    }
+}

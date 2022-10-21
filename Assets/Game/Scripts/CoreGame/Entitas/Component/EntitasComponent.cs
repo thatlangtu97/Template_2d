@@ -166,6 +166,14 @@ public class BehaviourTreeComponent : IComponent
 //}
 #endregion
 
+#region HPBar
+[Game]
+public class HPBarComponent : IComponent
+{
+    public HPBar value;
+}
+#endregion
+
 
 
 

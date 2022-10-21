@@ -19,6 +19,7 @@ public enum TypeComponent
 {
     Renderer,
     Collider,
+    HPBar,
     
 }
 public enum TypeSpawn
@@ -127,6 +128,13 @@ public class EnableComponent : IComboEvent
                 if (colider)
                 {
                     colider.enabled = enable;
+                }
+            
+                break;
+            case TypeComponent.HPBar:
+                if (entity.hasHPBar)
+                {
+                    entity.hPBar.value.gameObject.SetActive(enable);
                 }
 
                 break;
