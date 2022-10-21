@@ -26,8 +26,8 @@ MonoBehaviour:
   idState: 0
   Immunes: 
   eventCollectionData:
-  - {fileID: 11400000, guid: 6fef5167366ae70448df5f5c3860e7b7, type: 2}
   - {fileID: 11400000, guid: bf1e3ee26b8ca71498983e377e25f4ec, type: 2}
+  - {fileID: 11400000, guid: 6fef5167366ae70448df5f5c3860e7b7, type: 2}
   - {fileID: 11400000, guid: 0345af8aca5d1c34396445c491f7887c, type: 2}
   usePointSpeed: 1
   pointSpeed:

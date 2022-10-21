@@ -97,16 +97,16 @@ MonoBehaviour:
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 2
     min: 0
   scatter:
     m_OverrideState: 0
-    m_Value: 0.587
+    m_Value: 1
     min: 0
     max: 1
   clamp:
     m_OverrideState: 1
-    m_Value: 65456.66
+    m_Value: 10
     min: 0
   tint:
     m_OverrideState: 0

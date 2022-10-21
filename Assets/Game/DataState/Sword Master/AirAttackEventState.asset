@@ -434,7 +434,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   typeAnim: 1
-  NameTrigger: AirAttack
+  NameTrigger: Attack3
   timeStart: 0
   durationAnimation: 0.4
   curveX:

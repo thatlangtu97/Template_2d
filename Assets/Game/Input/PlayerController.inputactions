@@ -155,7 +155,7 @@
                     "name": "",
                     "id": "cfcf24e8-f1f9-4ac6-ad46-47c29e3395ed",
                     "path": "<XInputController>/buttonWest",
-                    "interactions": "Tap",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "AttackInput",
