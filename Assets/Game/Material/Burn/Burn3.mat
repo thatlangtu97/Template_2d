@@ -63,7 +63,7 @@ Material:
     - _BurnEdgeNoiseScale: {r: 0.3, g: 0.16, b: 0, a: 0}
     - _BurnInsideColor: {r: 0.4056604, g: 0.4008263, b: 0.39991993, a: 1}
     - _BurnInsideNoiseColor: {r: 385.50595, g: 180.90634, b: 0, a: 1}
-    - _BurnInsideNoiseScale: {r: 0.36, g: 0.23, b: 0, a: 0}
+    - _BurnInsideNoiseScale: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _BurnPosition: {r: 0, g: 5, b: 0, a: 0}
     - _BurnSwirlNoiseScale: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

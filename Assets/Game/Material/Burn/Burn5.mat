@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Burn4
+  m_Name: Burn5
   m_Shader: {fileID: 4800000, guid: b7b7316d18516bc44b4d9446426135b3, type: 3}
   m_ShaderKeywords: _SHADERSPACE_UV
   m_LightmapFlags: 4
@@ -46,12 +46,12 @@ Material:
     m_Floats:
     - PixelSnap: 0
     - _BurnEdgeNoiseFactor: 8.31
-    - _BurnFade: 0.497
-    - _BurnInsideContrast: 2
+    - _BurnFade: 0.594
+    - _BurnInsideContrast: 1.3
     - _BurnInsideNoiseFactor: 0.05
     - _BurnRadius: 5
     - _BurnSwirlFactor: 1
-    - _BurnWidth: 0
+    - _BurnWidth: 0.5
     - _EnableExternalAlpha: 0
     - _PixelsPerUnit: 100
     - _RectHeight: 100
@@ -59,12 +59,12 @@ Material:
     - _ScreenWidthUnits: 10
     - _ShaderSpace: 0
     m_Colors:
-    - _BurnEdgeColor: {r: 48.188236, g: 4.0156865, b: 0, a: 0}
-    - _BurnEdgeNoiseScale: {r: 0.3, g: 0.16, b: 0, a: 0}
-    - _BurnInsideColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 0}
-    - _BurnInsideNoiseColor: {r: 766.9961, g: 64.250984, b: 0, a: 0}
-    - _BurnInsideNoiseScale: {r: 1, g: 1, b: 0, a: 0}
-    - _BurnPosition: {r: 0, g: 5, b: 0, a: 0}
+    - _BurnEdgeColor: {r: 3.44159, g: 0.34235713, b: 0.054056387, a: 1}
+    - _BurnEdgeNoiseScale: {r: 0.29, g: 0.184, b: 0, a: 0}
+    - _BurnInsideColor: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 0}
+    - _BurnInsideNoiseColor: {r: 771.0119, g: 28.25698, b: 0, a: 1}
+    - _BurnInsideNoiseScale: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - _BurnPosition: {r: 0, g: 11.75, b: 0, a: 0}
     - _BurnSwirlNoiseScale: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
