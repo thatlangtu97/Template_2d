@@ -356,7 +356,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   typeAnim: 1
-  NameTrigger: Spawn
+  NameTrigger: Idle
   timeStart: 0
   durationAnimation: 1.6
   curveX:
