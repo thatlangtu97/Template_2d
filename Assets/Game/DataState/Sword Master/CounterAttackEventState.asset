@@ -136,25 +136,28 @@ MonoBehaviour:
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|Core.GamePlay.SlowMotionCamera, Assembly-CSharp
+      Data: 5|Core.GamePlay.ShakeCamera, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 0
     - Name: timeTriggerEvent
       Entry: 4
       Data: 0
+    - Name: strength
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.3
+    - Name: 
+      Entry: 4
+      Data: 0.3
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: duration
       Entry: 4
-      Data: 0.2
-    - Name: startValue
-      Entry: 4
-      Data: 0
-    - Name: endValue
-      Entry: 4
-      Data: 0.5
-    - Name: stepValue
-      Entry: 4
-      Data: 0.01
+      Data: 0.1
     - Name: 
       Entry: 8
       Data: 
