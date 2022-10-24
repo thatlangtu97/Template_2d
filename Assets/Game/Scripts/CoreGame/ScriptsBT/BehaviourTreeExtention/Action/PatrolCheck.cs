@@ -15,7 +15,8 @@ namespace Core.AI
         public override TaskStatus OnUpdate()
         {
 
-            if (Vector2.Distance(component.Value.transform.position, patrolTargetPosition.Value) <= rangeStop)
+            if(Mathf.Abs(component.Value.transform.position.x - patrolTargetPosition.Value.x)< rangeStop)
+            //if (Vector2.Distance(component.Value.transform.position, patrolTargetPosition.Value) <= rangeStop)
             {
                 return TaskStatus.Success;
             }
