@@ -19,20 +19,19 @@ namespace Core.AI
         public float distanceCheckGround;
         public override TaskStatus OnUpdate()
         {
-            RaycastHit2D hit =  Physics2D.Raycast(component.Value.transform.position , Vector2.down, distanceCheckGround, layerPlatform);
+            
             if (target.Value == null)
             {
-                
-                if (hit.collider == null)
-                    if (inPlatform)
-                    {
-                        Owner.DisableBehavior();
-                        Owner.EnableBehavior();
-                        inPlatform = false;
-                    }
+//                if (hit.collider == null)
+//                    if (inPlatform)
+//                    {
+//                        Owner.DisableBehavior();
+//                        Owner.EnableBehavior();
+//                        inPlatform = false;
+//                    }
                 return TaskStatus.Failure;
             }
-            
+            RaycastHit2D hit =  Physics2D.Raycast(component.Value.transform.position , Vector2.down, distanceCheckGround, layerPlatform);
 
             if (hit.collider != null)
             {
