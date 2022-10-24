@@ -14,7 +14,6 @@ namespace Core.AI
         public SharedTransform target;
         public SharedFloat range;
         public float rangeSuccess;
-        
         public override TaskStatus OnUpdate()
         {
             if (target.Value)
@@ -33,6 +32,8 @@ namespace Core.AI
             {
                 return TaskStatus.Failure;
             }
+
+
         }
     }
 
