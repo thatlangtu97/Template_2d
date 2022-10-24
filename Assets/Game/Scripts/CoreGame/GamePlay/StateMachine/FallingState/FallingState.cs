@@ -46,12 +46,10 @@ namespace Core.GamePlay
             controller.ChangeState(NameState.AirAttackState);
         }
         
-//        public override void OnInputJump()
-//        {
-//            base.OnInputJump();
-//            controller.ChangeState(NameState.JumpState);
-//
-//        }
+        public override void OnInputJump()
+        {
+            controller.ChangeState(NameState.JumpState,1);
+        }
     }
 }
 

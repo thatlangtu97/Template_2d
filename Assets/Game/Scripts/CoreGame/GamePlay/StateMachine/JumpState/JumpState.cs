@@ -30,6 +30,7 @@ namespace Core.GamePlay
                     return;
                 }
                 controller.ChangeState(NameState.FallingState);
+                idState = 0;
 
             }
         }
@@ -57,19 +58,20 @@ namespace Core.GamePlay
             controller.ChangeState(NameState.AirAttackState);
         }
 
+//        private bool doubleJump = false;
 //        public override void OnInputJump()
 //        {
 //            base.OnInputJump();
 //            if (doubleJump == false)
 //            {
 //                base.EnterState();
-//                currentState = eventCollectionData[idState];
+//                if(idState +1 >= eventCollectionData.Count ) return;
+//                
+//                currentState = eventCollectionData[idState+1];
 //                PlayAnim(currentState);
 //                PingPongJump();
 //                doubleJump = true;
 //            }
-//            
-//
 //        }
     }
 }
