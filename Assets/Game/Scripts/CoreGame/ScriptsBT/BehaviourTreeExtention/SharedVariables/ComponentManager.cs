@@ -36,6 +36,7 @@ namespace Core.GamePlay
     [ShowInInspector]
     [FoldoutGroup("BUFFER")] public List<Immune> currentImunes= new List<Immune>();
     [FoldoutGroup("PROPERTIES")] public float maxSpeedMove = 2f;
+    [FoldoutGroup("PROPERTIES")] public bool isDoubleJump = false;
     [FoldoutGroup("PROPERTIES")] public List<Immune> baseImmunes = new List<Immune>();
     [FoldoutGroup("PROPERTIES")] public LayerMask layerMaskGround;
     [FoldoutGroup("PROPERTIES")] public Vector2 boxCheckGround;
@@ -160,6 +161,7 @@ namespace Core.GamePlay
                 layerMaskGround);
             if (hit.collider != null)
             {
+                isDoubleJump = false;
                 return true;
             }
             else

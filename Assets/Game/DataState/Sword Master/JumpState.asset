@@ -28,3 +28,7 @@ MonoBehaviour:
   eventCollectionData:
   - {fileID: 11400000, guid: 0d34aff188e70e14b84c38affe14d156, type: 2}
   - {fileID: 11400000, guid: a0cc5e4dc23a4ce48a510dec62a251c4, type: 2}
+  layerStop:
+    serializedVersion: 2
+    m_Bits: 66048
+  distanceCheck: 0.05

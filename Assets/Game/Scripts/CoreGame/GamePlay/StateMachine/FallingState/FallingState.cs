@@ -9,6 +9,9 @@ namespace Core.GamePlay
     {
         private EventCollection currentState;
         private float duration;
+        
+        public LayerMask layerStop;
+        public float distanceCheck;
         public override void EnterState()
         {
             base.EnterState();
@@ -20,6 +23,12 @@ namespace Core.GamePlay
             base.UpdateState();
             controller.componentManager.Rotate();
             controller.componentManager.rgbody2D.velocity= new Vector2( controller.componentManager.vectorMove.x * controller.componentManager.maxSpeedMove, controller.componentManager.rgbody2D.velocity.y );
+            if (Physics2D.Raycast(controller.transform.position, controller.transform.right, distanceCheck, layerStop)
+                    .collider != null)
+            {
+                controller.componentManager.rgbody2D.velocity = new Vector2(0,controller.componentManager.rgbody2D.velocity.y);
+            }
+            
             if (controller.componentManager.IsGround)
             {
 //                if (controller.componentManager.vectorMove != Vector2.zero)
@@ -48,7 +57,12 @@ namespace Core.GamePlay
         
         public override void OnInputJump()
         {
-            controller.ChangeState(NameState.JumpState,1);
+            if (controller.componentManager.isDoubleJump == false)
+            {
+                base.OnInputJump();
+                controller.ChangeState(NameState.JumpState, 1);
+                controller.componentManager.isDoubleJump = true;
+            }
         }
     }
 }

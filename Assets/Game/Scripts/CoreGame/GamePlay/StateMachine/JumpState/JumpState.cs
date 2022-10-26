@@ -9,7 +9,8 @@ namespace Core.GamePlay
     public class JumpState : State
     {
         private EventCollection currentState;
-
+        public LayerMask layerStop;
+        public float distanceCheck;
         public override void EnterState()
         {
             base.EnterState();
@@ -22,6 +23,13 @@ namespace Core.GamePlay
             base.UpdateState();
             controller.componentManager.Rotate();
             controller.componentManager.rgbody2D.velocity= new Vector2(currentState.curveX.Evaluate(timeTrigger) * controller.componentManager.vectorMove.x * controller.componentManager.maxSpeedMove, currentState.curveY.Evaluate(timeTrigger) );
+
+            if (Physics2D.Raycast(controller.transform.position, controller.transform.right, distanceCheck, layerStop)
+                    .collider != null)
+            {
+                controller.componentManager.rgbody2D.velocity = new Vector2(0,controller.componentManager.rgbody2D.velocity.y);
+            }
+            
             if (timeTrigger > currentState.durationAnimation)
             {
                 if (controller.componentManager.IsGround)
@@ -29,6 +37,7 @@ namespace Core.GamePlay
                     controller.ChangeState(NameState.LandingState);
                     return;
                 }
+                
                 controller.ChangeState(NameState.FallingState);
                 idState = 0;
 
@@ -59,20 +68,20 @@ namespace Core.GamePlay
         }
 
 //        private bool doubleJump = false;
-//        public override void OnInputJump()
-//        {
-//            base.OnInputJump();
-//            if (doubleJump == false)
-//            {
-//                base.EnterState();
-//                if(idState +1 >= eventCollectionData.Count ) return;
-//                
-//                currentState = eventCollectionData[idState+1];
-//                PlayAnim(currentState);
-//                PingPongJump();
-//                doubleJump = true;
-//            }
-//        }
+        public override void OnInputJump()
+        {
+            base.OnInputJump();
+            if (controller.componentManager.isDoubleJump == false)
+            {
+                base.EnterState();
+                if(idState +1 >= eventCollectionData.Count ) return;
+                
+                currentState = eventCollectionData[idState+1];
+                PlayAnim(currentState);
+                PingPongJump();
+                controller.componentManager.isDoubleJump = true;
+            }
+        }
     }
 }
 
