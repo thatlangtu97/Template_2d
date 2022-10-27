@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Com.LuisPedroFonseca.ProCamera2D;
 using Core.GamePlay;
@@ -7,11 +8,17 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
     public Vector2 vMove;
     public ProCamera2D camera2D;
     public float distance;
     public StateMachineController controller;
-    
+
+    public void Awake()
+    {
+        instance = this;
+    }
+
     public void MoveInput(InputAction.CallbackContext context)
     {
         vMove = context.ReadValue<Vector2>();
