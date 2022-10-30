@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Grass1
+  m_Name: Grass3
   m_Shader: {fileID: 4800000, guid: 0803c241834332942abfcbd27c498b46, type: 3}
   m_ShaderKeywords: _ENABLEWIND_ON _SHADERSPACE_UV _TIMESETTINGS_LINEAR_DEFAULT _UBERFADING_NONE
   m_LightmapFlags: 4
@@ -329,10 +329,10 @@ Material:
     - _VibrateRotation: 4
     - _WindFlip: 0
     - _WindIsParallax: 0
-    - _WindMaxRotation: 1
+    - _WindMaxRotation: 1.5
     - _WindRotation: 0
-    - _WindRotationWindFactor: 0.2
-    - _WindSquishFactor: 0.1
+    - _WindRotationWindFactor: 0
+    - _WindSquishFactor: 0.001
     - _WindSquishWindFactor: 0
     - _WindXPosition: 0
     m_Colors:

@@ -484,7 +484,7 @@ MonoBehaviour:
       Data: 0
     - Name: duration
       Entry: 4
-      Data: 0.2
+      Data: 0.3
     - Name: localPosition
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule

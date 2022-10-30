@@ -484,16 +484,16 @@ MonoBehaviour:
       Data: 0
     - Name: duration
       Entry: 4
-      Data: 0.2
+      Data: 0.3
     - Name: localPosition
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: -0.1
+      Data: 0
     - Name: 
       Entry: 4
-      Data: 0.1
+      Data: 0.2
     - Name: 
       Entry: 4
       Data: 0
@@ -502,7 +502,7 @@ MonoBehaviour:
       Data: 
     - Name: mode
       Entry: 3
-      Data: 2
+      Data: 0
     - Name: FoliageObj
       Entry: 10
       Data: 3
@@ -526,7 +526,7 @@ MonoBehaviour:
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 2.5
+      Data: 4
     - Name: 
       Entry: 4
       Data: 0
@@ -538,10 +538,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.15
+      Data: 0.5
     - Name: 
       Entry: 4
-      Data: 0.2
+      Data: 0.15
     - Name: 
       Entry: 8
       Data: 
