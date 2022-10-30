@@ -189,6 +189,7 @@ namespace SpriteShadersUltimate
             else
             {
                 //Fade Out Bending:
+                
                 currentBending -= currentBending * Mathf.Min(bendOutSpeed * Time.fixedDeltaTime,1);
                 UpdateShader();
 
