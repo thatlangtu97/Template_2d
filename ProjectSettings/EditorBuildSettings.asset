@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Game/Scene/TestAnimURP.unity
-    guid: e9fc9cad8422ccb48aa8cc0ccfa4c7d3
+    path: Assets/Game/Scene/TestRoomMap.unity
+    guid: eefe9e9371ecd17459d08a56d5a5d66d
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: f0ffa881d1c3acc4691f89c923b870fa,
       type: 2}

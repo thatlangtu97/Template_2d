@@ -19,7 +19,9 @@ namespace Core.GamePlay
         {
             base.UpdateState();
             controller.componentManager.Rotate();
-            controller.componentManager.rgbody2D.velocity= new Vector2(controller.componentManager.vectorMove.x * controller.componentManager.maxSpeedMove, controller.componentManager.rgbody2D.velocity.y + currentState.curveY.Evaluate(timeTrigger));
+           // controller.componentManager.rgbody2D.velocity= new Vector2(controller.componentManager.vectorMove.x * controller.componentManager.maxSpeedMove, controller.componentManager.rgbody2D.velocity.y + currentState.curveY.Evaluate(timeTrigger));
+            
+            controller.componentManager.rgbody2D.velocity = new Vector2(currentState.curveX.Evaluate(timeTrigger) * controller.transform.right.x,currentState.curveY.Evaluate(timeTrigger)  );
             if (timeTrigger > currentState.durationAnimation)
             {
                 if (controller.componentManager.IsGround)

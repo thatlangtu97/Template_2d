@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using UnityEditor.U2D.Common;
 using UnityEngine;
 
 namespace Core.AI

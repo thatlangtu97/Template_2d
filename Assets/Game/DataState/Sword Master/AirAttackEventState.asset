@@ -555,7 +555,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   typeAnim: 1
-  NameTrigger: Attack3
+  NameTrigger: AirAttack
   timeStart: 0
   durationAnimation: 0.4
   curveX:
@@ -563,7 +563,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 34
@@ -578,7 +578,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.15122087
+      value: 0.027061462
       inSlope: 0.0018426661
       outSlope: 0.0018426661
       tangentMode: 0
@@ -586,22 +586,22 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 1
     - serializedVersion: 3
-      time: 0.040174328
-      value: 0.15122087
-      inSlope: 0.008546756
-      outSlope: 0.008546756
+      time: 0.14080848
+      value: 1.0122116
+      inSlope: -0.10368439
+      outSlope: -0.10368439
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.465988
+      outWeight: 0.14564861
     - serializedVersion: 3
-      time: 0.07404323
-      value: 0
-      inSlope: -16.019438
-      outSlope: -16.019438
+      time: 0.4
+      value: -1
+      inSlope: -0.006139796
+      outSlope: -0.006139796
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.11992766
+      inWeight: 0.10934699
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

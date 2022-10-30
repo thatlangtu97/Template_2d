@@ -67,6 +67,13 @@ public class PlayerController : MonoBehaviour
     {
         vMove = valueJoystick;
         camera2D.CameraTargets[0].TargetTransform = controller.transform;
+        if (camera2D && controller)
+        {
+            float value = 0;
+            value = controller.transform.right.x * distance;
+
+            camera2D.OverallOffset = new Vector2(value,0);
+        }
         if (controller)
         {
             controller.componentManager.vectorMove = vMove;
@@ -74,6 +81,11 @@ public class PlayerController : MonoBehaviour
                 controller.OnInputMove();
         }
 
+
+    }
+
+    private void FixedUpdate()
+    {
         if (camera2D && controller)
         {
             float value = 0;

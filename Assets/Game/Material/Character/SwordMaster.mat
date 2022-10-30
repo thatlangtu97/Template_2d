@@ -8,7 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SwordMaster
-  m_Shader: {fileID: 4800000, guid: b35b92d0d80228a42b12223233c90223, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 5097d4514f1bc2f4e88a282b65af6e52,
+    type: 3}
   m_ShaderKeywords: _SHADERSPACE_UV _TIMESETTINGS_LINEAR_DEFAULT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,6 +20,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_d9a636a7d9734ff29dcbb2bee1725f4f:
+        m_Texture: {fileID: 2800000, guid: 0dd9adc7ac0843a4dbaad62b5c6277d6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _AlphaTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -60,7 +65,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 0dd9adc7ac0843a4dbaad62b5c6277d6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NewTex_1:
@@ -71,11 +76,27 @@ Material:
         m_Texture: {fileID: 2800000, guid: cd21d0de17dcd734691f79979be13330, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_bd809f78c0774cdd8d0362a30d73d102_Texture_1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SourceGlowDissolveNoiseTexture:
         m_Texture: {fileID: 2800000, guid: 058197130346b7446addff001fad0f39, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -153,6 +174,21 @@ Material:
     - _TimeSettings: 0
     - _TimeValue: 0
     m_Colors:
+    - Color_1: {r: 0.63529414, g: 0.5411765, b: 0.17254902, a: 1}
+    - Color_10: {r: 0.04313726, g: 0.04313726, b: 0.04313726, a: 1}
+    - Color_11: {r: 0.8588236, g: 0.7333333, b: 0.2313726, a: 1}
+    - Color_12: {r: 0.1176471, g: 0.07058824, b: 0.06666667, a: 1}
+    - Color_13: {r: 0.07058824, g: 0.04313726, b: 0.03921569, a: 1}
+    - Color_2: {r: 0.45882356, g: 0.3921569, b: 0.1254902, a: 1}
+    - Color_3: {r: 0.043137256, g: 0.043137256, b: 0.043137256, a: 1}
+    - Color_4: {r: 0.11764707, g: 0.07058824, b: 0.06666667, a: 1}
+    - Color_5: {r: 0.8588236, g: 0.73333335, b: 0.23137257, a: 1}
+    - Color_6: {r: 0.07058824, g: 0.043137256, b: 0.039215688, a: 1}
+    - Color_7: {r: 0.9529412, g: 0.9529412, b: 0.9529412, a: 1}
+    - Color_8: {r: 0.6352941, g: 0.5411765, b: 0.172549, a: 1}
+    - Color_80f362fc285e4b4f90089009a0f478de: {r: 0.95294124, g: 0.95294124, b: 0.95294124,
+        a: 1}
+    - Color_9: {r: 0.4588236, g: 0.3921569, b: 0.1254902, a: 1}
     - _AlphaTintColor: {r: 1, g: 0.88013244, b: 0.08962262, a: 0}
     - _BurnEdgeColor: {r: 11.98431, g: 1.129412, b: 0.1254902, a: 0}
     - _BurnEdgeNoiseScale: {r: 5.58, g: 5.71, b: 0, a: 0}
