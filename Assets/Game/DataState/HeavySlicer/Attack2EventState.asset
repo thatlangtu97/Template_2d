@@ -133,7 +133,31 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 5|Core.GamePlay.SlowMotionCamera, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
       Data: 0
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0
+    - Name: duration
+      Entry: 4
+      Data: 0.2
+    - Name: startValue
+      Entry: 4
+      Data: 0
+    - Name: endValue
+      Entry: 4
+      Data: 0.3
+    - Name: stepValue
+      Entry: 4
+      Data: 0.02
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -145,10 +169,10 @@ MonoBehaviour:
       Data: 
     - Name: targetHitPhaseData
       Entry: 7
-      Data: 5|Core.GamePlay.HitPhase, Assembly-CSharp
+      Data: 6|Core.GamePlay.HitPhase, Assembly-CSharp
     - Name: hitPhaseEvents
       Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[Core.GamePlay.IComboEvent, Assembly-CSharp]],
+      Data: 7|System.Collections.Generic.List`1[[Core.GamePlay.IComboEvent, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -167,7 +191,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 7|Core.GamePlay.SpawnGameObject, Assembly-CSharp
+      Data: 8|Core.GamePlay.SpawnGameObject, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 100
@@ -263,7 +287,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 8|Core.GamePlay.SpawnGameObject, Assembly-CSharp
+      Data: 9|Core.GamePlay.SpawnGameObject, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 200
@@ -359,7 +383,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|Core.GamePlay.InteractiveGrassWind, Assembly-CSharp
+      Data: 10|Core.GamePlay.InteractiveGrassWind, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 300

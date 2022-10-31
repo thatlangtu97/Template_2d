@@ -24,7 +24,7 @@ MonoBehaviour:
   controller: {fileID: 0}
   timeTrigger: 0
   idState: 0
-  Immunes: 
+  Immunes: 00000000
   eventCollectionData:
   - {fileID: 11400000, guid: 385276772276d2b45b1af78d9624c9e2, type: 2}
   - {fileID: 11400000, guid: 16e5250335ab22448bc75aced821df1b, type: 2}

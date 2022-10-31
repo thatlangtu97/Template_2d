@@ -8,7 +8,7 @@ namespace Core.GamePlay
     [CreateAssetMenu(fileName = "EventState", menuName = "CoreGame/EventState")]
     public class EventCollection : SerializedScriptableObject
     {
-        public AnimationTypeState typeAnim;
+        public AnimationTypeState typeAnim= AnimationTypeState.PlayAnim;
         public string NameTrigger;
         [ShowIf("typeAnim",AnimationTypeState.PlayAnim)]
         public float timeStart;

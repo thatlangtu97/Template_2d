@@ -99,22 +99,22 @@ public class TakeDamageSystem : ReactiveSystem<GameEntity>
                 
                 }
 
-                Vector3 randomPos = RandomVector[countRandom];
-                Action temp = delegate
-                    {
-                        DamageTextManager.AddReactiveComponent(DamageTextType.Normal, damageTake.ToString(),
-                            position + randomPos);
-                    };
-                addAction(actions, temp, maxAction);
+//                Vector3 randomPos = RandomVector[countRandom];
+//                Action temp = delegate
+//                    {
+//                        DamageTextManager.AddReactiveComponent(DamageTextType.Normal, damageTake.ToString(),
+//                            position + randomPos);
+//                    };
+//                addAction(actions, temp, maxAction);
             }
             else
             {
-                Vector3 randomPos = RandomVector[countRandom];
-                Action temp = delegate
-                {
-                    DamageTextManager.AddReactiveComponent(DamageTextType.Normal,"Block",position + randomPos);
-                };
-                addAction(actions, temp, maxAction);
+//                Vector3 randomPos = RandomVector[countRandom];
+//                Action temp = delegate
+//                {
+//                    DamageTextManager.AddReactiveComponent(DamageTextType.Normal,"Block",position + randomPos);
+//                };
+//                addAction(actions, temp, maxAction);
             }
             countRandom = (countRandom+1) % (RandomVector.Count);
             //ObjectPool.instance.RecycleEntity(myEntity);
@@ -169,7 +169,7 @@ public class TakeDamageSystem : ReactiveSystem<GameEntity>
         while (count<100)
         {
             count += 1;
-            RandomVector.Add(new Vector3(Random.Range(-.5f,.5f),Random.Range(1.5f,2f),0f));
+            RandomVector.Add(new Vector3(Random.Range(-.5f,.5f),Random.Range(.3f,.5f),0f));
         }
     }
 }

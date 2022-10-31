@@ -120,6 +120,13 @@ namespace Core.GamePlay
             bufferAttack = true;
         }
 
+        public override void OnInputDash()
+        {
+            base.OnInputDash();
+            controller.componentManager.Rotate();
+            controller.ChangeState(NameState.DashState);
+        }
+
         void Cast()
         {
             controller.componentManager.Rotate();
