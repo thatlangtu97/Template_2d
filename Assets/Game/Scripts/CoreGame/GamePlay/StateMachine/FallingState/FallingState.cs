@@ -12,30 +12,31 @@ namespace Core.GamePlay
         
         public LayerMask layerStop;
         public float distanceCheck;
+        public Vector3 LocalPosition;
+        public Vector3 SizeBoxCastCheckWall;
         public override void EnterState()
         {
             base.EnterState();
             currentState = eventCollectionData[idState];
             PlayAnim(currentState);
         }
+
+        void Move()
+        {
+            controller.componentManager.Rotate();
+            Vector2 tempVelocity = new Vector2( controller.componentManager.vectorMove.x * controller.componentManager.maxSpeedMove, controller.componentManager.rgbody2D.velocity.y );
+            if(Physics2D.BoxCast(controller.transform.position + LocalPosition,SizeBoxCastCheckWall,0,controller.transform.right,distanceCheck,layerStop).collider != null)
+            {
+                tempVelocity.x =0;
+            }
+            controller.componentManager.rgbody2D.velocity = tempVelocity;
+        }
         public override void UpdateState()
         {
             base.UpdateState();
-            controller.componentManager.Rotate();
-            controller.componentManager.rgbody2D.velocity= new Vector2( controller.componentManager.vectorMove.x * controller.componentManager.maxSpeedMove, controller.componentManager.rgbody2D.velocity.y );
-            if (Physics2D.Raycast(controller.transform.position, controller.transform.right, distanceCheck, layerStop)
-                    .collider != null)
-            {
-                controller.componentManager.rgbody2D.velocity = new Vector2(0,controller.componentManager.rgbody2D.velocity.y);
-            }
-            
+            Move();
             if (controller.componentManager.IsGround)
             {
-//                if (controller.componentManager.vectorMove != Vector2.zero)
-//                {
-//                    controller.ChangeState(NameState.MoveState);
-//                    return;
-//                }
                 controller.ChangeState(NameState.LandingState);
             }
         }

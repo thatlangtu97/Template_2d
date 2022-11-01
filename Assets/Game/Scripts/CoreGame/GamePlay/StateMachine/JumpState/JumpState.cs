@@ -11,6 +11,8 @@ namespace Core.GamePlay
         private EventCollection currentState;
         public LayerMask layerStop;
         public float distanceCheck;
+        public Vector3 LocalPosition;
+        public Vector3 SizeBoxCastCheckWall;
         public override void EnterState()
         {
             base.EnterState();
@@ -18,18 +20,21 @@ namespace Core.GamePlay
             PlayAnim(currentState);
             PingPongJump();
         }
+        void Move()
+        {
+            controller.componentManager.Rotate();
+            Vector2 tempVelocity = new Vector2( controller.componentManager.vectorMove.x * controller.componentManager.maxSpeedMove, currentState.curveY.Evaluate(timeTrigger));
+            if(Physics2D.BoxCast(controller.transform.position + LocalPosition,SizeBoxCastCheckWall,0,controller.transform.right,distanceCheck,layerStop).collider != null)
+            {
+                tempVelocity.x =0;
+            }
+            controller.componentManager.rgbody2D.velocity = tempVelocity;
+        }
         public override void UpdateState()
         {
             base.UpdateState();
-            controller.componentManager.Rotate();
-            controller.componentManager.rgbody2D.velocity= new Vector2(currentState.curveX.Evaluate(timeTrigger) * controller.componentManager.vectorMove.x * controller.componentManager.maxSpeedMove, currentState.curveY.Evaluate(timeTrigger) );
+            Move();
 
-            if (Physics2D.Raycast(controller.transform.position, controller.transform.right, distanceCheck, layerStop)
-                    .collider != null)
-            {
-                controller.componentManager.rgbody2D.velocity = new Vector2(0,controller.componentManager.rgbody2D.velocity.y);
-            }
-            
             if (timeTrigger > currentState.durationAnimation)
             {
                 if (controller.componentManager.IsGround)
