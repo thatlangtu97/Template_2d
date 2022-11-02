@@ -38,6 +38,7 @@ namespace Core.GamePlay
             projectileMoveBezierSystem = new ProjectileMoveBezierSystem(contexts);
             damageTextSystem = new DamageTextSystem(contexts);
 //        healthBarUpdateSystem = new HealthBarUpdateSystem(contexts);
+
         }
     
         [Button("SetupSystem", ButtonSizes.Gigantic), GUIColor(0.4f, 0.8f, 1),]

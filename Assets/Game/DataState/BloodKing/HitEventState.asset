@@ -131,6 +131,7 @@ MonoBehaviour:
   typeAnim: 1
   NameTrigger: Hit
   timeStart: 0
+  layerAnim: 1
   durationAnimation: 0.15
   curveX:
     serializedVersion: 2

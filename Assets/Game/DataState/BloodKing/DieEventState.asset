@@ -35,8 +35,9 @@ MonoBehaviour:
       Entry: 8
       Data: 
   typeAnim: 1
-  NameTrigger: Death
+  NameTrigger: TelePortStart
   timeStart: 0
+  layerAnim: 0
   durationAnimation: 1
   curveX:
     serializedVersion: 2

@@ -298,7 +298,31 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 12|Core.GamePlay.PlayAnimation, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
       Data: 0
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0
+    - Name: typeAnim
+      Entry: 3
+      Data: 1
+    - Name: NameTrigger
+      Entry: 1
+      Data: Hit
+    - Name: timeStart
+      Entry: 4
+      Data: 0
+    - Name: layerAnim
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -313,7 +337,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|Core.GamePlay.PlaySound, Assembly-CSharp
+      Data: 13|Core.GamePlay.PlaySound, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 100
@@ -346,10 +370,10 @@ MonoBehaviour:
       Data: 0
     - Name: curveVolume
       Entry: 7
-      Data: 13|UnityEngine.AnimationCurve, UnityEngine.CoreModule
+      Data: 14|UnityEngine.AnimationCurve, UnityEngine.CoreModule
     - Name: 
       Entry: 7
-      Data: 14|UnityEngine.Keyframe[], UnityEngine.CoreModule
+      Data: 15|UnityEngine.Keyframe[], UnityEngine.CoreModule
     - Name: 
       Entry: 12
       Data: 1
@@ -406,7 +430,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 15|Core.GamePlay.PlaySound, Assembly-CSharp
+      Data: 16|Core.GamePlay.PlaySound, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 200
@@ -439,10 +463,10 @@ MonoBehaviour:
       Data: 0
     - Name: curveVolume
       Entry: 7
-      Data: 16|UnityEngine.AnimationCurve, UnityEngine.CoreModule
+      Data: 17|UnityEngine.AnimationCurve, UnityEngine.CoreModule
     - Name: 
       Entry: 7
-      Data: 17|UnityEngine.Keyframe[], UnityEngine.CoreModule
+      Data: 18|UnityEngine.Keyframe[], UnityEngine.CoreModule
     - Name: 
       Entry: 12
       Data: 1
@@ -499,7 +523,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 18|Core.GamePlay.InteractiveGrassWind, Assembly-CSharp
+      Data: 19|Core.GamePlay.InteractiveGrassWind, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 300
@@ -581,6 +605,7 @@ MonoBehaviour:
   typeAnim: 1
   NameTrigger: Attack3
   timeStart: 0
+  layerAnim: 0
   durationAnimation: 0.38
   curveX:
     serializedVersion: 2

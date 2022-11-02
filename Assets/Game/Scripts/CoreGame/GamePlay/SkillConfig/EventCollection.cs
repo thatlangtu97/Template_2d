@@ -12,6 +12,8 @@ namespace Core.GamePlay
         public string NameTrigger;
         [ShowIf("typeAnim",AnimationTypeState.PlayAnim)]
         public float timeStart;
+        [ShowIf("typeAnim",AnimationTypeState.PlayAnim)]
+        public int layerAnim;
         public float durationAnimation;
         public AnimationCurve curveX, curveY;
         public AnimationCurve curveSpeedAnimation= new AnimationCurve(new Keyframe(0,1f));

@@ -35,6 +35,8 @@ namespace Core.GamePlay
     [FoldoutGroup("BUFFER")] public Vector2 vectorMove ;
     [ShowInInspector]
     [FoldoutGroup("BUFFER")] public List<Immune> currentImunes= new List<Immune>();
+
+    [FoldoutGroup("BUFFER")] public Vector2 Force;
     [FoldoutGroup("PROPERTIES")] public float maxSpeedMove = 2f;
     [FoldoutGroup("PROPERTIES")] public bool isDoubleJump = false;
     [FoldoutGroup("PROPERTIES")] public List<Immune> baseImmunes = new List<Immune>();
@@ -44,6 +46,13 @@ namespace Core.GamePlay
     public List<AutoAddComponent> AutoAdds = new List<AutoAddComponent>();
 
     public bool autoSetupEntity;
+
+    public void AddForce(Vector2 force)
+    {
+        Force = force;
+        rgbody2D.AddRelativeForce(force);
+        //rgbody2D.AddForce(force);
+    }
     [Button("FIND AUTO ADD COMPONENT", ButtonSizes.Gigantic), GUIColor(0.4f, 0.8f, 1),]
     void FindComponentEntitas()
     { 
@@ -194,7 +203,7 @@ namespace Core.GamePlay
 //            return false;
 //        }
 //    }
-    public void PlayAnim(string name, AnimationTypeState type , float timestart)
+    public void PlayAnim(string name, AnimationTypeState type, float timestart, int layer = 0)
     {
         if (animator)
         {
@@ -204,7 +213,7 @@ namespace Core.GamePlay
                     animator.SetTrigger(name);
                     break;
                 case AnimationTypeState.PlayAnim:
-                    animator.Play(name,0,timestart);
+                    animator.Play(name,layer,timestart);
                     break;
             }
         }
@@ -250,10 +259,11 @@ namespace Core.GamePlay
         }
         foreach (var immuneItem in immunesAdd)
         {
-            if (baseImmunes.Contains(immuneItem)) ;
+            if (baseImmunes.Contains(immuneItem)) 
             {
                 continue;
             }
+            
             tempImmune.Add(immuneItem);
         }
         currentImunes = tempImmune;
@@ -266,7 +276,7 @@ namespace Core.GamePlay
         {
             tempImmune.Add(immuneItem);
         }
-        if (!baseImmunes.Contains(immunesAdd)) ;
+        if (!baseImmunes.Contains(immunesAdd)) 
         {
             tempImmune.Add(immunesAdd);
         }

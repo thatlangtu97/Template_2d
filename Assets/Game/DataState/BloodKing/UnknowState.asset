@@ -25,4 +25,7 @@ MonoBehaviour:
   timeTrigger: 0
   idState: 0
   Immunes: 
-  eventCollectionData: []
+  eventCollectionData:
+  - {fileID: 11400000, guid: 8391587a616ec2f4badef9fec0f6c8fb, type: 2}
+  - {fileID: 11400000, guid: 8071a612ea861d84fb74bdf1b1e2a508, type: 2}
+  - {fileID: 11400000, guid: 001b4ab11f5393141bd3a66cb1d3dc60, type: 2}

@@ -438,8 +438,11 @@ public class ColliderEvent : IComboEvent
                                 ComponentManager componentManager = hitBox.component;
                                 void Action()
                                 {
-                                    componentManager.rgbody2D.velocity = new Vector2(0,componentManager.rgbody2D.velocity.y);
-                                    componentManager.rgbody2D.AddForceAtPosition(damageInfoEventTemp.forcePower, col.transform.position);
+                                    componentManager.AddForce(damageInfoEventTemp.forcePower);
+                                    //componentManager.rgbody2D.AddForce(damageInfoEventTemp.forcePower,ForceMode2D.Force);
+                                    
+//                                    componentManager.rgbody2D.velocity = new Vector2(0,componentManager.rgbody2D.velocity.y);
+//                                    componentManager.rgbody2D.AddForceAtPosition(damageInfoEventTemp.forcePower, col.transform.position);
                                 }
                                 DamageInfoSend damageInfoSend = new DamageInfoSend(damageInfoEventTemp,damageProperties,Action);
                                 DealDmgManager.DealDamage(componentManager.entity, entity,damageInfoSend);
@@ -1001,7 +1004,49 @@ public class InteractiveGrassWind : IComboEvent
 }
 #endregion
 
+#region PLAY ANIM
+public class PlayAnimation : IComboEvent
+{
+    [FoldoutGroup("PLAY ANIM")]
+    [ReadOnly]
+    public int idEvent;
 
+    [FoldoutGroup("PLAY ANIM")] 
+    public float timeTriggerEvent;
+
+    [FoldoutGroup("PLAY ANIM")] 
+    public AnimationTypeState typeAnim= AnimationTypeState.PlayAnim;
+    
+    [FoldoutGroup("PLAY ANIM")] 
+    public string NameTrigger;
+    
+    [FoldoutGroup("PLAY ANIM")] 
+    [ShowIf("typeAnim",AnimationTypeState.PlayAnim)]
+    public float timeStart;
+
+    [FoldoutGroup("PLAY ANIM")] 
+    [ShowIf("typeAnim",AnimationTypeState.PlayAnim)]
+    public int layerAnim;
+    
+    
+    public int id { get { return idEvent; } set { idEvent = value; } }
+    public float timeTrigger { get { return timeTriggerEvent; } }
+    
+    public void OnEventTrigger(GameEntity entity)
+    {
+        entity.stateMachineContainer.value.componentManager.PlayAnim(NameTrigger,typeAnim,timeStart, layerAnim);
+    }
+    public void Recycle()
+    {
+
+    }
+
+    public void OnUpdateTrigger()
+    {
+        
+    }
+}
+#endregion
 public class HitPhase
 {
     [HideReferenceObjectPicker]

@@ -114,7 +114,7 @@ namespace Core.GamePlay
                     controller.componentManager.animator.SetTrigger(collection.NameTrigger);
                     break;
                 case AnimationTypeState.PlayAnim:
-                    controller.componentManager.animator.Play(collection.NameTrigger,0,collection.timeStart);
+                    controller.componentManager.animator.Play(collection.NameTrigger,collection.layerAnim,collection.timeStart);
                     break;
             }
         }
