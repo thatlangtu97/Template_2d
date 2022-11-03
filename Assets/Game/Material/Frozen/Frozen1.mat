@@ -8,7 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Frozen1
-  m_Shader: {fileID: 4800000, guid: 0083e10c90ca4ee4ab0c55b1ccb866ba, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 0ffd7859326693e4eb5efd38c3b7337f,
+    type: 3}
   m_ShaderKeywords: _SHADERSPACE_UV _TIMESETTINGS_LINEAR_DEFAULT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -28,7 +29,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 3bb70228ff1f5fe41bd93d9fe2db012d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex_1:
+        m_Texture: {fileID: 2800000, guid: 6962c6044953aa940aa07473eabd083d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex_2:
+        m_Texture: {fileID: 2800000, guid: 6b7b4a61603088549ac748de5e4e6d8c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
@@ -43,8 +52,26 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - PixelSnap: 0
+    - Vector1_3f1841b44fc1435b97b7881affcf308d: 0
+    - Vector1_47c4d20cc11c434cb38ce584f37df22f: 2
+    - Vector1_4869bbced74d4b52b6c5ade7ed1c2f38: 0.3
+    - Vector1_ab3f914048ee41a7a396265e2cf6a74b: 1
+    - Vector1_abc9b78fb63648f88cb9ec8d51d0538c: 17.42
+    - Vector1_afbf97c4de2347d3a4707ba640955f24: 15
     - _EnableExternalAlpha: 0
     - _FrozenContrast: 2
     - _FrozenFade: 1
@@ -64,6 +91,9 @@ Material:
     - _TimeSettings: 0
     - _TimeValue: 0
     m_Colors:
+    - Color_63dd8b5d1e7448bbaff7877557b0bd54: {r: 0, g: 0, b: 0, a: 0}
+    - Color_b10b462b1ad74d61b5c60ca1271e48ec: {r: 0, g: 0, b: 0, a: 0}
+    - Color_b10b462b1ad74d61b5c60ca1271e48ec_1: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _FrozenHighlightColor: {r: 1.797647, g: 4.604501, b: 5.992157, a: 1}
