@@ -11,25 +11,28 @@ namespace Core.AI
     {
         public SharedComponentManager component;
         public SharedTransform target;
-        public SharedFloat range;
+        public float range;
         public float rangeSuccess;
+        public float speed=1f;
 
 
         public override TaskStatus OnUpdate()
         {
             if (target.Value)
             {
-                range.Value = Vector2.Distance(component.Value.transform.position, target.Value.transform.position);
-                if (range.Value <= rangeSuccess)
+                range = Mathf.Abs(component.Value.transform.position.x-  target.Value.transform.position.x);
+                if (range <= rangeSuccess)
                 {
                     component.Value.rgbody2D.velocity=Vector2.zero;
                     return TaskStatus.Success;
                 }
                 else
                 {
-                    component.Value.rgbody2D.velocity =
-                        (target.Value.position - component.Value.transform.position).normalized *
-                        component.Value.maxSpeedMove;
+                    component.Value.rgbody2D.velocity = new Vector2(
+                        target.Value.position.x-component.Value.transform.position.x,0f
+                    ).normalized * component.Value.maxSpeedMove * speed;
+//                        (target.Value.position - component.Value.transform.position).normalized *
+//                        component.Value.maxSpeedMove;
                     return TaskStatus.Running;
                 }
             }

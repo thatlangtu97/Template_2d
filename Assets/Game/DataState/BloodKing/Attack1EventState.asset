@@ -41,7 +41,7 @@ MonoBehaviour:
       Data: 0
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.3
+      Data: 0.25
     - Name: layerMaskEnemy
       Entry: 7
       Data: UnityEngine.LayerMask, UnityEngine.CoreModule
@@ -74,7 +74,7 @@ MonoBehaviour:
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.8
+      Data: 1
     - Name: 
       Entry: 4
       Data: 0.2
@@ -581,6 +581,7 @@ MonoBehaviour:
   typeAnim: 1
   NameTrigger: Attack1
   timeStart: 0
+  layerAnim: 0
   durationAnimation: 1.3
   curveX:
     serializedVersion: 2
@@ -595,26 +596,17 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.33629593
     - serializedVersion: 3
-      time: 0.2500328
-      value: 0.103881836
-      inSlope: 0.23252954
-      outSlope: 0.23252954
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.263517
-      value: 0.104550466
-      inSlope: -0.041358367
-      outSlope: -0.041358367
+      time: 0.18433365
+      value: 0
+      inSlope: Infinity
+      outSlope: Infinity
       tangentMode: 0
       weightedMode: 0
-      inWeight: 1
+      inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.27172744
-      value: 7
+      time: 0.20196944
+      value: 8
       inSlope: 2.3924363
       outSlope: 2.3924363
       tangentMode: 0
@@ -622,7 +614,7 @@ MonoBehaviour:
       inWeight: 0.70780116
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.348414
+      time: 0.3051702
       value: 0
       inSlope: Infinity
       outSlope: Infinity

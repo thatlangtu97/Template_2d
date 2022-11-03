@@ -933,6 +933,7 @@ MonoBehaviour:
   typeAnim: 1
   NameTrigger: Attack2
   timeStart: 0
+  layerAnim: 0
   durationAnimation: 1.7
   curveX:
     serializedVersion: 2
@@ -940,14 +941,41 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -11.644242
+      outSlope: -11.644242
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.0817929
+      time: 0.17175871
+      value: -2
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.29619822
+      value: 0
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.7336567
+      value: 10
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.83379513
       value: 0
       inSlope: Infinity
       outSlope: Infinity
@@ -956,26 +984,17 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0
     - serializedVersion: 3
-      time: 0.8
-      value: 4
-      inSlope: -2.777521
-      outSlope: -2.777521
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1.1595678
+      time: 1.0947725
       value: 0
-      inSlope: -2.7691221
-      outSlope: -2.7691221
+      inSlope: Infinity
+      outSlope: Infinity
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.44313133
-      outWeight: 0.33333334
+      outWeight: 0
     - serializedVersion: 3
-      time: 1.2
-      value: 4
+      time: 1.128136
+      value: 5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -983,10 +1002,10 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1.2921308
+      time: 1.2273355
       value: 0.026601776
-      inSlope: 0
-      outSlope: 0
+      inSlope: Infinity
+      outSlope: Infinity
       tangentMode: 0
       weightedMode: 0
       inWeight: 0

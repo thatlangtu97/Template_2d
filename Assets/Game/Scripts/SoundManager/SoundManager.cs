@@ -23,7 +23,7 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public int sizeAudio = 10;
+    public int sizeAudio = 100;
     
     private List<AudioSource> audioSources = new List<AudioSource>();
     private List<AudioSource> audioSourcePool = new List<AudioSource>();
