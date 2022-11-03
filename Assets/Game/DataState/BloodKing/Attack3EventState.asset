@@ -18,7 +18,7 @@ MonoBehaviour:
     ReferencedUnityObjects:
     - {fileID: 8300000, guid: 7cdc2cba83824c749a8a50a18c5636e8, type: 3}
     - {fileID: 8300000, guid: aeb9e3253b3eb714c9159b2564935ff6, type: 3}
-    - {fileID: 9080223970476371308, guid: 4a366b456ca2ca54d83d9f6b7a27908e, type: 3}
+    - {fileID: 6552118667384704801, guid: d80008431807cd344a8a85b4341260cd, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -30,7 +30,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 6
+      Data: 8
     - Name: 
       Entry: 7
       Data: 1|Core.GamePlay.ColliderEvent, Assembly-CSharp
@@ -404,148 +404,16 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 15|Core.GamePlay.CastProjectile, Assembly-CSharp
+      Data: 15|Core.GamePlay.SpawnGameObject, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 200
     - Name: timeTriggerEvent
       Entry: 4
       Data: 0.6
-    - Name: useDuration
-      Entry: 5
-      Data: false
     - Name: duration
       Entry: 4
-      Data: 0
-    - Name: forceWhenFinishEvent
-      Entry: 5
-      Data: false
-    - Name: setParent
-      Entry: 5
-      Data: false
-    - Name: typeSpawn
-      Entry: 3
-      Data: 0
-    - Name: Prefab
-      Entry: 10
-      Data: 2
-    - Name: localPosition
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: -0.5
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: LocalRotation
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: LocalScale
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 2
-    - Name: 
-      Entry: 4
-      Data: 2
-    - Name: 
-      Entry: 4
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: ForceSpawn
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: damageInfoEvent
-      Entry: 7
-      Data: 16|Core.GamePlay.DamageInfoEvent, Assembly-CSharp
-    - Name: damageScale
-      Entry: 4
-      Data: 1
-    - Name: powerCollider
-      Entry: 3
-      Data: 1
-    - Name: forcePower
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: LayerMaskLimitPosition
-      Entry: 7
-      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 17|Core.GamePlay.CastProjectile, Assembly-CSharp
-    - Name: idEvent
-      Entry: 3
-      Data: 300
-    - Name: timeTriggerEvent
-      Entry: 4
-      Data: 0.6
-    - Name: useDuration
-      Entry: 5
-      Data: false
-    - Name: duration
-      Entry: 4
-      Data: 0
-    - Name: forceWhenFinishEvent
-      Entry: 5
-      Data: false
-    - Name: setParent
-      Entry: 5
-      Data: false
-    - Name: typeSpawn
-      Entry: 3
-      Data: 0
+      Data: 1.2
     - Name: Prefab
       Entry: 10
       Data: 2
@@ -606,31 +474,19 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: damageInfoEvent
-      Entry: 7
-      Data: 18|Core.GamePlay.DamageInfoEvent, Assembly-CSharp
-    - Name: damageScale
-      Entry: 4
-      Data: 1
-    - Name: powerCollider
+    - Name: setParent
+      Entry: 5
+      Data: false
+    - Name: UseDuration
+      Entry: 5
+      Data: true
+    - Name: forceWhenFinishEvent
+      Entry: 5
+      Data: false
+    - Name: typeSpawn
       Entry: 3
-      Data: 1
-    - Name: forcePower
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
       Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: LayerMaskLimitPosition
+    - Name: LayerMask
       Entry: 7
       Data: UnityEngine.LayerMask, UnityEngine.CoreModule
     - Name: 
@@ -644,28 +500,294 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 19|Core.GamePlay.CastProjectile, Assembly-CSharp
+      Data: 16|Core.GamePlay.ColliderEvent, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 300
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 1
+    - Name: layerMaskEnemy
+      Entry: 7
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 262144
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: typeCast
+      Entry: 3
+      Data: 0
+    - Name: localPosition
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.4
+    - Name: 
+      Entry: 4
+      Data: 0.2
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeBox
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.2
+    - Name: 
+      Entry: 4
+      Data: 0.4
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: radius
+      Entry: 4
+      Data: 0
+    - Name: castByTime
+      Entry: 5
+      Data: false
+    - Name: idStartCastByTime
+      Entry: 3
+      Data: 0
+    - Name: timeStartCastByTime
+      Entry: 4
+      Data: 0
+    - Name: timeStepCastByTime
+      Entry: 4
+      Data: 0
+    - Name: maxCastByTime
+      Entry: 3
+      Data: 0
+    - Name: damageInfoEvent
+      Entry: 7
+      Data: 17|Core.GamePlay.DamageInfoEvent, Assembly-CSharp
+    - Name: damageScale
+      Entry: 4
+      Data: 1
+    - Name: powerCollider
+      Entry: 3
+      Data: 1
+    - Name: forcePower
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 30
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hitPhaseData
+      Entry: 7
+      Data: 18|Core.GamePlay.HitPhase, Assembly-CSharp
+    - Name: hitPhaseEvents
+      Entry: 7
+      Data: 19|System.Collections.Generic.List`1[[Core.GamePlay.IComboEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 20|Core.GamePlay.PlaySound, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 0
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0
+    - Name: clip
+      Entry: 10
+      Data: 0
+    - Name: volume
+      Entry: 4
+      Data: 1
+    - Name: loop
+      Entry: 5
+      Data: false
+    - Name: pitch
+      Entry: 4
+      Data: 1
+    - Name: useStop
+      Entry: 5
+      Data: false
+    - Name: useCurveVolume
+      Entry: 5
+      Data: false
+    - Name: useDuration
+      Entry: 5
+      Data: false
+    - Name: duration
+      Entry: 4
+      Data: 0
+    - Name: curveVolume
+      Entry: 7
+      Data: 21|UnityEngine.AnimationCurve, UnityEngine.CoreModule
+    - Name: 
+      Entry: 7
+      Data: 22|UnityEngine.Keyframe[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Keyframe, UnityEngine.CoreModule
+    - Name: ver
+      Entry: 3
+      Data: 1
+    - Name: m_Time
+      Entry: 4
+      Data: 0
+    - Name: m_Value
+      Entry: 4
+      Data: 1
+    - Name: m_InTangent
+      Entry: 4
+      Data: 0
+    - Name: m_OutTangent
+      Entry: 4
+      Data: 0
+    - Name: m_TangentMode
+      Entry: 3
+      Data: 0
+    - Name: m_WeightedMode
+      Entry: 3
+      Data: 0
+    - Name: m_InWeight
+      Entry: 4
+      Data: 0
+    - Name: m_OutWeight
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 23|Core.GamePlay.ShakeCamera, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 100
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0
+    - Name: strength
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.3
+    - Name: 
+      Entry: 4
+      Data: 0.3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: duration
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 24|Core.GamePlay.SlowMotionCamera, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 200
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0
+    - Name: duration
+      Entry: 4
+      Data: 0.2
+    - Name: startValue
+      Entry: 4
+      Data: 0
+    - Name: endValue
+      Entry: 4
+      Data: 0.3
+    - Name: stepValue
+      Entry: 4
+      Data: 0.02
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: targetHitPhaseData
+      Entry: 7
+      Data: 25|Core.GamePlay.HitPhase, Assembly-CSharp
+    - Name: hitPhaseEvents
+      Entry: 7
+      Data: 26|System.Collections.Generic.List`1[[Core.GamePlay.IComboEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 27|Core.GamePlay.SpawnGameObject, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 400
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 1
-    - Name: useDuration
-      Entry: 5
-      Data: false
+      Data: 0.9
     - Name: duration
       Entry: 4
-      Data: 0
-    - Name: forceWhenFinishEvent
-      Entry: 5
-      Data: false
-    - Name: setParent
-      Entry: 5
-      Data: false
-    - Name: typeSpawn
-      Entry: 3
-      Data: 0
+      Data: 1.2
     - Name: Prefab
       Entry: 10
       Data: 2
@@ -674,7 +796,7 @@ MonoBehaviour:
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: -1.2
+      Data: 1
     - Name: 
       Entry: 4
       Data: 0
@@ -726,31 +848,19 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: damageInfoEvent
-      Entry: 7
-      Data: 20|Core.GamePlay.DamageInfoEvent, Assembly-CSharp
-    - Name: damageScale
-      Entry: 4
-      Data: 1
-    - Name: powerCollider
+    - Name: setParent
+      Entry: 5
+      Data: false
+    - Name: UseDuration
+      Entry: 5
+      Data: true
+    - Name: forceWhenFinishEvent
+      Entry: 5
+      Data: false
+    - Name: typeSpawn
       Entry: 3
-      Data: 1
-    - Name: forcePower
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
       Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: LayerMaskLimitPosition
+    - Name: LayerMask
       Entry: 7
       Data: UnityEngine.LayerMask, UnityEngine.CoreModule
     - Name: 
@@ -764,28 +874,294 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 21|Core.GamePlay.CastProjectile, Assembly-CSharp
+      Data: 28|Core.GamePlay.ColliderEvent, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 500
     - Name: timeTriggerEvent
       Entry: 4
+      Data: 1.3
+    - Name: layerMaskEnemy
+      Entry: 7
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 262144
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: typeCast
+      Entry: 3
+      Data: 0
+    - Name: localPosition
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.9
+    - Name: 
+      Entry: 4
+      Data: 0.2
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeBox
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.2
+    - Name: 
+      Entry: 4
+      Data: 0.4
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: radius
+      Entry: 4
+      Data: 0
+    - Name: castByTime
+      Entry: 5
+      Data: false
+    - Name: idStartCastByTime
+      Entry: 3
+      Data: 0
+    - Name: timeStartCastByTime
+      Entry: 4
+      Data: 0
+    - Name: timeStepCastByTime
+      Entry: 4
+      Data: 0
+    - Name: maxCastByTime
+      Entry: 3
+      Data: 0
+    - Name: damageInfoEvent
+      Entry: 7
+      Data: 29|Core.GamePlay.DamageInfoEvent, Assembly-CSharp
+    - Name: damageScale
+      Entry: 4
       Data: 1
+    - Name: powerCollider
+      Entry: 3
+      Data: 1
+    - Name: forcePower
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 30
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hitPhaseData
+      Entry: 7
+      Data: 30|Core.GamePlay.HitPhase, Assembly-CSharp
+    - Name: hitPhaseEvents
+      Entry: 7
+      Data: 31|System.Collections.Generic.List`1[[Core.GamePlay.IComboEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 32|Core.GamePlay.PlaySound, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 0
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0
+    - Name: clip
+      Entry: 10
+      Data: 0
+    - Name: volume
+      Entry: 4
+      Data: 1
+    - Name: loop
+      Entry: 5
+      Data: false
+    - Name: pitch
+      Entry: 4
+      Data: 1
+    - Name: useStop
+      Entry: 5
+      Data: false
+    - Name: useCurveVolume
+      Entry: 5
+      Data: false
     - Name: useDuration
       Entry: 5
       Data: false
     - Name: duration
       Entry: 4
       Data: 0
-    - Name: forceWhenFinishEvent
-      Entry: 5
-      Data: false
-    - Name: setParent
-      Entry: 5
-      Data: false
-    - Name: typeSpawn
+    - Name: curveVolume
+      Entry: 7
+      Data: 33|UnityEngine.AnimationCurve, UnityEngine.CoreModule
+    - Name: 
+      Entry: 7
+      Data: 34|UnityEngine.Keyframe[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Keyframe, UnityEngine.CoreModule
+    - Name: ver
+      Entry: 3
+      Data: 1
+    - Name: m_Time
+      Entry: 4
+      Data: 0
+    - Name: m_Value
+      Entry: 4
+      Data: 1
+    - Name: m_InTangent
+      Entry: 4
+      Data: 0
+    - Name: m_OutTangent
+      Entry: 4
+      Data: 0
+    - Name: m_TangentMode
       Entry: 3
       Data: 0
+    - Name: m_WeightedMode
+      Entry: 3
+      Data: 0
+    - Name: m_InWeight
+      Entry: 4
+      Data: 0
+    - Name: m_OutWeight
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 35|Core.GamePlay.ShakeCamera, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 100
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0
+    - Name: strength
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.3
+    - Name: 
+      Entry: 4
+      Data: 0.3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: duration
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 36|Core.GamePlay.SlowMotionCamera, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 200
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0
+    - Name: duration
+      Entry: 4
+      Data: 0.2
+    - Name: startValue
+      Entry: 4
+      Data: 0
+    - Name: endValue
+      Entry: 4
+      Data: 0.3
+    - Name: stepValue
+      Entry: 4
+      Data: 0.02
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: targetHitPhaseData
+      Entry: 7
+      Data: 37|Core.GamePlay.HitPhase, Assembly-CSharp
+    - Name: hitPhaseEvents
+      Entry: 7
+      Data: 38|System.Collections.Generic.List`1[[Core.GamePlay.IComboEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 39|Core.GamePlay.SpawnGameObject, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 600
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 1.2
+    - Name: duration
+      Entry: 4
+      Data: 1.2
     - Name: Prefab
       Entry: 10
       Data: 2
@@ -794,7 +1170,7 @@ MonoBehaviour:
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 1.2
+      Data: 1.5
     - Name: 
       Entry: 4
       Data: 0
@@ -846,9 +1222,102 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: setParent
+      Entry: 5
+      Data: false
+    - Name: UseDuration
+      Entry: 5
+      Data: true
+    - Name: forceWhenFinishEvent
+      Entry: 5
+      Data: false
+    - Name: typeSpawn
+      Entry: 3
+      Data: 0
+    - Name: LayerMask
+      Entry: 7
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 40|Core.GamePlay.ColliderEvent, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 700
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 1.6
+    - Name: layerMaskEnemy
+      Entry: 7
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 262144
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: typeCast
+      Entry: 3
+      Data: 0
+    - Name: localPosition
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1.4
+    - Name: 
+      Entry: 4
+      Data: 0.2
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: sizeBox
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.2
+    - Name: 
+      Entry: 4
+      Data: 0.4
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: radius
+      Entry: 4
+      Data: 0
+    - Name: castByTime
+      Entry: 5
+      Data: false
+    - Name: idStartCastByTime
+      Entry: 3
+      Data: 0
+    - Name: timeStartCastByTime
+      Entry: 4
+      Data: 0
+    - Name: timeStepCastByTime
+      Entry: 4
+      Data: 0
+    - Name: maxCastByTime
+      Entry: 3
+      Data: 0
     - Name: damageInfoEvent
       Entry: 7
-      Data: 22|Core.GamePlay.DamageInfoEvent, Assembly-CSharp
+      Data: 41|Core.GamePlay.DamageInfoEvent, Assembly-CSharp
     - Name: damageScale
       Entry: 4
       Data: 1
@@ -860,7 +1329,7 @@ MonoBehaviour:
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0
+      Data: 30
     - Name: 
       Entry: 4
       Data: 0
@@ -870,12 +1339,185 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: LayerMaskLimitPosition
+    - Name: hitPhaseData
       Entry: 7
-      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+      Data: 42|Core.GamePlay.HitPhase, Assembly-CSharp
+    - Name: hitPhaseEvents
+      Entry: 7
+      Data: 43|System.Collections.Generic.List`1[[Core.GamePlay.IComboEvent, Assembly-CSharp]],
+        mscorlib
     - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 44|Core.GamePlay.PlaySound, Assembly-CSharp
+    - Name: idEvent
       Entry: 3
       Data: 0
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0
+    - Name: clip
+      Entry: 10
+      Data: 0
+    - Name: volume
+      Entry: 4
+      Data: 1
+    - Name: loop
+      Entry: 5
+      Data: false
+    - Name: pitch
+      Entry: 4
+      Data: 1
+    - Name: useStop
+      Entry: 5
+      Data: false
+    - Name: useCurveVolume
+      Entry: 5
+      Data: false
+    - Name: useDuration
+      Entry: 5
+      Data: false
+    - Name: duration
+      Entry: 4
+      Data: 0
+    - Name: curveVolume
+      Entry: 7
+      Data: 45|UnityEngine.AnimationCurve, UnityEngine.CoreModule
+    - Name: 
+      Entry: 7
+      Data: 46|UnityEngine.Keyframe[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Keyframe, UnityEngine.CoreModule
+    - Name: ver
+      Entry: 3
+      Data: 1
+    - Name: m_Time
+      Entry: 4
+      Data: 0
+    - Name: m_Value
+      Entry: 4
+      Data: 1
+    - Name: m_InTangent
+      Entry: 4
+      Data: 0
+    - Name: m_OutTangent
+      Entry: 4
+      Data: 0
+    - Name: m_TangentMode
+      Entry: 3
+      Data: 0
+    - Name: m_WeightedMode
+      Entry: 3
+      Data: 0
+    - Name: m_InWeight
+      Entry: 4
+      Data: 0
+    - Name: m_OutWeight
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 47|Core.GamePlay.ShakeCamera, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 100
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0
+    - Name: strength
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.3
+    - Name: 
+      Entry: 4
+      Data: 0.3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: duration
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 48|Core.GamePlay.SlowMotionCamera, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 200
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0
+    - Name: duration
+      Entry: 4
+      Data: 0.2
+    - Name: startValue
+      Entry: 4
+      Data: 0
+    - Name: endValue
+      Entry: 4
+      Data: 0.3
+    - Name: stepValue
+      Entry: 4
+      Data: 0.02
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: targetHitPhaseData
+      Entry: 7
+      Data: 49|Core.GamePlay.HitPhase, Assembly-CSharp
+    - Name: hitPhaseEvents
+      Entry: 7
+      Data: 50|System.Collections.Generic.List`1[[Core.GamePlay.IComboEvent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -892,7 +1534,7 @@ MonoBehaviour:
   NameTrigger: Attack3
   timeStart: 0
   layerAnim: 0
-  durationAnimation: 1.3
+  durationAnimation: 2
   curveX:
     serializedVersion: 2
     m_Curve:

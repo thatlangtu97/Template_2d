@@ -38,7 +38,9 @@ namespace Core.GamePlay
         }
         public virtual void OnTriggerEnter2D(Collider2D other)
         {
-            ComponentManager componentManager =ComponentManagerUtils.GetComponentByInstanceId(other.gameObject.GetInstanceID());
+            HitBoxComponent hitBox =ComponentManagerUtils.GetHitBoxByInstanceId(other.gameObject.GetInstanceID());
+            ComponentManager componentManager = hitBox.component;
+           // ComponentManager componentManager =ComponentManagerUtils.GetComponentByInstanceId(other.gameObject.GetInstanceID());
             void Action()
             {
                 componentManager.rgbody2D.AddForceAtPosition(damageInfoEvent.forcePower * transform.localScale.x, other.transform.position);
