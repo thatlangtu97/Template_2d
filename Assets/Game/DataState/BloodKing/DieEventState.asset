@@ -16,7 +16,7 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 8116762680336563667, guid: d2b065a9972e9d7468e84a53bb6d5161, type: 3}
+    - {fileID: 210665385641648111, guid: 1c46c6737321b9b4988a8d6f38544f02, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -28,7 +28,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 3
     - Name: 
       Entry: 7
       Data: 1|Core.GamePlay.EnableComponent, Assembly-CSharp
@@ -140,6 +140,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|Core.GamePlay.PostEvent, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 200
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0
+    - Name: eventID
+      Entry: 3
+      Data: 2
     - Name: 
       Entry: 8
       Data: 

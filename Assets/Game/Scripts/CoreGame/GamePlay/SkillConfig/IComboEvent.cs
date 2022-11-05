@@ -185,6 +185,42 @@ public class EnableComponent : IComboEvent
 }
 #endregion
 
+#region POST EVENT
+public class PostEvent : IComboEvent
+{
+    [FoldoutGroup("POST EVENT")]
+    [ReadOnly]
+    public int idEvent;
+
+    [FoldoutGroup("POST EVENT")]
+    [Range(0f, 5f)]
+    public float timeTriggerEvent;
+
+    [FoldoutGroup("POST EVENT")]
+    public EventID eventID;
+    
+    
+    
+    public int id { get { return idEvent; } set { idEvent = value; } }
+    public float timeTrigger { get { return timeTriggerEvent; } }
+
+    public void OnEventTrigger(GameEntity entity)
+    {
+        this.PostEvent(eventID);
+        
+    }
+
+    public void OnUpdateTrigger()
+    {
+        
+    }
+
+    public void Recycle()
+    {
+    }
+}
+#endregion
+
 #region SPAWN GAMEOBJECT
 public class SpawnGameObject : IComboEvent
 {

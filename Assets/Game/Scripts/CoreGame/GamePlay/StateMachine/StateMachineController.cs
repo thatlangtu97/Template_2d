@@ -92,6 +92,11 @@ namespace Core.GamePlay
         public virtual void OnRevival()
         {
         }
+
+        public virtual void OnDie()
+        {
+            ChangeState(NameState.DieState, true);
+        }
         protected void CreateStateFactory(StateClone stateClone)
         {
             State state = Instantiate(stateClone.StateToClone);
@@ -128,6 +133,7 @@ namespace Core.GamePlay
             }
             else
             {
+                if (currentNameState == NameState.DieState && currentNameState == NameState.ReviveState) return;
                 if (currentState)
                 {
                     currentState.ExitState();
@@ -160,6 +166,7 @@ namespace Core.GamePlay
             }
             else
             {
+                if (currentNameState == NameState.DieState && currentNameState == NameState.ReviveState) return;
                 if (currentState)
                 {
                     currentState.ExitState();
