@@ -32,6 +32,8 @@ namespace Core.GamePlay
     
     [ChildGameObjectsOnly]
     [FoldoutGroup("REFERENCE")] public Collider2D collider;
+    [ChildGameObjectsOnly]
+    [FoldoutGroup("REFERENCE")] public GameObject interactiveGrass;
     [FoldoutGroup("BUFFER")] public Vector2 vectorMove ;
     [ShowInInspector]
     [FoldoutGroup("BUFFER")] public List<Immune> currentImunes= new List<Immune>();

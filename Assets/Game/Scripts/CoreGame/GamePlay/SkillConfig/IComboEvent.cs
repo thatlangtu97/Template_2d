@@ -21,6 +21,7 @@ public enum TypeComponent
     Collider,
     HPBar,
     BehaviourTree,
+    InteractiveGrass,
     
 }
 public enum TypeSpawn
@@ -151,6 +152,21 @@ public class EnableComponent : IComboEvent
                     else
                     {
                         bt.EnableBehavior();
+                    }
+                }
+
+                break;
+            case TypeComponent.InteractiveGrass:
+                GameObject interactiveGrass = entity.stateMachineContainer.value.componentManager.interactiveGrass;
+                if (interactiveGrass != null)
+                {
+                    if (!enable)
+                    {
+                        interactiveGrass.SetActive(false);
+                    }
+                    else
+                    {
+                        interactiveGrass.SetActive(true);
                     }
                 }
 

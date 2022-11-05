@@ -359,6 +359,7 @@ MonoBehaviour:
   typeAnim: 1
   NameTrigger: HeartSlam
   timeStart: 0
+  layerAnim: 0
   durationAnimation: 1.5
   curveX:
     serializedVersion: 2

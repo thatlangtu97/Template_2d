@@ -332,7 +332,7 @@ Material:
     - _WindMaxRotation: 1
     - _WindRotation: 0
     - _WindRotationWindFactor: 0.2
-    - _WindSquishFactor: 0.1
+    - _WindSquishFactor: 0.3
     - _WindSquishWindFactor: 0
     - _WindXPosition: 0
     m_Colors:

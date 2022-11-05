@@ -27,25 +27,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 1|Core.GamePlay.EnableComponent, Assembly-CSharp
-    - Name: idEvent
-      Entry: 3
       Data: 0
-    - Name: timeTriggerEvent
-      Entry: 4
-      Data: 0.5
-    - Name: enable
-      Entry: 5
-      Data: true
-    - Name: Component
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -55,6 +37,7 @@ MonoBehaviour:
   typeAnim: 1
   NameTrigger: TelePortEnd
   timeStart: 0
+  layerAnim: 0
   durationAnimation: 1.6
   curveX:
     serializedVersion: 2
