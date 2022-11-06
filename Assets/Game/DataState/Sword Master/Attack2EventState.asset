@@ -266,16 +266,16 @@ MonoBehaviour:
       Data: 0
     - Name: duration
       Entry: 4
-      Data: 0.2
+      Data: 0.25
     - Name: startValue
       Entry: 4
       Data: 0
     - Name: endValue
       Entry: 4
-      Data: 0.2
+      Data: 0.1
     - Name: stepValue
       Entry: 4
-      Data: 0.02
+      Data: 0.0005
     - Name: 
       Entry: 8
       Data: 

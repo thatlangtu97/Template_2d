@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
+using Core.GamePlay;
 using UnityEngine;
 
 namespace Core.AI
@@ -12,6 +13,15 @@ namespace Core.AI
         public SharedComponentManager component;
         public SharedVector2 spawnPosition;
         public bool spawnGround;
+        public override void OnAwake()
+        {
+            base.OnAwake();
+            if (component.Value == null)
+            {
+                component.Value= Owner.gameObject.GetComponent<ComponentManager>();
+            }
+        }
+
         public override void OnStart()
         {
             base.OnStart();

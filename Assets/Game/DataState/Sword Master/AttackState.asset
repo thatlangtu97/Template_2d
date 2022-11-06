@@ -33,3 +33,19 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  checkTargets:
+  - useCheck: 1
+    distance: 0.4
+    layerStop:
+      serializedVersion: 2
+      m_Bits: 4096
+  - useCheck: 1
+    distance: 0.4
+    layerStop:
+      serializedVersion: 2
+      m_Bits: 135168
+  - useCheck: 1
+    distance: 0.4
+    layerStop:
+      serializedVersion: 2
+      m_Bits: 135168
