@@ -816,6 +816,9 @@ public class PlaySound : IComboEvent
     
     [FoldoutGroup("SOUND")] 
     public AudioClip clip;
+
+    [FoldoutGroup("SOUND")] 
+    public SoundGroup group = SoundGroup.Global;
     
     [FoldoutGroup("SOUND")] 
     [Range(0,1f)]
@@ -845,6 +848,8 @@ public class PlaySound : IComboEvent
     [ShowIf("useCurveVolume")]
     public AnimationCurve curveVolume = new AnimationCurve(new Keyframe(0f,1f));
     
+    
+    
     public int id { get { return idEvent; } set { idEvent = value; } }
     public float timeTrigger { get { return timeTriggerEvent; } }
 
@@ -852,7 +857,7 @@ public class PlaySound : IComboEvent
     private AudioSource source;
     public void OnEventTrigger(GameEntity entity)
     {
-        source = SoundManager.PlaySound(clip,false,volume,loop,pitch);
+        source = SoundManager.PlaySound(clip,false,volume,loop,pitch, group);
         timecount = 0;
     }
     public void Recycle()

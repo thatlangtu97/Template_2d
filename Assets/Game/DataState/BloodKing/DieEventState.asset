@@ -19,6 +19,7 @@ MonoBehaviour:
     - {fileID: 8116762680336563667, guid: d2b065a9972e9d7468e84a53bb6d5161, type: 3}
     - {fileID: 8300000, guid: 601b04dd525bae64fb14497e2bd2a91a, type: 3}
     - {fileID: 8300000, guid: 28cf58d53d5611c44b2fa469bfc478e1, type: 3}
+    - {fileID: 8300000, guid: 9c57bdff3600f1a478f35e6eb26a6951, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -30,7 +31,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 6
+      Data: 7
     - Name: 
       Entry: 7
       Data: 1|Core.GamePlay.EnableComponent, Assembly-CSharp
@@ -172,6 +173,9 @@ MonoBehaviour:
     - Name: clip
       Entry: 10
       Data: 1
+    - Name: group
+      Entry: 3
+      Data: 0
     - Name: volume
       Entry: 4
       Data: 0.811
@@ -265,6 +269,9 @@ MonoBehaviour:
     - Name: clip
       Entry: 10
       Data: 2
+    - Name: group
+      Entry: 3
+      Data: 0
     - Name: volume
       Entry: 4
       Data: 1
@@ -361,6 +368,102 @@ MonoBehaviour:
     - Name: Component
       Entry: 3
       Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 11|Core.GamePlay.PlaySound, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 600
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0
+    - Name: clip
+      Entry: 10
+      Data: 3
+    - Name: group
+      Entry: 3
+      Data: 0
+    - Name: volume
+      Entry: 4
+      Data: 1
+    - Name: loop
+      Entry: 5
+      Data: false
+    - Name: pitch
+      Entry: 4
+      Data: 1
+    - Name: useStop
+      Entry: 5
+      Data: false
+    - Name: useCurveVolume
+      Entry: 5
+      Data: false
+    - Name: useDuration
+      Entry: 5
+      Data: false
+    - Name: duration
+      Entry: 4
+      Data: 0
+    - Name: curveVolume
+      Entry: 7
+      Data: 12|UnityEngine.AnimationCurve, UnityEngine.CoreModule
+    - Name: 
+      Entry: 7
+      Data: 13|UnityEngine.Keyframe[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Keyframe, UnityEngine.CoreModule
+    - Name: ver
+      Entry: 3
+      Data: 1
+    - Name: m_Time
+      Entry: 4
+      Data: 0
+    - Name: m_Value
+      Entry: 4
+      Data: 1
+    - Name: m_InTangent
+      Entry: 4
+      Data: 0
+    - Name: m_OutTangent
+      Entry: 4
+      Data: 0
+    - Name: m_TangentMode
+      Entry: 3
+      Data: 0
+    - Name: m_WeightedMode
+      Entry: 3
+      Data: 0
+    - Name: m_InWeight
+      Entry: 4
+      Data: 0
+    - Name: m_OutWeight
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 

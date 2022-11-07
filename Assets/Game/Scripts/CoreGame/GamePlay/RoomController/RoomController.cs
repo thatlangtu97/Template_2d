@@ -8,6 +8,7 @@ public class RoomController : MonoBehaviour
 {
     public EventCollection eventCollectionData;
     protected Dictionary<int, IComboEvent> idEventTrigged = new Dictionary<int, IComboEvent>();
+    public AudioClip Ambient;
     public float timeTrigger;
     public GameObject Boss;
     public float timeBoss;
@@ -18,7 +19,7 @@ public class RoomController : MonoBehaviour
         this.RegisterListener(EventID.ENTRY_ROOM, (sender, param) => OnEntryRoom());
         this.RegisterListener(EventID.OPEN_DOOR, (sender, param) => FinishRoom());
     }
-
+    
     private void FinishRoom()
     { 
         Entry = false;
@@ -34,8 +35,8 @@ public class RoomController : MonoBehaviour
     }
     void Start()
     {
-        
-       
+        SoundManager.PlaySound(Ambient, false, 1, true, 1, SoundGroup.Global);
+
     }
 
     // Update is called once per frame

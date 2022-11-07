@@ -16,7 +16,7 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 8300000, guid: 0e26248f39205c344b8558184e9dcb97, type: 3}
+    - {fileID: 8300000, guid: c2a014f388e3c3e4ca5a85f903abd212, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -41,6 +41,9 @@ MonoBehaviour:
     - Name: clip
       Entry: 10
       Data: 0
+    - Name: group
+      Entry: 3
+      Data: 1
     - Name: volume
       Entry: 4
       Data: 1
@@ -131,6 +134,7 @@ MonoBehaviour:
   typeAnim: 1
   NameTrigger: Hit
   timeStart: 0
+  layerAnim: 1
   durationAnimation: 0.15
   curveX:
     serializedVersion: 2
