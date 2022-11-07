@@ -9,11 +9,13 @@ public class RoomController : MonoBehaviour
     public EventCollection eventCollectionData;
     protected Dictionary<int, IComboEvent> idEventTrigged = new Dictionary<int, IComboEvent>();
     public AudioClip Ambient;
+    public float volume=0.5f;
     public float timeTrigger;
     public GameObject Boss;
     public float timeBoss;
     public bool started;
     public bool Entry;
+    
     private void Awake()
     {
         this.RegisterListener(EventID.ENTRY_ROOM, (sender, param) => OnEntryRoom());
@@ -35,7 +37,7 @@ public class RoomController : MonoBehaviour
     }
     void Start()
     {
-        SoundManager.PlaySound(Ambient, false, 1, true, 1, SoundGroup.Global);
+        SoundManager.PlaySound(Ambient, false, volume, true, 1, SoundGroup.Global);
 
     }
 

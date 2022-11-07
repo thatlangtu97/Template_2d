@@ -495,7 +495,7 @@ MonoBehaviour:
   NameTrigger: 
   timeStart: 0
   layerAnim: 0
-  durationAnimation: 5
+  durationAnimation: 7
   curveX:
     serializedVersion: 2
     m_Curve: []
