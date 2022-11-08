@@ -29,7 +29,7 @@ public class ProjectileArrowMovement : ProjectileMovement
     public override void UpdatePosition()
     {
         localScaleX = transform.localScale.x;
-        direction = transform.right * transform.localScale.x;
+        direction = transform.right ;
         transform.position +=  direction * speed  * fixedDeltaTime;
         timeCount += fixedDeltaTime;
         trail.enabled = true;
