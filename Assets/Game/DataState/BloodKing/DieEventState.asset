@@ -19,8 +19,8 @@ MonoBehaviour:
     - {fileID: 8116762680336563667, guid: d2b065a9972e9d7468e84a53bb6d5161, type: 3}
     - {fileID: 8300000, guid: 601b04dd525bae64fb14497e2bd2a91a, type: 3}
     - {fileID: 8300000, guid: 28cf58d53d5611c44b2fa469bfc478e1, type: 3}
-    - {fileID: 8300000, guid: 9c57bdff3600f1a478f35e6eb26a6951, type: 3}
     - {fileID: 8300000, guid: a51c998711ba8c8489bff7f714e4eb42, type: 3}
+    - {fileID: 8300000, guid: 9c57bdff3600f1a478f35e6eb26a6951, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -485,7 +485,7 @@ MonoBehaviour:
       Data: 0
     - Name: volume
       Entry: 4
-      Data: 1
+      Data: 0.9
     - Name: loop
       Entry: 5
       Data: false

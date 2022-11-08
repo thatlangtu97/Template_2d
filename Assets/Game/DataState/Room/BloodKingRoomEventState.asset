@@ -46,7 +46,7 @@ MonoBehaviour:
       Data: 0
     - Name: volume
       Entry: 4
-      Data: 0.5
+      Data: 0.6
     - Name: loop
       Entry: 5
       Data: true
@@ -88,13 +88,13 @@ MonoBehaviour:
       Data: 0
     - Name: m_InTangent
       Entry: 4
-      Data: 1
+      Data: 2.38544488
     - Name: m_OutTangent
       Entry: 4
-      Data: 1
+      Data: 2.38544488
     - Name: m_TangentMode
       Entry: 3
-      Data: 34
+      Data: 0
     - Name: m_WeightedMode
       Entry: 3
       Data: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
       Data: 0
     - Name: m_OutWeight
       Entry: 4
-      Data: 0
+      Data: 0.0583333336
     - Name: 
       Entry: 8
       Data: 
@@ -121,19 +121,19 @@ MonoBehaviour:
       Data: 1
     - Name: m_InTangent
       Entry: 4
-      Data: 1
+      Data: 0.200686067
     - Name: m_OutTangent
       Entry: 4
-      Data: 1
+      Data: 0.200686067
     - Name: m_TangentMode
       Entry: 3
-      Data: 34
+      Data: 0
     - Name: m_WeightedMode
       Entry: 3
       Data: 0
     - Name: m_InWeight
       Entry: 4
-      Data: 0
+      Data: 0.4583333
     - Name: m_OutWeight
       Entry: 4
       Data: 0
