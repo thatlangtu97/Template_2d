@@ -2,6 +2,7 @@
 using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
+using Core.GamePlay;
 using DG.Tweening;
 using Object = System.Object;
 
@@ -73,7 +74,7 @@ public class CastAddForce : IComboEvent
         Rigidbody2D baseRigidbody = entity.stateMachineContainer.value.componentManager.rgbody2D;
         Transform baseTransform = entity.stateMachineContainer.value.transform;
         
-        Vector3 CalculateForce = new Vector3(force.x * (baseTransform.localScale.x < 0 ? -1f : 1f),
+        Vector3 CalculateForce = new Vector3(force.x * (baseTransform.right.x < 0 ? -1f : 1f),
             force.y,
             force.z);
         baseRigidbody.AddForce(CalculateForce);
@@ -404,7 +405,9 @@ public class ColliderEvent : IComboEvent
     [FoldoutGroup("COLLIDER EVENT")]
     [ShowIf("castByTime")]
     public int maxCastByTime;
-
+    [FoldoutGroup("COLLIDER EVENT")]
+    [ShowIf("castByTime")]
+    public bool stopWhenHit;
 //    [FoldoutGroup("COLLIDER EVENT")]
 //    public bool useColliderComponent;
 //    
@@ -505,6 +508,13 @@ public class ColliderEvent : IComboEvent
                                     EventUpdate.SetEvent(targetHitPhaseData.hitPhaseEvents,componentManager.entity);
                                 }
                                 
+                                if (castByTime)
+                                {
+                                    if (stopWhenHit)
+                                    {
+                                        countCast = maxCastByTime;
+                                    }
+                                }
                             }
                         }
                     }
@@ -559,7 +569,15 @@ public class ColliderEvent : IComboEvent
                                 if (targetHitPhaseData != null)
                                 {
                                     EventUpdate.SetEvent(targetHitPhaseData.hitPhaseEvents,componentManager.entity);
-                                }  
+                                }
+
+                                if (castByTime)
+                                {
+                                    if (stopWhenHit)
+                                    {
+                                        countCast = maxCastByTime;
+                                    }
+                                }
                             }
                         }
                     }
@@ -805,6 +823,7 @@ public class CastProjectile : IComboEvent
 #endregion
 
 #region SOUND
+[System.Serializable]
 public class PlaySound : IComboEvent
 {
     [FoldoutGroup("SOUND")]
@@ -1128,3 +1147,63 @@ public class HitPhase
     public HitPhase (){}
 }
 }
+
+public abstract class AbsComboEvent
+{
+    public abstract int id { get; set; }
+    public abstract float timeTrigger { get; }
+    public abstract void OnEventTrigger(GameEntity entity);
+    public abstract void OnUpdateTrigger();
+    public abstract void Recycle();
+
+}
+[System.Serializable]
+public class CAST_VFX : AbsComboEvent
+{
+    [FoldoutGroup("SPAWN GAMEOBJECT")][ReadOnly] public int idEvent;
+
+    [FoldoutGroup("SPAWN GAMEOBJECT")]     public float timeTriggerEvent;
+    
+    [FoldoutGroup("SPAWN GAMEOBJECT")]     public float duration = 0.5f;
+
+    [FoldoutGroup("SPAWN GAMEOBJECT")]     public GameObject Prefab;
+
+    [FoldoutGroup("SPAWN GAMEOBJECT")]     public Vector3 localPosition;
+    
+    [FoldoutGroup("SPAWN GAMEOBJECT")]     public Vector3 LocalRotation;
+
+    [FoldoutGroup("SPAWN GAMEOBJECT")]     public Vector3 LocalScale = Vector3.one;
+    
+    [FoldoutGroup("SPAWN GAMEOBJECT")]    [ShowIf("typeSpawn", TypeSpawn.RigidBody2D)]     public Vector2 ForceSpawn ;
+    
+    [FoldoutGroup("SPAWN GAMEOBJECT")]     public bool setParent ;
+    
+    [FoldoutGroup("SPAWN GAMEOBJECT")]     public bool UseDuration;
+    
+    [FoldoutGroup("SPAWN GAMEOBJECT")]     public bool forceWhenFinishEvent ;
+
+    [FoldoutGroup("SPAWN GAMEOBJECT")]     public TypeSpawn typeSpawn;
+    
+    [FoldoutGroup("SPAWN GAMEOBJECT")]     public LayerMask LayerMask ;
+    
+    private GameObject prefabSpawned;
+    
+    public override int id {  get { return idEvent; } set { idEvent = value; } }
+    public override float timeTrigger { get { return timeTriggerEvent; } }
+    public override void OnEventTrigger(GameEntity entity)
+    {
+        
+    }
+
+    public override void OnUpdateTrigger()
+    {
+        
+    }
+
+    public override void Recycle()
+    {
+        
+    }
+}
+
+
