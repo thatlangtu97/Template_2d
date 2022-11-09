@@ -27,4 +27,11 @@ MonoBehaviour:
   Immunes: 
   eventCollectionData:
   - {fileID: 11400000, guid: 2bb1d1ca33d80224aa6f85114e6bcc6c, type: 2}
-  - {fileID: 11400000, guid: acb75c244d43ad2448f17e6e3082855d, type: 2}
+  - {fileID: 11400000, guid: 5cbe13ca05321f04aad26d07722ea1e6, type: 2}
+  slowMotion:
+    idEvent: 0
+    timeTriggerEvent: 0
+    duration: 0.4
+    startValue: 0
+    endValue: 0.1
+    stepValue: 0.0001

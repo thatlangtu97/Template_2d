@@ -309,6 +309,7 @@ namespace Core.GamePlay
         RollOutState,
         LandingState,
         CounterState,
+        CounteredState,
     }
 }
 

@@ -10,6 +10,7 @@ namespace Core.GamePlay
         private EventCollection currentState;
         private float duration;
         private bool successCounter, counted;
+        public SlowMotionCamera slowMotion;
         public override void InitState(StateMachineController controller)
         {
             base.InitState(controller);
@@ -29,18 +30,23 @@ namespace Core.GamePlay
         void Counter(object obj)
         {
             DataDamageTake dt = obj as DataDamageTake;
-            if(dt.source == controller)
+            if (dt.source == controller)
+            {
                 if (controller.currentNameState == NameState.CounterState)
                 {
                     successCounter = true;
-                    HitStopManager.DefaultSlowMotion();
-                    if (idState + 1 < eventCollectionData.Count)
-                    {
-                        idState += 1;
-                        counted = true;
-                        Cast();
-                    }
+                    //HitStopManager.DefaultSlowMotion();
+                    slowMotion.OnEventTrigger(controller.componentManager.entity);
+//                    if (idState + 1 < eventCollectionData.Count)
+//                    {
+//                        idState += 1;
+//                        counted = true;
+//                        Cast();
+//                    }
+                    if(dt.target!=null)
+                        dt.target.ChangeState(NameState.CounteredState);
                 }
+            }
         }
         public override void UpdateState()
         {
@@ -48,46 +54,49 @@ namespace Core.GamePlay
             controller.componentManager.rgbody2D.velocity = new Vector2(currentState.curveX.Evaluate(timeTrigger) * controller.transform.right.x,currentState.curveY.Evaluate(timeTrigger) + controller.componentManager.rgbody2D.velocity.y );
             if (timeTrigger >= duration)
             {
-//                if (!successCounter || counted )
-//                {
-//                    if (controller.componentManager.IsGround)
-//                    {
-//                        if (controller.componentManager.vectorMove != Vector2.zero)
-//                        {
-//                            controller.ChangeState(NameState.MoveState);
-//                            return;
-//                        }
-//
-//                        controller.ChangeState(NameState.IdleState);
-//                    }
-//                    else
-//                    {
-//                        controller.ChangeState(NameState.FallingState);
-//                    }
-//                }
-//                else
-//                {
-//                    if (idState + 1 < eventCollectionData.Count)
-//                    {
-//                        idState += 1;
-//                        counted = true;
-//                        Cast();
-//                    }
-//                }
-                if (controller.componentManager.IsGround)
+                if (!successCounter || counted )
                 {
-                    if (controller.componentManager.vectorMove != Vector2.zero)
+                    if (controller.componentManager.IsGround)
                     {
-                        controller.ChangeState(NameState.MoveState);
-                        return;
-                    }
+                        if (controller.componentManager.vectorMove != Vector2.zero)
+                        {
+                            controller.ChangeState(NameState.MoveState);
+                            return;
+                        }
 
-                    controller.ChangeState(NameState.IdleState);
+                        controller.ChangeState(NameState.IdleState);
+                    }
+                    else
+                    {
+                        controller.ChangeState(NameState.FallingState);
+                    }
                 }
                 else
                 {
-                    controller.ChangeState(NameState.FallingState);
+                    if (idState + 1 < eventCollectionData.Count)
+                    {
+                        idState += 1;
+                        counted = true;
+                        Cast();
+                    }
                 }
+
+
+
+//                if (controller.componentManager.IsGround)
+//                {
+//                    if (controller.componentManager.vectorMove != Vector2.zero)
+//                    {
+//                        controller.ChangeState(NameState.MoveState);
+//                        return;
+//                    }
+//
+//                    controller.ChangeState(NameState.IdleState);
+//                }
+//                else
+//                {
+//                    controller.ChangeState(NameState.FallingState);
+//                }
             }
         }
         public override void ExitState()

@@ -41,6 +41,9 @@ MonoBehaviour:
     - Name: clip
       Entry: 10
       Data: 0
+    - Name: group
+      Entry: 3
+      Data: 0
     - Name: volume
       Entry: 4
       Data: 0.3
@@ -131,7 +134,8 @@ MonoBehaviour:
   typeAnim: 1
   NameTrigger: Counter
   timeStart: 0
-  durationAnimation: 0.3
+  layerAnim: 0
+  durationAnimation: 0.5
   curveX:
     serializedVersion: 2
     m_Curve: []

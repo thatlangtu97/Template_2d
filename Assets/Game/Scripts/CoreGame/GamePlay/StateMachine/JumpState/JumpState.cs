@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Core.GamePlay
@@ -13,22 +14,47 @@ namespace Core.GamePlay
         public float distanceCheck;
         public Vector3 LocalPosition;
         public Vector3 SizeBoxCastCheckWall;
+        public bool addForce;
+        [ShowIf("addForce")]
+        public float force = 5f;
         public override void EnterState()
         {
             base.EnterState();
             currentState = eventCollectionData[idState];
             PlayAnim(currentState);
             PingPongJump();
+            if (addForce)
+            {
+                controller.componentManager.rgbody2D.velocity= new Vector2(controller.componentManager.rgbody2D.velocity.x, force );
+            }
         }
         void Move()
         {
             controller.componentManager.Rotate();
-            Vector2 tempVelocity = new Vector2( controller.componentManager.vectorMove.x * controller.componentManager.maxSpeedMove, currentState.curveY.Evaluate(timeTrigger));
-            if(Physics2D.BoxCast(controller.transform.position + LocalPosition,SizeBoxCastCheckWall,0,controller.transform.right,distanceCheck,layerStop).collider != null)
+            if (addForce)
             {
-                tempVelocity.x =0;
+                Vector2 tempVelocity = new Vector2(controller.componentManager.vectorMove.x * controller.componentManager.maxSpeedMove,controller.componentManager.rgbody2D.velocity.y );
+                
+                if (Physics2D.BoxCast(controller.transform.position + LocalPosition, SizeBoxCastCheckWall, 0,
+                        controller.transform.right, distanceCheck, layerStop).collider != null)
+                {
+                    tempVelocity.x = 0;
+                }
+                controller.componentManager.rgbody2D.velocity = tempVelocity;
             }
-            controller.componentManager.rgbody2D.velocity = tempVelocity;
+            else
+            {
+                Vector2 tempVelocity =
+                    new Vector2(controller.componentManager.vectorMove.x * controller.componentManager.maxSpeedMove,
+                        currentState.curveY.Evaluate(timeTrigger));
+                if (Physics2D.BoxCast(controller.transform.position + LocalPosition, SizeBoxCastCheckWall, 0,
+                        controller.transform.right, distanceCheck, layerStop).collider != null)
+                {
+                    tempVelocity.x = 0;
+                }
+
+                controller.componentManager.rgbody2D.velocity = tempVelocity;
+            }
         }
         public override void UpdateState()
         {
@@ -85,6 +111,10 @@ namespace Core.GamePlay
                 PlayAnim(currentState);
                 PingPongJump();
                 controller.componentManager.isDoubleJump = true;
+                if (addForce)
+                {
+                    controller.componentManager.rgbody2D.velocity= new Vector2(controller.componentManager.rgbody2D.velocity.x, force );
+                }
             }
         }
     }

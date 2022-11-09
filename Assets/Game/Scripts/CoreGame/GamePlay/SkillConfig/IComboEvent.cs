@@ -945,6 +945,7 @@ public class ShakeCamera : IComboEvent
 #endregion
 
 #region SLOW MOTION
+[System.Serializable]
 public class SlowMotionCamera : IComboEvent
 {
     [FoldoutGroup("SLOW MOTION")]

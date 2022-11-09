@@ -11,7 +11,7 @@ namespace Core.AI
     {
         public SharedTransform target;
         public int frameSpaceScan;
-        private int countFrame;
+        public int countFrame;
         public override TaskStatus OnUpdate()
         {
             if (!target.Value)
@@ -27,8 +27,13 @@ namespace Core.AI
                     return TaskStatus.Running;
                 }
             }
+            else
+            {
+                return TaskStatus.Success;
+                
+            }
 
-            return TaskStatus.Running;
+//            return TaskStatus.Running;
         }
     }
 

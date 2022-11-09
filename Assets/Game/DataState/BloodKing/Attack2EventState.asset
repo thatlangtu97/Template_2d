@@ -16,7 +16,6 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 8300000, guid: 4244dbcb4103ee84cae165a1cf91599f, type: 3}
     - {fileID: 8300000, guid: 537f1d1bec0bc1147bcff2d2b4940a5e, type: 3}
     - {fileID: 1103464484556320335, guid: 9573684b03d561549a6dc073a8823bea, type: 3}
     - {fileID: 6248087401434533543, guid: 3208d6770e621c34b9612028e2359bbf, type: 3}
@@ -101,6 +100,9 @@ MonoBehaviour:
     - Name: maxCastByTime
       Entry: 3
       Data: 0
+    - Name: stopWhenHit
+      Entry: 5
+      Data: false
     - Name: damageInfoEvent
       Entry: 7
       Data: 2|Core.GamePlay.DamageInfoEvent, Assembly-CSharp
@@ -134,103 +136,10 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 5|Core.GamePlay.PlaySound, Assembly-CSharp
-    - Name: idEvent
-      Entry: 3
-      Data: 0
-    - Name: timeTriggerEvent
-      Entry: 4
-      Data: 0
-    - Name: clip
-      Entry: 10
-      Data: 0
-    - Name: volume
-      Entry: 4
-      Data: 1
-    - Name: loop
-      Entry: 5
-      Data: false
-    - Name: pitch
-      Entry: 4
-      Data: 1
-    - Name: useStop
-      Entry: 5
-      Data: false
-    - Name: useCurveVolume
-      Entry: 5
-      Data: false
-    - Name: useDuration
-      Entry: 5
-      Data: false
-    - Name: duration
-      Entry: 4
-      Data: 0
-    - Name: curveVolume
-      Entry: 7
-      Data: 6|UnityEngine.AnimationCurve, UnityEngine.CoreModule
-    - Name: 
-      Entry: 7
-      Data: 7|UnityEngine.Keyframe[], UnityEngine.CoreModule
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: UnityEngine.Keyframe, UnityEngine.CoreModule
-    - Name: ver
-      Entry: 3
-      Data: 1
-    - Name: m_Time
-      Entry: 4
-      Data: 0
-    - Name: m_Value
-      Entry: 4
-      Data: 1
-    - Name: m_InTangent
-      Entry: 4
-      Data: 0
-    - Name: m_OutTangent
-      Entry: 4
-      Data: 0
-    - Name: m_TangentMode
-      Entry: 3
-      Data: 0
-    - Name: m_WeightedMode
-      Entry: 3
-      Data: 0
-    - Name: m_InWeight
-      Entry: 4
-      Data: 0
-    - Name: m_OutWeight
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 8
-    - Name: 
-      Entry: 3
-      Data: 8
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 8|Core.GamePlay.ShakeCamera, Assembly-CSharp
+      Data: 5|Core.GamePlay.ShakeCamera, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 100
@@ -257,7 +166,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|Core.GamePlay.SlowMotionCamera, Assembly-CSharp
+      Data: 6|Core.GamePlay.SlowMotionCamera, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 200
@@ -290,10 +199,10 @@ MonoBehaviour:
       Data: 
     - Name: targetHitPhaseData
       Entry: 7
-      Data: 10|Core.GamePlay.HitPhase, Assembly-CSharp
+      Data: 7|Core.GamePlay.HitPhase, Assembly-CSharp
     - Name: hitPhaseEvents
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[Core.GamePlay.IComboEvent, Assembly-CSharp]],
+      Data: 8|System.Collections.Generic.List`1[[Core.GamePlay.IComboEvent, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -312,7 +221,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|Core.GamePlay.ColliderEvent, Assembly-CSharp
+      Data: 9|Core.GamePlay.ColliderEvent, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 100
@@ -379,9 +288,12 @@ MonoBehaviour:
     - Name: maxCastByTime
       Entry: 3
       Data: 0
+    - Name: stopWhenHit
+      Entry: 5
+      Data: false
     - Name: damageInfoEvent
       Entry: 7
-      Data: 13|Core.GamePlay.DamageInfoEvent, Assembly-CSharp
+      Data: 10|Core.GamePlay.DamageInfoEvent, Assembly-CSharp
     - Name: damageScale
       Entry: 4
       Data: 1
@@ -405,110 +317,17 @@ MonoBehaviour:
       Data: 
     - Name: hitPhaseData
       Entry: 7
-      Data: 14|Core.GamePlay.HitPhase, Assembly-CSharp
+      Data: 11|Core.GamePlay.HitPhase, Assembly-CSharp
     - Name: hitPhaseEvents
       Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[Core.GamePlay.IComboEvent, Assembly-CSharp]],
+      Data: 12|System.Collections.Generic.List`1[[Core.GamePlay.IComboEvent, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 16|Core.GamePlay.PlaySound, Assembly-CSharp
-    - Name: idEvent
-      Entry: 3
-      Data: 0
-    - Name: timeTriggerEvent
-      Entry: 4
-      Data: 0
-    - Name: clip
-      Entry: 10
-      Data: 0
-    - Name: volume
-      Entry: 4
-      Data: 1
-    - Name: loop
-      Entry: 5
-      Data: false
-    - Name: pitch
-      Entry: 4
-      Data: 1
-    - Name: useStop
-      Entry: 5
-      Data: false
-    - Name: useCurveVolume
-      Entry: 5
-      Data: false
-    - Name: useDuration
-      Entry: 5
-      Data: false
-    - Name: duration
-      Entry: 4
-      Data: 0
-    - Name: curveVolume
-      Entry: 7
-      Data: 17|UnityEngine.AnimationCurve, UnityEngine.CoreModule
-    - Name: 
-      Entry: 7
-      Data: 18|UnityEngine.Keyframe[], UnityEngine.CoreModule
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: UnityEngine.Keyframe, UnityEngine.CoreModule
-    - Name: ver
-      Entry: 3
-      Data: 1
-    - Name: m_Time
-      Entry: 4
-      Data: 0
-    - Name: m_Value
-      Entry: 4
-      Data: 1
-    - Name: m_InTangent
-      Entry: 4
-      Data: 0
-    - Name: m_OutTangent
-      Entry: 4
-      Data: 0
-    - Name: m_TangentMode
-      Entry: 3
-      Data: 0
-    - Name: m_WeightedMode
-      Entry: 3
-      Data: 0
-    - Name: m_InWeight
-      Entry: 4
-      Data: 0
-    - Name: m_OutWeight
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 8
-    - Name: 
-      Entry: 3
-      Data: 8
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 19|Core.GamePlay.ShakeCamera, Assembly-CSharp
+      Data: 13|Core.GamePlay.ShakeCamera, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 100
@@ -535,7 +354,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 20|Core.GamePlay.SlowMotionCamera, Assembly-CSharp
+      Data: 14|Core.GamePlay.SlowMotionCamera, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 200
@@ -568,10 +387,10 @@ MonoBehaviour:
       Data: 
     - Name: targetHitPhaseData
       Entry: 7
-      Data: 21|Core.GamePlay.HitPhase, Assembly-CSharp
+      Data: 15|Core.GamePlay.HitPhase, Assembly-CSharp
     - Name: hitPhaseEvents
       Entry: 7
-      Data: 22|System.Collections.Generic.List`1[[Core.GamePlay.IComboEvent, Assembly-CSharp]],
+      Data: 16|System.Collections.Generic.List`1[[Core.GamePlay.IComboEvent, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -590,7 +409,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 23|Core.GamePlay.PlaySound, Assembly-CSharp
+      Data: 17|Core.GamePlay.PlaySound, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 200
@@ -599,7 +418,10 @@ MonoBehaviour:
       Data: 0.5
     - Name: clip
       Entry: 10
-      Data: 1
+      Data: 0
+    - Name: group
+      Entry: 3
+      Data: 0
     - Name: volume
       Entry: 4
       Data: 1
@@ -623,10 +445,10 @@ MonoBehaviour:
       Data: 0
     - Name: curveVolume
       Entry: 7
-      Data: 24|UnityEngine.AnimationCurve, UnityEngine.CoreModule
+      Data: 18|UnityEngine.AnimationCurve, UnityEngine.CoreModule
     - Name: 
       Entry: 7
-      Data: 25|UnityEngine.Keyframe[], UnityEngine.CoreModule
+      Data: 19|UnityEngine.Keyframe[], UnityEngine.CoreModule
     - Name: 
       Entry: 12
       Data: 1
@@ -683,7 +505,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 26|Core.GamePlay.PlaySound, Assembly-CSharp
+      Data: 20|Core.GamePlay.PlaySound, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 300
@@ -692,7 +514,10 @@ MonoBehaviour:
       Data: 1
     - Name: clip
       Entry: 10
-      Data: 1
+      Data: 0
+    - Name: group
+      Entry: 3
+      Data: 0
     - Name: volume
       Entry: 4
       Data: 1
@@ -716,10 +541,10 @@ MonoBehaviour:
       Data: 0
     - Name: curveVolume
       Entry: 7
-      Data: 27|UnityEngine.AnimationCurve, UnityEngine.CoreModule
+      Data: 21|UnityEngine.AnimationCurve, UnityEngine.CoreModule
     - Name: 
       Entry: 7
-      Data: 28|UnityEngine.Keyframe[], UnityEngine.CoreModule
+      Data: 22|UnityEngine.Keyframe[], UnityEngine.CoreModule
     - Name: 
       Entry: 12
       Data: 1
@@ -776,7 +601,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 29|Core.GamePlay.InteractiveGrassWind, Assembly-CSharp
+      Data: 23|Core.GamePlay.InteractiveGrassWind, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 400
@@ -806,7 +631,7 @@ MonoBehaviour:
       Data: 2
     - Name: FoliageObj
       Entry: 10
-      Data: 2
+      Data: 1
     - Name: space
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -821,7 +646,7 @@ MonoBehaviour:
       Data: 
     - Name: FoliageObjRigidbody2D
       Entry: 10
-      Data: 3
+      Data: 2
     - Name: velocity
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -851,7 +676,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 30|Core.GamePlay.InteractiveGrassWind, Assembly-CSharp
+      Data: 24|Core.GamePlay.InteractiveGrassWind, Assembly-CSharp
     - Name: idEvent
       Entry: 3
       Data: 500
@@ -881,7 +706,7 @@ MonoBehaviour:
       Data: 2
     - Name: FoliageObj
       Entry: 10
-      Data: 2
+      Data: 1
     - Name: space
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -896,7 +721,7 @@ MonoBehaviour:
       Data: 
     - Name: FoliageObjRigidbody2D
       Entry: 10
-      Data: 3
+      Data: 2
     - Name: velocity
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -967,7 +792,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.7336567
-      value: 10
+      value: 5
       inSlope: Infinity
       outSlope: Infinity
       tangentMode: 0
@@ -994,7 +819,7 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 1.128136
-      value: 5
+      value: 3
       inSlope: 0
       outSlope: 0
       tangentMode: 0
