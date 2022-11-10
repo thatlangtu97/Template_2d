@@ -34,7 +34,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 5
+      Data: 7
     - Name: 
       Entry: 7
       Data: 1|Core.GamePlay.ColliderEvent, Assembly-CSharp
@@ -799,6 +799,42 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 24|Core.GamePlay.EnableComponent, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 500
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0
+    - Name: enable
+      Entry: 5
+      Data: false
+    - Name: Component
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 25|Core.GamePlay.EnableComponent, Assembly-CSharp
+    - Name: idEvent
+      Entry: 3
+      Data: 600
+    - Name: timeTriggerEvent
+      Entry: 4
+      Data: 0.45
+    - Name: enable
+      Entry: 5
+      Data: true
+    - Name: Component
+      Entry: 3
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
