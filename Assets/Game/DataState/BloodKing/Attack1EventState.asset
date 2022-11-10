@@ -40,7 +40,7 @@ MonoBehaviour:
       Data: 0
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.25
+      Data: 0.55
     - Name: layerMaskEnemy
       Entry: 7
       Data: UnityEngine.LayerMask, UnityEngine.CoreModule
@@ -73,7 +73,7 @@ MonoBehaviour:
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 1
+      Data: 0.5
     - Name: 
       Entry: 4
       Data: 0.2
@@ -228,7 +228,7 @@ MonoBehaviour:
       Data: 100
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.2
+      Data: 0.5
     - Name: clip
       Entry: 10
       Data: 0
@@ -324,7 +324,7 @@ MonoBehaviour:
       Data: 200
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.4
+      Data: 0.7
     - Name: clip
       Entry: 10
       Data: 1
@@ -420,7 +420,7 @@ MonoBehaviour:
       Data: 300
     - Name: timeTriggerEvent
       Entry: 4
-      Data: 0.3
+      Data: 0.6
     - Name: duration
       Entry: 4
       Data: 0.3
@@ -450,7 +450,7 @@ MonoBehaviour:
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.5
+      Data: 0.4
     - Name: 
       Entry: 4
       Data: 0
@@ -520,8 +520,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.20196944
-      value: 8
+      time: 0.44073257
+      value: 5
       inSlope: 2.3924363
       outSlope: 2.3924363
       tangentMode: 0
@@ -529,7 +529,7 @@ MonoBehaviour:
       inWeight: 0.70780116
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.3051702
+      time: 0.54073256
       value: 0
       inSlope: Infinity
       outSlope: Infinity

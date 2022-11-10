@@ -72,7 +72,7 @@ MonoBehaviour:
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.7
+      Data: 0.5
     - Name: 
       Entry: 4
       Data: 0.2
@@ -245,7 +245,7 @@ MonoBehaviour:
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.1
+      Data: 0
     - Name: 
       Entry: 4
       Data: 0.1
