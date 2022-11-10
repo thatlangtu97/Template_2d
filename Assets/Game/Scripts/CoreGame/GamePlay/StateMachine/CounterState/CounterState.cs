@@ -43,8 +43,11 @@ namespace Core.GamePlay
 //                        counted = true;
 //                        Cast();
 //                    }
-                    if(dt.target!=null)
+                    if (dt.target != null)
+                    {
+                        
                         dt.target.ChangeState(NameState.CounteredState);
+                    }
                 }
             }
         }

@@ -35,3 +35,4 @@ MonoBehaviour:
     startValue: 0
     endValue: 0.1
     stepValue: 0.0001
+  force: 1000
